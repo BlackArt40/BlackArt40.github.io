@@ -22,15 +22,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="伏北的BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="安装git 在终端中输入git可检查是否已经安装，若没安装可以根据提示的命令行进行安装  $ git  ps:很多软件都可以通过这种方式安装。  根据提示命令进行安装  $ sudo apt install git  可能出现（没有可用的软件包git，但是它被其他的软件包引用了）错误  这可能意味着这个缺失的软件包可能已被废弃，或者只能在其他发布源中找到  此时只需要更新一下源  $ sudo a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu下git的安装和使用">
+<meta property="og:url" content="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
 <meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="安装git 在终端中输入git可检查是否已经安装，若没安装可以根据提示的命令行进行安装  $ git  ps:很多软件都可以通过这种方式安装。  根据提示命令进行安装  $ sudo apt install git  可能出现（没有可用的软件包git，但是它被其他的软件包引用了）错误  这可能意味着这个缺失的软件包可能已被废弃，或者只能在其他发布源中找到  此时只需要更新一下源  $ sudo a">
 <meta property="og:locale">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/28/GkCVBR.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/28/GkZk0e.jpg">
+<meta property="article:published_time" content="2020-03-27T11:14:28.000Z">
+<meta property="article:modified_time" content="2020-03-28T04:06:50.342Z">
 <meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/28/GkCVBR.jpg">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/">
 
 
 <script id="page-configurations">
@@ -38,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh'
   };
 </script>
 
-  <title>Archive | 伏北的BLOG</title>
+  <title>Ubuntu下git的安装和使用 | 伏北的BLOG</title>
   
 
 
@@ -156,210 +164,132 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 9 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu下git的安装和使用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-27 19:14:28" itemprop="dateCreated datePublished" datetime="2020-03-27T19:14:28+08:00">2020-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-28 12:06:50" itemprop="dateModified" datetime="2020-03-28T12:06:50+08:00">2020-03-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ol>
+<li><p>在终端中输入git可检查是否已经安装，若没安装可以根据提示的命令行进行安装</p>
+<p> <code>$ git</code></p>
+<p> ps:很多软件都可以通过这种方式安装。</p>
+</li>
+<li><p>根据提示命令进行安装</p>
+<p> <code>$ sudo apt install git</code></p>
+</li>
+<li><p>可能出现（没有可用的软件包git，但是它被其他的软件包引用了）错误</p>
+<p> 这可能意味着这个缺失的软件包可能已被废弃，或者只能在其他发布源中找到</p>
+</li>
+<li><p>此时只需要更新一下源</p>
+<p> <code>$ sudo apt-get update</code></p>
+</li>
+<li><p>待源更新完毕之后再次输入第二步的安装命令</p>
+<p> <code>$ sudo apt install git</code></p>
+</li>
+<li><p>等待安装完毕之后再次输入git，就会发现已经成功安装</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GkCVBR"><img src="https://s1.ax1x.com/2020/03/28/GkCVBR.jpg" alt="GkCVBR.jpg"></a></p>
+<ol start="7">
+<li><p>安装完成后，进行最后一步设置，在命令行输入：</p>
+<p> <code>$ git config --global user.name &quot;Your Name&quot;</code></p>
+<p> <code>$ git config --global user.email &quot;email@example.com&quot;</code></p>
+</li>
+</ol>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p>通过<code>mkdir</code>代码创建空的文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none">mkdir workspace
+mkdir lab01
+mkdir 20182250
+pwd (显示当前文件夹的路径)
+&#x2F;home&#x2F;misaka&#x2F;workspace&#x2F;lab01&#x2F;20182250<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-31T19:45:50+08:00"
-              content="2020-07-31">
-          07-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">git 常用命令</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-20T10:00:30+08:00"
-              content="2020-05-20">
-          05-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">配置MacBook的终端</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-29T19:45:50+08:00"
-              content="2020-03-29">
-          03-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/29/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">git 常用命令</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-28T16:10:34+08:00"
-              content="2020-03-28">
-          03-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">Ubuntu换源</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-27T19:28:44+08:00"
-              content="2020-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">如何在markdown中添加图片</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-27T19:14:28+08:00"
-              content="2020-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">Ubuntu下git的安装和使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-19T01:54:20+08:00"
-              content="2020-02-19">
-          02-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">如何快速复制代码(git clone)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-21T12:13:24+08:00"
-              content="2020-01-21">
-          01-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">MarkDown基本语法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-19T16:14:35+08:00"
-              content="2020-01-19">
-          01-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/" itemprop="url">
-            <span itemprop="name">如何搭建你的个人博客（by hexo）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p><img src="https://s1.ax1x.com/2020/03/28/GkZk0e.jpg" alt="GkZk0e.jpg"></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="prev" title="如何快速复制代码(git clone)">
+      <i class="fa fa-chevron-left"></i> 如何快速复制代码(git clone)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="next" title="如何在markdown中添加图片">
+      如何在markdown中添加图片 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -412,6 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">创建版本库</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

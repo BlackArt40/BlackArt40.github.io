@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页 配置基础安装node.jsNode.js为大多数平台提供了官方的安装程序。node.js中文网 其他安装方法：  Windows：通过nvs或者nvm安装。 Mac：使用Homebrew或MacPorts安装。 Linux：使用NodeSour">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何搭建你的个人博客（by hexo）">
+<meta property="og:url" content="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
+<meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页 配置基础安装node.jsNode.js为大多数平台提供了官方的安装程序。node.js中文网 其他安装方法：  Windows：通过nvs或者nvm安装。 Mac：使用Homebrew或MacPorts安装。 Linux：使用NodeSour">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-01-19T08:14:35.000Z">
+<meta property="article:modified_time" content="2020-07-25T13:57:15.130Z">
+<meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>如何搭建你的个人博客（by hexo） | 伏北的BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">伏北的BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何搭建你的个人博客（by hexo）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-19 16:14:35" itemprop="dateCreated datePublished" datetime="2020-01-19T16:14:35+08:00">2020-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-25 21:57:15" itemprop="dateModified" datetime="2020-07-25T21:57:15+08:00">2020-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">个人博客</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页</p>
+<h2 id="配置基础"><a href="#配置基础" class="headerlink" title="配置基础"></a>配置基础</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Node.js为大多数平台提供了官方的安装程序。<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node.js中文网</a></p>
+<p>其他安装方法：</p>
+<ul>
+<li>Windows：通过<a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/">nvs</a>或者<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>安装。</li>
+<li>Mac：使用<a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a>或<a href="www.macports.org">MacPorts</a>安装。</li>
+<li>Linux：使用NodeSource(<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions)%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/nodesource/distributions)安装。</a></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Windows用户
+
+使用Node.js官方安装程序时，请确保勾选**ADD TO PATH**选项（默认已勾选）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">For Mac&#x2F;Linux用户
+
+如果在尝试安装Hexo的过程中出现*EACCES*权限错误，请遵循由[npmjs发布的指导](https:&#x2F;&#x2F;docs.npmjs.com&#x2F;resolving-eacces-permissions-errors-when-installing-packages-globally)修复该问题。强烈建议**不要**使用root、sudo等方法覆盖权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="通过cnpm安装Hexo"><a href="#通过cnpm安装Hexo" class="headerlink" title="通过cnpm安装Hexo"></a>通过cnpm安装Hexo</h3><ol>
+<li><p>通过node -v 和npm -v检测当前版本</p>
+</li>
+<li><p>利用npm安装cnpm（npm国内下载速度不太行，选用淘宝镜像）</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>利用cnpm安装hexo</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cnpm install -g hexo-cli
+(自动下载)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>建立一个空的文件夹放置网页主体</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p><strong><em>这步完成之后你可以进入C盘，点开Windows文件夹中的System32文件夹找到blog文件夹，后续操作还是在cmd中进行</em></strong></p>
+<ol start="5">
+<li>进入blog<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>使用hexo生成博客<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo init
+（它会自动生成）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+如果出现git报错，要去git官网下载git进行安装<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>。</li>
+</ol>
+<h2 id="在本地使用个人博客"><a href="#在本地使用个人博客" class="headerlink" title="在本地使用个人博客"></a>在本地使用个人博客</h2><h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><pre class="line-numbers language-none"><code class="language-none">hexo s <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它会为你显示一个网址，在浏览器输入进入，就是hexo为你生成的网址</p>
+<h3 id="创建新的博客文章"><a href="#创建新的博客文章" class="headerlink" title="创建新的博客文章"></a>创建新的博客文章</h3><pre class="line-numbers language-none"><code class="language-none">hexo n “我的第一篇博客文章”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>自动生成该文件</p>
+<h3 id="修改博客文章中的内容"><a href="#修改博客文章中的内容" class="headerlink" title="修改博客文章中的内容"></a>修改博客文章中的内容</h3><p>进入blog/source/_posts可以查看刚刚新建的文档</p>
+<p>可以通过vs code 软件编辑该文档</p>
+<h3 id="将文章部署到网页中"><a href="#将文章部署到网页中" class="headerlink" title="将文章部署到网页中"></a>将文章部署到网页中</h3><pre class="line-numbers language-none"><code class="language-none">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Hexo文件夹中各文件信息"><a href="#Hexo文件夹中各文件信息" class="headerlink" title="Hexo文件夹中各文件信息"></a>Hexo文件夹中各文件信息</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>网站的配置信息，你可以在此配置大部分的参数。</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。EJS,Stylus和Markdown renderer已默认安装，你可以自由移除</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">package.json
+<span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"hexo-site"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">""</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token string">"^3.8.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-archive"</span><span class="token operator">:</span> <span class="token string">"^0.1.5"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-category"</span><span class="token operator">:</span> <span class="token string">"^0.1.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-index"</span><span class="token operator">:</span> <span class="token string">"^0.2.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-tag"</span><span class="token operator">:</span> <span class="token string">"^0.2.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-ejs"</span><span class="token operator">:</span> <span class="token string">"^0.3.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-stylus"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-marked"</span><span class="token operator">:</span> <span class="token string">"^0.3.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-server"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="scafflods"><a href="#scafflods" class="headerlink" title="scafflods"></a>scafflods</h3><p>模板文件夹。当你新建文章时，Hexo会根据scaffold来建立文件。</p>
+<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果你修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题文件夹。Hexo 会根据主题来生成静态页面。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="下载主题相关文件"><a href="#下载主题相关文件" class="headerlink" title="下载主题相关文件"></a>下载主题相关文件</h3><p>这里推荐两个网站，你也可以去GitHub里找自己喜欢的主题进行下载<br><a target="_blank" rel="noopener" href="https://github.com/halo-dev/halo">halo</a><br><a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">yilia</a></p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;halo-dev&#x2F;halo.git themes&#x2F;halo
+git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>通过这两行代码可以下载halo和yilia两个主题文件到blog/themes中</p>
+<h3 id="配置主题文件"><a href="#配置主题文件" class="headerlink" title="配置主题文件"></a>配置主题文件</h3><p>在blog文件夹中找到_config.yml文件</p>
+<p>用vs code将它打开</p>
+<pre class="line-numbers language-none"><code class="language-none">将其改成theme: halo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>记得:后要加一个空格</p>
+<h3 id="配置主题成功后"><a href="#配置主题成功后" class="headerlink" title="配置主题成功后"></a>配置主题成功后</h3><p>在cmd中运行下面这段代码</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>进入local 4000 查看相关主题</p>
+<p><strong><em>如何修改主题文件，在GitHub中已有现成的方法，在这里不做过多说明(去阅读README文件)</em></strong></p>
+<h2 id="将配置好的网站推到GitHub中"><a href="#将配置好的网站推到GitHub中" class="headerlink" title="将配置好的网站推到GitHub中"></a>将配置好的网站推到GitHub中</h2><ul>
+<li>创建GitHub仓库</li>
+</ul>
+<p>进入自己的GitHub网站</p>
+<p>新建一个仓库(new repository)</p>
+<p>一定是你的昵称.github.io</p>
+<p><strong><em>(用户部署个人博客的GitHub仓库的命名必须符合特定要求才行)</em></strong></p>
+<p>然后create，就完成了</p>
+<ul>
+<li>在cmd中的操作</li>
+</ul>
+<p>在blog文件夹中安装相关插件</p>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>设置config文件</li>
+</ul>
+<p>设置blog文件中的_config.yml文件(用vs code 打开)</p>
+<p>在最底部有一个Deployment配置</p>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+ type: git
+ repo: 刚刚创建的仓库的地址(ssh)
+ branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>部署到远端<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ul>
+<h3 id="部署到远端出现错误的解决办法"><a href="#部署到远端出现错误的解决办法" class="headerlink" title="部署到远端出现错误的解决办法"></a>部署到远端出现错误的解决办法</h3><ol>
+<li><p>打开Git Bash 查看电脑上是否已经存在SSH密钥</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh
+sh.exe&quot;: cd: &#x2F;c&#x2F;Users&#x2F;Lin&#x2F;.ssh: No shch file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>若出现上面的显示无法找到该文件则要创建新的ssh key</p>
+</li>
+<li><p>创建新的ssh key</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ssh -keygen -t rsa -C&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行这条命令会上图体是文件保存路径，可以直接按Enter</p>
+<p>然后提示输入 passphrase(密码)，输入两次(可以不输直接两次Enter)</p>
+<p><strong><em>你输入的密码你是看不见的</em></strong></p>
+<p>然后会在.ssh目录生产两个文件：id_ras和_rsa.pub</p>
+<p>用记事本打开.ssh目录下的id_rsa.pub文件，复制里卖弄的内容(这是你生成的电脑的公钥)</p>
+<p><strong><em>id_rsa文件里面是你自己的私钥，不要交给别人</em></strong></p>
+<ol start="3">
+<li>复制ssh key到GitHub</li>
+</ol>
+<p><strong><em>这一步是到GitHub的，如果自己有搭建git服务器，则可以直接去服务器上(CentOS)将id_rsa.pub内的公告密钥导入到/home/git/.ssh/authorized_keys文件里，一行一个）参考网址：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664">廖雪峰的官方网站-搭建git服务器</a></em></strong></p>
+<p>On the Github site Click “Account Settings” &gt; Click “SSH Keys” &gt; Click “ADD SSH Key”</p>
+<p>打开GitHub网站，点击右上角扳手图标，然后点击左边菜单的ssh key，然后右边页面的 add ssh key，将复制的内容粘贴到GitHub的key中，title可以不填，直接保存即可</p>
+<ol start="4">
+<li>测试ssh链接到GitHub</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>出现successfully就ok</p>
+<ol start="5">
+<li>设置自己的git信息</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name&quot;Firstname Lastname&quot;(此处name可修改为不是用于登陆GitHub的登陆名)
+git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>设置自己的git信息即完成安装和设置，可以输入git config –list查看自己的git信息</p>
+<ol start="6">
+<li>重新部署</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="next" title="MarkDown基本语法">
+      MarkDown基本语法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHexo%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是Hexo？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">配置基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node-js"><span class="nav-number">2.1.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87cnpm%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">通过cnpm安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">在本地使用个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8hexo"><span class="nav-number">3.1.</span> <span class="nav-text">启动hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="nav-number">3.2.</span> <span class="nav-text">创建新的博客文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">3.3.</span> <span class="nav-text">修改博客文章中的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%96%87%E7%AB%A0%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BD%91%E9%A1%B5%E4%B8%AD"><span class="nav-number">3.4.</span> <span class="nav-text">将文章部署到网页中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E5%90%84%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="nav-number">4.</span> <span class="nav-text">Hexo文件夹中各文件信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml"><span class="nav-number">4.1.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-json"><span class="nav-number">4.2.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scafflods"><span class="nav-number">4.3.</span> <span class="nav-text">scafflods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#source"><span class="nav-number">4.4.</span> <span class="nav-text">source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes"><span class="nav-number">4.5.</span> <span class="nav-text">themes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span class="nav-number">5.1.</span> <span class="nav-text">下载主题相关文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.</span> <span class="nav-text">配置主题文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98%E6%88%90%E5%8A%9F%E5%90%8E"><span class="nav-number">5.3.</span> <span class="nav-text">配置主题成功后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E7%BD%91%E7%AB%99%E6%8E%A8%E5%88%B0GitHub%E4%B8%AD"><span class="nav-number">6.</span> <span class="nav-text">将配置好的网站推到GitHub中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%AB%AF%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">6.1.</span> <span class="nav-text">部署到远端出现错误的解决办法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">伏城北染</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">伏城北染</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

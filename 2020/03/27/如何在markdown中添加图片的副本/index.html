@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="插图最基础的格式是：  [alt text](图片链接”optional title”)   Alt text:它是图片的ALT标签，用来描述图片的关键字，可以不写。（直接显示在图片下面） 图片链接：可以是图片的本地地址或者是网址 “optional title”：鼠标悬置在图片上会出现的文字，可以不写  插入本地图片在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。 例如： ![">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在markdown中添加图片">
+<meta property="og:url" content="http://yoursite.com/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
+<meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="插图最基础的格式是：  [alt text](图片链接”optional title”)   Alt text:它是图片的ALT标签，用来描述图片的关键字，可以不写。（直接显示在图片下面） 图片链接：可以是图片的本地地址或者是网址 “optional title”：鼠标悬置在图片上会出现的文字，可以不写  插入本地图片在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。 例如： ![">
+<meta property="og:locale">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/27/GiMR9s.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/27/GiQk8A.th.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/27/GiQ4Gd.jpg">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/e53da98942a0b35988f0bc45551a002d?method=download&shareKey=b1304887b92c4a21ea11c9e9e870e469">
+<meta property="article:published_time" content="2020-03-27T11:28:44.000Z">
+<meta property="article:modified_time" content="2020-03-27T12:03:09.741Z">
+<meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="MarkDown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/27/GiMR9s.th.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>如何在markdown中添加图片 | 伏北的BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">伏北的BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何在markdown中添加图片
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-27 19:28:44 / Modified: 20:03:09" itemprop="dateCreated datePublished" datetime="2020-03-27T19:28:44+08:00">2020-03-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/" itemprop="url" rel="index"><span itemprop="name">文本编辑</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>插图最基础的格式是：</p>
+<ul>
+<li>[alt text](图片链接”optional title”)</li>
+</ul>
+<blockquote>
+<p>Alt text:它是图片的ALT标签，用来描述图片的关键字，可以不写。（直接显示在图片下面）</p>
+<p>图片链接：可以是图片的本地地址或者是网址</p>
+<p>“optional title”：鼠标悬置在图片上会出现的文字，可以不写</p>
+</blockquote>
+<h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar](&#x2F;source&#x2F;picture&#x2F;1.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>缺点：不灵活不好分享，本地图片的路径更改或丢失都会造成MarkDown文件调不出图片。（不推荐）</p>
+<h2 id="插入网络图片"><a href="#插入网络图片" class="headerlink" title="插入网络图片"></a>插入网络图片</h2><p>只需要在基础语法的括号中填入图片的网络链接即可。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar](http:&#x2F;&#x2F;baidu.com&#x2F;pic&#x2F;cat.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="使用图床上传图片"><a href="#使用图床上传图片" class="headerlink" title="使用图床上传图片"></a>使用图床上传图片</h3><p>可以在进入<a target="_blank" rel="noopener" href="https://imgchr.com/">图床</a>上传自己的图片，在里面可以自己选择代码格式，很方便。</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiMR9s"><img src="https://s1.ax1x.com/2020/03/27/GiMR9s.th.jpg" alt="1"></a></p>
+<h3 id="使用有道云笔记上传照片"><a href="#使用有道云笔记上传照片" class="headerlink" title="使用有道云笔记上传照片"></a>使用有道云笔记上传照片</h3><p>我们只需要把图片保存到有道云笔记中</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQk8A"><img src="https://s1.ax1x.com/2020/03/27/GiQk8A.th.jpg" alt="2"></a></p>
+<p>然后选择分享，点击复制链接</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQ4Gd"><img src="https://s1.ax1x.com/2020/03/27/GiQ4Gd.jpg" alt="3"></a></p>
+<p>在网页中加载出来，然后右键点击图片复制图片地址</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/e53da98942a0b35988f0bc45551a002d?method=download&shareKey=b1304887b92c4a21ea11c9e9e870e469" alt="4"></p>
+<p>就可以显示出来了。是不是也很方便。</p>
+<h2 id="将图片存入markdown文件"><a href="#将图片存入markdown文件" class="headerlink" title="将图片存入markdown文件"></a>将图片存入markdown文件</h2><p>用base64转码工具把图片转成一段字符串，然后把字符串填到基础格式中链接的那个位置。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar][base64str]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>不是很推荐这种方法，因为这一段字符串一般很长，很影响阅读体验。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MarkDown/" rel="tag"># MarkDown</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="prev" title="Ubuntu下git的安装和使用">
+      <i class="fa fa-chevron-left"></i> Ubuntu下git的安装和使用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="next" title="Ubuntu换源">
+      Ubuntu换源 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87"><span class="nav-number">1.</span> <span class="nav-text">插入本地图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">插入网络图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"><span class="nav-number">2.1.</span> <span class="nav-text">使用图床上传图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%8A%E4%BC%A0%E7%85%A7%E7%89%87"><span class="nav-number">2.2.</span> <span class="nav-text">使用有道云笔记上传照片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E5%9B%BE%E7%89%87%E5%AD%98%E5%85%A5markdown%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">将图片存入markdown文件</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">伏城北染</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">伏城北染</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

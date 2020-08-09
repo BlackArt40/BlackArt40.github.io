@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍  优点：  1.因为是纯文本，所以只要支持MarkDown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写博客2.操作简单  缺点：  1.需要记一些语法2.有些平台不支持MarkDown边集模式 一、标题在想要设置标题的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MarkDown基本语法">
+<meta property="og:url" content="http://yoursite.com/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
+<meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍  优点：  1.因为是纯文本，所以只要支持MarkDown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写博客2.操作简单  缺点：  1.需要记一些语法2.有些平台不支持MarkDown边集模式 一、标题在想要设置标题的">
+<meta property="og:locale">
+<meta property="og:image" content="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg">
+<meta property="article:published_time" content="2020-01-21T04:13:24.000Z">
+<meta property="article:modified_time" content="2020-03-19T09:56:07.920Z">
+<meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="MarkDown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>MarkDown基本语法 | 伏北的BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">伏北的BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MarkDown基本语法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-21 12:13:24" itemprop="dateCreated datePublished" datetime="2020-01-21T12:13:24+08:00">2020-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-19 17:56:07" itemprop="dateModified" datetime="2020-03-19T17:56:07+08:00">2020-03-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/" itemprop="url" rel="index"><span itemprop="name">文本编辑</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍</p>
+<ul>
+<li>优点：</li>
+</ul>
+<p>1.因为是纯文本，所以只要支持MarkDown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写博客<br>2.操作简单</p>
+<ul>
+<li>缺点：</li>
+</ul>
+<p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
+<li>加粗</li>
+</ul>
+<p>要加粗的文字左右分别用两个*包起来</p>
+<ul>
+<li>斜体</li>
+</ul>
+<p>要倾斜的文字左右分别用一个*包起来</p>
+<ul>
+<li>斜体加粗</li>
+</ul>
+<p>要倾斜和加粗的文字左右分别用三个*包起来</p>
+<ul>
+<li>删除线</li>
+</ul>
+<p>要加删除线的文字左右用两个~~包起来</p>
+<ul>
+<li>下划线</li>
+</ul>
+<p>下划线可以通过HTML的<u></u>标签来实现</p>
+<ul>
+<li>脚注</li>
+</ul>
+<p>脚注时对文本的补充说明。</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">**这是加粗的文字**
+*这是倾斜的文字*
+***这是斜体加粗的文字***
+~~这是加删除线的文字~~
+&lt;u&gt;这是带下划线的文字&lt;&#x2F;u&gt;
+这是要注明的文字[^1]
+[^1]:1111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del><br><u>这是带下划线的文字</u><br>创建脚注格式类似这样[^脚注]<br>[^脚注]<br>[^脚注]:这是要标注的文字。</p>
+<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>貌似是可以一直加下去的</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&gt;这是引用的内容
+&gt;&gt;这是引用的内容
+&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><p>三个或者三个以上的-或者*都可以</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+----
+***
+****<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p>可以看到，显示的效果是一样的</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">![图片alt](图片地址 “图片title”)
+
+图片alt就是现实在图片下面的文字，相当于对图片内容的解释。
+图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>效果如下：</p>
+<p><img src="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg" alt="图片"></p>
+<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">[超链接名](超链接地址 “超链接title”)
+title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">[百度](http:&#x2F;&#x2F;baidu.com)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
+<h2 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h2><ul>
+<li>无序列表</li>
+</ul>
+<p>语法：<br>无序列表用 - + * 任何一种都可以</p>
+<pre class="line-numbers language-none"><code class="language-none">- 列表内容
++ 列表内容
+* 列表内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>有序列表</li>
+</ul>
+<p>语法：<br>数字加点</p>
+<pre class="line-numbers language-none"><code class="language-none">1.列表内容
+2.列表内容
+3.列表内容
+
+注意：序号跟内容之间要有空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+<ul>
+<li>列表嵌套</li>
+</ul>
+<p><strong>上一级和下一级之间敲三个空格</strong></p>
+<ul>
+<li><p>一级无序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级无序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>一级有序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级有序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ol>
+<h2 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">表头|表头|表头
+--|：-- ：|--:
+内容|内容|内容
+内容|内容|内容
+
+第二行分割表头和内容。
+- 有一个就行
+文字默认居左
+-两边加：表示文字居中
+-右边加：表示文字居右
+注：原生的语法两边都要用|包起来。此处省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>姓名|学号|年级<br>–|：–：|–：<br>一|10|大学<br>二|20|大学<br>三|20|大学</p>
+<h2 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h2><p>语法：<br>单行代码：代码之间分别用一个反引号包起来</p>
+<pre class="line-numbers language-none"><code class="language-none">&#96;代码内容&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
+<pre class="line-numbers language-none"><code class="language-none">(&#96;&#96;&#96;)
+
+代码、、、
+代码、、、
+代码、、、
+
+(&#96;&#96;&#96;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong><em>注：为了防止转译，前后三个反引号处加了小括号，实际时没有的，这里只是用来演示，实际中去掉两边小括号即可。</em></strong></p>
+<p>示例：</p>
+<p>单行代码</p>
+<p><code>System.out.print</code></p>
+<p>代码块</p>
+<pre class="line-numbers language-none"><code class="language-none">for(int i &#x3D; 0; i &lt; 10; i++)
+&#123;
+    sum +&#x3D; i;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十、流程图"><a href="#十、流程图" class="headerlink" title="十、流程图"></a>十、流程图</h2><pre class="line-numbers language-none"><code class="language-none">&#96;&#96;&#96;flow
+st&#x3D;&gt;start:开始
+op&#x3D;&gt;operation:My operation
+cond&#x3D;&gt;condition:Yes or No?
+e&#x3D;&gt;end
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+&amp;&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-flow" data-language="flow"><code class="language-flow">st<span class="token operator">=></span>start<span class="token operator">:</span> 开始框
+op<span class="token operator">=></span>operation<span class="token operator">:</span> 处理框
+cond<span class="token operator">=></span>condition<span class="token operator">:</span> <span class="token function">判断框</span><span class="token punctuation">(</span>是或否<span class="token operator">?</span><span class="token punctuation">)</span>
+sub1<span class="token operator">=></span>subroutine<span class="token operator">:</span> 子流程
+io<span class="token operator">=></span>inputoutput<span class="token operator">:</span> 输入输出框
+e<span class="token operator">=></span>end<span class="token operator">:</span> 结束框
+st<span class="token operator">-</span><span class="token operator">></span>op<span class="token operator">-</span><span class="token operator">></span>cond
+<span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>io<span class="token operator">-</span><span class="token operator">></span>e
+<span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">sub1</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>op<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MarkDown/" rel="tag"># MarkDown</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="prev" title="如何搭建你的个人博客（by hexo）">
+      <i class="fa fa-chevron-left"></i> 如何搭建你的个人博客（by hexo）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="next" title="如何快速复制代码(git clone)">
+      如何快速复制代码(git clone) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A0%87%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">一、标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AD%97%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">二、字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BC%95%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">三、引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">四、分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%9B%BE%E7%89%87"><span class="nav-number">5.</span> <span class="nav-text">五、图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">六、超链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%88%97%E8%A1%A8"><span class="nav-number">7.</span> <span class="nav-text">七、列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%A1%A8%E6%A0%BC"><span class="nav-number">8.</span> <span class="nav-text">八、表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E4%BB%A3%E7%A0%81"><span class="nav-number">9.</span> <span class="nav-text">九、代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">10.</span> <span class="nav-text">十、流程图</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">伏城北染</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">伏城北染</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

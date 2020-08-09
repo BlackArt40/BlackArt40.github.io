@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="使用oh-my-zsh来配置MacBook的终端前言什么是Shell对于内核来说Shell是Linux&#x2F;Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序. 简单的来说,Shell就是命令行. Shell的分类Linux&#x2F;Unix提供了很多种Shell，不同的s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置MacBook的终端">
+<meta property="og:url" content="http://yoursite.com/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
+<meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="使用oh-my-zsh来配置MacBook的终端前言什么是Shell对于内核来说Shell是Linux&#x2F;Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序. 简单的来说,Shell就是命令行. Shell的分类Linux&#x2F;Unix提供了很多种Shell，不同的s">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-05-20T02:00:30.000Z">
+<meta property="article:modified_time" content="2020-08-09T14:58:58.186Z">
+<meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="终端">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>配置MacBook的终端 | 伏北的BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">伏北的BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF%E7%9A%84%E5%89%AF%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          配置MacBook的终端
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-20 10:00:30" itemprop="dateCreated datePublished" datetime="2020-05-20T10:00:30+08:00">2020-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-09 22:58:58" itemprop="dateModified" datetime="2020-08-09T22:58:58+08:00">2020-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MacBook/" itemprop="url" rel="index"><span itemprop="name">MacBook</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
+<p>简单的来说,Shell就是命令行.</p>
+<h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
+<p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
+<pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示如下:</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;bin&#x2F;bash  
+&#x2F;bin&#x2F;csh
+&#x2F;bin&#x2F;ksh
+&#x2F;bin&#x2F;sh
+&#x2F;bin&#x2F;tcsh
+&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
+<p>在 Linux 里执行这个命令和 Mac 略有不同， Mac 里多了一个 zsh，也就是说 OS X 系统预装了个 zsh(最新版本默认).</p>
+<h4 id="什么是Zsh"><a href="#什么是Zsh" class="headerlink" title="什么是Zsh"></a>什么是Zsh</h4><ul>
+<li><p><code>Oh My Zsh</code>是一个开源的由社区驱动的用于管理zsh配置的框架</p>
+</li>
+<li><p>包含了大量的插件和主题样式,能极大的提升使用shell终端的舒适度</p>
+</li>
+<li><p>Zsh兼容Bash,据传说99%的Bash操作和Zsh是相同的</p>
+</li>
+<li><p>默认CentOS/Ubuntu/MacOS系统使用的是Bash,不过新版MacOS使用的是Zsh</p>
+</li>
+</ul>
+<h3 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h3><p>如果你用 Mac，就可以直接看下一节，Mac默认已经安装；<br>如果你用 Redhat Linux，执行：sudo yum install zsh；<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh；</p>
+<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
+<p>Via curl:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Via wget:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果官网安装方式失败,可以先使用git下载:</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone git:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh.git ~&#x2F;.oh-my-zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再替换zshrc</p>
+<pre class="line-numbers language-none"><code class="language-none">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>使用vim打开.zshrc文件</p>
+<pre class="line-numbers language-none"><code class="language-none">vim ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在.zshrc文件中找到主题的配置行</p>
+<pre class="line-numbers language-none"><code class="language-none"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
+# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
+# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
+ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里可以设置主题的名字,Oh My Zsh中自带了很多主题可以通过进入Oh My Zsh的配置目录进行查看</p>
+<pre class="line-numbers language-none"><code class="language-none">ls &#x2F;Users&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
+Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
+adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
+af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
+afowler.zsh-theme             fino.zsh-theme                kiwi.zsh-theme                rkj.zsh-theme
+agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme                robbyrussell.zsh-theme
+alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
+amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
+apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
+arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
+....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>也可以进入Oh My Zsh的网站进行主题选择:<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
+<p>或者我们将主题设置为随机(‘random’),每次打开命令行窗口,都会随机在默认主题中选择一个,如果遇到你喜欢的主题,可以输入命令查看它的名字:</p>
+<pre class="line-numbers language-none"><code class="language-none">echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 中默认自带了一些插件,存放在~/.oh-my-zsh/plugins目录中。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
+
+adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
+ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
+apache2-macports  bundler      colored-man-pages  dnf             fedora           git-remote-branch         jake-node  lighthouse        node                   pow         repo        stack          textastic   vi-mode            zsh_reload
+archlinux         bwana        colorize           docker          forklift         glassfish                 jhbuild    lol               npm                    powder      rsync       sublime        textmate    virtualenv
+asdf              cabal        command-not-found  docker-compose  frontend-search  gnu-utils                 jira       macports          nvm                    powify      ruby        sudo           thefuck     virtualenvwrapper
+autoenv           cake         common-aliases     emacs           gas              go                        jruby      man               nyan                   profiles    rvm         supervisor     themes      vundle
+autojump          cakephp3     compleat           ember-cli       geeknote         golang                    jsontools  marked2           osx                    pyenv       safe-paste  suse           thor        wakeonlan
+autopep8          capistrano   composer           emoji           gem              gpg-agent                 jump       mercurial         pass                   pylint      sbt         svn            tmux        wd
+aws               cask         copydir            emoji-clock     git              gradle                    kate       meteor            paver                  python      scala       svn-fast-info  tmux-cssh   web-search
+battery           catimg       copyfile           emotty          git-extras       grails                    kitchen    mix               pep8                   rails       scd         symfony        tmuxinator  wp-cli
+bbedit            celery       cp                 encode64        gitfast          grunt                     knife      mix-fast          per-directory-history  rake        screen      symfony2       torrent     xcode
+bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
+boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
+bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
+branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们打开.zshrc配置文件,定位到plugins</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可以看到默认只开启了git插件,我们可以在要使用的插件的名字之间用空格连接在后面就可以了,比如:</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git pip)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如果不知道插件的作用,可以进入GitHub的网站进行查看:<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a></p>
+<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>zsh-autosuggestions</strong></p>
+<p>它是Oh-myszh的一个插件，作用基本上是根据历史输入指令的记录即时的提示，能够很大的提高效率</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>zsh-syntax-highlighting</strong></p>
+<p>这是一个命令高亮插件，输入为绿色时表示可用命令，路径带有下划线时表示可用路径</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>最后别忘记了让配置生效</p>
+<pre class="line-numbers language-none"><code class="language-none">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%88%E7%AB%AF/" rel="tag"># 终端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/29/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="prev" title="git 常用命令">
+      <i class="fa fa-chevron-left"></i> git 常用命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/" rel="next" title="git 常用命令">
+      git 常用命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8oh-my-zsh%E6%9D%A5%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">使用oh-my-zsh来配置MacBook的终端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFShell"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是Shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shell%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shell的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFZsh"><span class="nav-number">1.1.3.</span> <span class="nav-text">什么是Zsh</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zsh%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">Zsh安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oh-My-Zsh"><span class="nav-number">1.3.</span> <span class="nav-text">Oh My Zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.2.</span> <span class="nav-text">主题设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%BC%80%E5%90%AF"><span class="nav-number">1.3.3.</span> <span class="nav-text">插件开启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E6%8F%92%E4%BB%B6"><span class="nav-number">1.3.4.</span> <span class="nav-text">推荐插件</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">伏城北染</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">伏城北染</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
