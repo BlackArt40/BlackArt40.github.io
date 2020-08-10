@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -12,30 +12,30 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="十步学习法发明者发明背景​       多年以来 ，我都承受着巨大的压力 ：快速学习新技术 、新编程语言 、新框架和其他能力 。通常 ，这种压力是我自己造成的 ，我总是投入新事物 ，结果力不从心 。但是 ，即便不考虑压力来源 ，这也迫使我开发出一个可重复使用的自学体系 。在接下来的几章里 ，我会带你了解我自创的进行快速学习的 “十步学习法 ” 。让我们先从了解这个体系的确切含义及其工作原理开始 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 常用命令">
+<meta property="og:title" content="十步学习法">
 <meta property="og:url" content="http://yoursite.com/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/index.html">
 <meta property="og:site_name" content="伏北的BLOG">
 <meta property="og:description" content="十步学习法发明者发明背景​       多年以来 ，我都承受着巨大的压力 ：快速学习新技术 、新编程语言 、新框架和其他能力 。通常 ，这种压力是我自己造成的 ，我总是投入新事物 ，结果力不从心 。但是 ，即便不考虑压力来源 ，这也迫使我开发出一个可重复使用的自学体系 。在接下来的几章里 ，我会带你了解我自创的进行快速学习的 “十步学习法 ” 。让我们先从了解这个体系的确切含义及其工作原理开始 。">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/24274-f9a0ae4ea76cecd2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/24274-9f38a8be1bf8c5ef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/24274-42307d6dfcdf4f8e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/24274-14de0485efa55468.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/24274-bb5d77c97ecd5272.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200">
 <meta property="article:published_time" content="2020-07-31T11:45:50.000Z">
-<meta property="article:modified_time" content="2020-08-09T15:01:08.234Z">
+<meta property="article:modified_time" content="2020-08-10T02:55:36.560Z">
 <meta property="article:author" content="伏城北染">
 <meta property="article:tag" content="方法">
 <meta name="twitter:card" content="summary">
@@ -50,11 +50,11 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>git 常用命令 | 伏北的BLOG</title>
+  <title>十步学习法 | 伏北的BLOG</title>
   
 
 
@@ -94,7 +94,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -112,6 +112,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -123,43 +124,70 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/BlackArt40" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -173,13 +201,13 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="伏城北染">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -187,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          git 常用命令
+          十步学习法<a href="https://github.com/BlackArt40/BlackArt40.github.io.git_posts/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
         </h1>
 
         <div class="post-meta">
@@ -195,22 +223,22 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-07-31 19:45:50" itemprop="dateCreated datePublished" datetime="2020-07-31T19:45:50+08:00">2020-07-31</time>
+              <time title="创建时间：2020-07-31 19:45:50" itemprop="dateCreated datePublished" datetime="2020-07-31T19:45:50+08:00">2020-07-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-09 23:01:08" itemprop="dateModified" datetime="2020-08-09T23:01:08+08:00">2020-08-09</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-10 10:55:36" itemprop="dateModified" datetime="2020-08-10T10:55:36+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
                 </span>
@@ -235,6 +263,8 @@
 <li>基础知识 ——不止在开始阶段 ，要想使用一项特定的技术 ，我需要了解基本的用户案例和最常见的问题 ，也需要知道自己学的哪 2 0 %就能满足 8 0 %的日常应用 。</li>
 </ol>
 <p>​       熟知了这三个关键点后 ，我可以高效地学习一门技术 ，无需通晓全部细节 。我发现 ，如果我了解三项主题 ——如何开始 ，我能做什么 ，以及相关基础知识 ，那么我就能随着学习深入学会所需的其他知识 。 如果我想提前掌握所有知识 ，那只是在浪费时间 ，因为真正重要的内容会湮没在那些细枝末节中 。 这种新方法能让我关注重点 。当我确实需要了解更多细节时 ，我可以利用参考资料来弥补这些不足 。有多少次你从头到尾仔细阅读一本技术书籍 ，却发现自己实际用到的也只是书里介绍的技术的一小部分 ？使用这种方法 ，我在很短的时间内学会了 G o语言 ——仅仅几个星期而已 。我专注于学习如何尽快用 G o语言写代码 。很快我就对这门编程语言以及它有哪些可用的库有了一个大致的了解 。我希望对这门语言能做什么能有一个整体的了解 。最后 ，我完成并掌握了基础知识 。当我需要深入了解时 ，我只需要在这些基础知识的基础上进行扩展 。</p>
+<a id="more"></a>
+
 <h2 id="十步学习法体系"><a href="#十步学习法体系" class="headerlink" title="十步学习法体系"></a>十步学习法体系</h2><p>​        事实证明 ，掌握这三大要点可不像看上去那么轻松 。学会 “如何开始学习一门技术 ”可以说是一项挑战 ，而且往往很难找出那些所谓的 “篇幅只占 2 0 % 、然而有效性却达到 8 0 % ”的内容 。另外 ，我经常发现 ，要总结出一门技术的应用广泛程度的简短描述 ，是很难的 。通常你需要阅读一整本甚至几本不同的书籍之后才能获得此信息 。为了解决这些问题 ，我又提前做功课 ，确保自己能够找出自己所需的信息 ，并以最合理的方式将它们组织起来 ，实施落地 。 “十步学习法 ”的基本思想就是 ：要对自己要学的内容有个基本的了解 ——了解自己不知道什么就足矣 。然后 ，利用这些信息勾勒出学习的范围 ，即需要学哪些内容 ，以及学成之后又会获得什么 。依靠这些知识 ，你可以找出各种资源 （不局限于书 ）来帮助自己学习 。最后 ，你可以创建自己的学习计划 ，列出要去学习哪些相关课程 ，筛选学习材料 ，只保留能帮助自己达成目标的优质内容 。一旦完成这些工作 ，你对自己要学什么和怎样学都了然于胸 ，你就可以把控自己的学习计划中的每个关键点 ，通过 “学习 —实践 —掌握 —教授 ” （ L e a r n i n g , D o i n g , L e a r n i n g a n d T e a c h i n g ， L D L T ）的过程 ，获得对该学科的深刻理解 ，同时你也向着自己的目标前进 。<br>​      “十步学习法 ”的第一部分是研究 ，它是一次性完成的 。 但是从第 7步到第 1 0步则是重复的过程 ，贯穿于你的学习计划的各个模块 。这个方法非常奏效 ，因为它迫使你提前明确自己的学习目标 ，也持续不断的激励你通过实践 （而不仅仅是读书或听讲座 ）向着目标前进 。<br>​        借助此方法 ，我得以在几天之内就全面掌握了一门编程语言 。成千上万注册了我的 “十步学习法 ”视频课程 （ h t t p : / / s i m p l e p r o g r a m m e r . c o m / s s 1 0 s t e p s ）的其他软件开发人员也取得了类似的成果 。这是快速学习的唯一途径吗 ？这是一种魔法系统吗 ？不 ，不是的 。它只是通过 “聚焦学习范围 ，让你关注重点内容 ”来学习的一种快速学习方法 ，它迫使你通过 “自我探索 ”和 “主动教学 ”的方式将真正重要的内容印刻在自己的大脑中 。接下来的几章 ，我们将介绍该方法的实际操作步骤 。你可以根据自己的情况对该方法进行裁剪 ，去掉你不喜欢或者认为无效的部分 ，保留对你有用的部分 。最终 ，你一定会找到适合自己的自学方法 ，而你的未来将仰仗于它 。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/24274-f9a0ae4ea76cecd2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200" alt="img"></p>
 <blockquote>
@@ -356,10 +386,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -371,8 +401,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="伏城北染"
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">伏城北染</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">在时间的大钟上，只有两个字现在</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -380,27 +412,36 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">9</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/BlackArt40" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;BlackArt40" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -418,14 +459,14 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2019 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">伏城北染</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -451,33 +492,43 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
 
+<script src="/js/bookmark.js"></script>
 
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
   
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 
-</body>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"log":false});</script></body>
 </html>
