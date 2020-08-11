@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>MarkDown基本语法</title>
-    <url>/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍</p>
 <ul>
 <li>优点：</li>
@@ -12,8 +12,6 @@
 <li>缺点：</li>
 </ul>
 <p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
-<a id="more"></a>
-
 <h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
 <p>示例：</p>
 <pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
@@ -246,7 +244,7 @@ st<span class="token operator">-</span><span class="token operator">></span>op<s
   </entry>
   <entry>
     <title>Ubuntu下git的安装和使用</title>
-    <url>/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ol>
 <li><p>在终端中输入git可检查是否已经安装，若没安装可以根据提示的命令行进行安装</p>
 <p> <code>$ git</code></p>
@@ -292,7 +290,7 @@ pwd (显示当前文件夹的路径)
   </entry>
   <entry>
     <title>Ubuntu换源</title>
-    <url>/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/</url>
     <content><![CDATA[<ol>
 <li><p>登陆root用户<br> <code>su</code></p>
 </li>
@@ -337,10 +335,8 @@ deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports m
   </entry>
   <entry>
     <title>git 常用命令</title>
-    <url>/2020/03/29/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/03/29/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>作为一名git的初学者，有部分git命令时间长了不使用容易忘记，在这里简单的记录一下，详细的教程请参见<a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的git教程</a></p>
-<a id="more"></a>
-
 <h2 id="创建版本仓库"><a href="#创建版本仓库" class="headerlink" title="创建版本仓库"></a>创建版本仓库</h2><pre class="line-numbers language-none"><code class="language-none">git init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="将文件添加仓库"><a href="#将文件添加仓库" class="headerlink" title="将文件添加仓库"></a>将文件添加仓库</h2><pre class="line-numbers language-none"><code class="language-none">git add<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -447,7 +443,7 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
   </entry>
   <entry>
     <title>如何在markdown中添加图片</title>
-    <url>/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>插图最基础的格式是：</p>
 <ul>
 <li>[alt text](图片链接”optional title”)</li>
@@ -457,8 +453,6 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
 <p>图片链接：可以是图片的本地地址或者是网址</p>
 <p>“optional title”：鼠标悬置在图片上会出现的文字，可以不写</p>
 </blockquote>
-<a id="more"></a>
-
 <h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。</p>
 <p>例如：</p>
 <pre class="line-numbers language-none"><code class="language-none">![avatar](&#x2F;source&#x2F;picture&#x2F;1.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -492,12 +486,10 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
   </entry>
   <entry>
     <title>如何快速复制代码(git clone)</title>
-    <url>/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<p><em>有一个很多初次使用GitHub的人都会犯难的问题</em></p>
 <p>那就是GitHub网页上的代码如何下载到自己的电脑上</p>
 <p><strong>在这里你会找到最简单的答案</strong></p>
-<a id="more"></a>
-
 <h2 id="打开cmd界面"><a href="#打开cmd界面" class="headerlink" title="打开cmd界面"></a>打开cmd界面</h2><ul>
 <li>进入保存文件的文件夹</li>
 </ul>
@@ -521,131 +513,9 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
       </tags>
   </entry>
   <entry>
-    <title>配置MacBook的终端</title>
-    <url>/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
-    <content><![CDATA[<h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
-<p>简单的来说,Shell就是命令行.</p>
-<a id="more"></a>s
-
-<h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
-<p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
-<pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>显示如下:</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;bin&#x2F;bash  
-&#x2F;bin&#x2F;csh
-&#x2F;bin&#x2F;ksh
-&#x2F;bin&#x2F;sh
-&#x2F;bin&#x2F;tcsh
-&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
-<p>在 Linux 里执行这个命令和 Mac 略有不同， Mac 里多了一个 zsh，也就是说 OS X 系统预装了个 zsh(最新版本默认).</p>
-<h4 id="什么是Zsh"><a href="#什么是Zsh" class="headerlink" title="什么是Zsh"></a>什么是Zsh</h4><ul>
-<li><p><code>Oh My Zsh</code>是一个开源的由社区驱动的用于管理zsh配置的框架</p>
-</li>
-<li><p>包含了大量的插件和主题样式,能极大的提升使用shell终端的舒适度</p>
-</li>
-<li><p>Zsh兼容Bash,据传说99%的Bash操作和Zsh是相同的</p>
-</li>
-<li><p>默认CentOS/Ubuntu/MacOS系统使用的是Bash,不过新版MacOS使用的是Zsh</p>
-</li>
-</ul>
-<h3 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h3><p>如果你用 Mac，就可以直接看下一节，Mac默认已经安装；<br>如果你用 Redhat Linux，执行：sudo yum install zsh；<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh；</p>
-<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
-<p>Via curl:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>Via wget:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果官网安装方式失败,可以先使用git下载:</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh.git ~&#x2F;.oh-my-zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>再替换zshrc</p>
-<pre class="line-numbers language-none"><code class="language-none">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>使用vim打开.zshrc文件</p>
-<pre class="line-numbers language-none"><code class="language-none">vim ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>在.zshrc文件中找到主题的配置行</p>
-<pre class="line-numbers language-none"><code class="language-none"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
-# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
-# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
-ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里可以设置主题的名字,Oh My Zsh中自带了很多主题可以通过进入Oh My Zsh的配置目录进行查看</p>
-<pre class="line-numbers language-none"><code class="language-none">ls &#x2F;Users&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
-Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
-adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
-af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
-afowler.zsh-theme             fino.zsh-theme                kiwi.zsh-theme                rkj.zsh-theme
-agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme                robbyrussell.zsh-theme
-alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
-amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
-apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
-arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
-....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>也可以进入Oh My Zsh的网站进行主题选择:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
-<p>或者我们将主题设置为随机(‘random’),每次打开命令行窗口,都会随机在默认主题中选择一个,如果遇到你喜欢的主题,可以输入命令查看它的名字:</p>
-<pre class="line-numbers language-none"><code class="language-none">echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 中默认自带了一些插件,存放在~/.oh-my-zsh/plugins目录中。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
-
-adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
-ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
-apache2-macports  bundler      colored-man-pages  dnf             fedora           git-remote-branch         jake-node  lighthouse        node                   pow         repo        stack          textastic   vi-mode            zsh_reload
-archlinux         bwana        colorize           docker          forklift         glassfish                 jhbuild    lol               npm                    powder      rsync       sublime        textmate    virtualenv
-asdf              cabal        command-not-found  docker-compose  frontend-search  gnu-utils                 jira       macports          nvm                    powify      ruby        sudo           thefuck     virtualenvwrapper
-autoenv           cake         common-aliases     emacs           gas              go                        jruby      man               nyan                   profiles    rvm         supervisor     themes      vundle
-autojump          cakephp3     compleat           ember-cli       geeknote         golang                    jsontools  marked2           osx                    pyenv       safe-paste  suse           thor        wakeonlan
-autopep8          capistrano   composer           emoji           gem              gpg-agent                 jump       mercurial         pass                   pylint      sbt         svn            tmux        wd
-aws               cask         copydir            emoji-clock     git              gradle                    kate       meteor            paver                  python      scala       svn-fast-info  tmux-cssh   web-search
-battery           catimg       copyfile           emotty          git-extras       grails                    kitchen    mix               pep8                   rails       scd         symfony        tmuxinator  wp-cli
-bbedit            celery       cp                 encode64        gitfast          grunt                     knife      mix-fast          per-directory-history  rake        screen      symfony2       torrent     xcode
-bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
-boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
-bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
-branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>我们打开.zshrc配置文件,定位到plugins</p>
-<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
-  git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>可以看到默认只开启了git插件,我们可以在要使用的插件的名字之间用空格连接在后面就可以了,比如:</p>
-<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
-  git pip)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>如果不知道插件的作用,可以进入GitHub的网站进行查看:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a></p>
-<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>zsh-autosuggestions</strong></p>
-<p>它是Oh-myszh的一个插件，作用基本上是根据历史输入指令的记录即时的提示，能够很大的提高效率</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>zsh-syntax-highlighting</strong></p>
-<p>这是一个命令高亮插件，输入为绿色时表示可用命令，路径带有下划线时表示可用路径</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>最后别忘记了让配置生效</p>
-<pre class="line-numbers language-none"><code class="language-none">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>MacBook</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何搭建你的个人博客（by hexo）</title>
-    <url>/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/</url>
     <content><![CDATA[<h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页</p>
-<a id="more"></a>
-
 <h2 id="配置基础"><a href="#配置基础" class="headerlink" title="配置基础"></a>配置基础</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Node.js为大多数平台提供了官方的安装程序。<a href="http://nodejs.cn/download/">node.js中文网</a></p>
 <p>其他安装方法：</p>
 <ul>
@@ -806,8 +676,126 @@ git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hid
       </tags>
   </entry>
   <entry>
+    <title>配置MacBook的终端</title>
+    <url>/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF/</url>
+    <content><![CDATA[<h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
+<p>简单的来说,Shell就是命令行.</p>
+<h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
+<p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
+<pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示如下:</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;bin&#x2F;bash  
+&#x2F;bin&#x2F;csh
+&#x2F;bin&#x2F;ksh
+&#x2F;bin&#x2F;sh
+&#x2F;bin&#x2F;tcsh
+&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
+<p>在 Linux 里执行这个命令和 Mac 略有不同， Mac 里多了一个 zsh，也就是说 OS X 系统预装了个 zsh(最新版本默认).</p>
+<h4 id="什么是Zsh"><a href="#什么是Zsh" class="headerlink" title="什么是Zsh"></a>什么是Zsh</h4><ul>
+<li><p><code>Oh My Zsh</code>是一个开源的由社区驱动的用于管理zsh配置的框架</p>
+</li>
+<li><p>包含了大量的插件和主题样式,能极大的提升使用shell终端的舒适度</p>
+</li>
+<li><p>Zsh兼容Bash,据传说99%的Bash操作和Zsh是相同的</p>
+</li>
+<li><p>默认CentOS/Ubuntu/MacOS系统使用的是Bash,不过新版MacOS使用的是Zsh</p>
+</li>
+</ul>
+<h3 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h3><p>如果你用 Mac，就可以直接看下一节，Mac默认已经安装；<br>如果你用 Redhat Linux，执行：sudo yum install zsh；<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh；</p>
+<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
+<p>Via curl:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Via wget:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果官网安装方式失败,可以先使用git下载:</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone git:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh.git ~&#x2F;.oh-my-zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再替换zshrc</p>
+<pre class="line-numbers language-none"><code class="language-none">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>使用vim打开.zshrc文件</p>
+<pre class="line-numbers language-none"><code class="language-none">vim ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在.zshrc文件中找到主题的配置行</p>
+<pre class="line-numbers language-none"><code class="language-none"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
+# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
+# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
+ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里可以设置主题的名字,Oh My Zsh中自带了很多主题可以通过进入Oh My Zsh的配置目录进行查看</p>
+<pre class="line-numbers language-none"><code class="language-none">ls &#x2F;Users&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
+Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
+adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
+af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
+afowler.zsh-theme             fino.zsh-theme                kiwi.zsh-theme                rkj.zsh-theme
+agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme                robbyrussell.zsh-theme
+alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
+amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
+apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
+arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
+....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>也可以进入Oh My Zsh的网站进行主题选择:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
+<p>或者我们将主题设置为随机(‘random’),每次打开命令行窗口,都会随机在默认主题中选择一个,如果遇到你喜欢的主题,可以输入命令查看它的名字:</p>
+<pre class="line-numbers language-none"><code class="language-none">echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 中默认自带了一些插件,存放在~/.oh-my-zsh/plugins目录中。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
+
+adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
+ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
+apache2-macports  bundler      colored-man-pages  dnf             fedora           git-remote-branch         jake-node  lighthouse        node                   pow         repo        stack          textastic   vi-mode            zsh_reload
+archlinux         bwana        colorize           docker          forklift         glassfish                 jhbuild    lol               npm                    powder      rsync       sublime        textmate    virtualenv
+asdf              cabal        command-not-found  docker-compose  frontend-search  gnu-utils                 jira       macports          nvm                    powify      ruby        sudo           thefuck     virtualenvwrapper
+autoenv           cake         common-aliases     emacs           gas              go                        jruby      man               nyan                   profiles    rvm         supervisor     themes      vundle
+autojump          cakephp3     compleat           ember-cli       geeknote         golang                    jsontools  marked2           osx                    pyenv       safe-paste  suse           thor        wakeonlan
+autopep8          capistrano   composer           emoji           gem              gpg-agent                 jump       mercurial         pass                   pylint      sbt         svn            tmux        wd
+aws               cask         copydir            emoji-clock     git              gradle                    kate       meteor            paver                  python      scala       svn-fast-info  tmux-cssh   web-search
+battery           catimg       copyfile           emotty          git-extras       grails                    kitchen    mix               pep8                   rails       scd         symfony        tmuxinator  wp-cli
+bbedit            celery       cp                 encode64        gitfast          grunt                     knife      mix-fast          per-directory-history  rake        screen      symfony2       torrent     xcode
+bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
+boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
+bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
+branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们打开.zshrc配置文件,定位到plugins</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可以看到默认只开启了git插件,我们可以在要使用的插件的名字之间用空格连接在后面就可以了,比如:</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git pip)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如果不知道插件的作用,可以进入GitHub的网站进行查看:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a></p>
+<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>zsh-autosuggestions</strong></p>
+<p>它是Oh-myszh的一个插件，作用基本上是根据历史输入指令的记录即时的提示，能够很大的提高效率</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>zsh-syntax-highlighting</strong></p>
+<p>这是一个命令高亮插件，输入为绿色时表示可用命令，路径带有下划线时表示可用路径</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>最后别忘记了让配置生效</p>
+<pre class="line-numbers language-none"><code class="language-none">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>MacBook</category>
+      </categories>
+      <tags>
+        <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>十步学习法</title>
-    <url>/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/</url>
+    <url>/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95/</url>
     <content><![CDATA[<h1 id="十步学习法"><a href="#十步学习法" class="headerlink" title="十步学习法"></a>十步学习法</h1><h2 id="发明者发明背景"><a href="#发明者发明背景" class="headerlink" title="发明者发明背景"></a>发明者发明背景</h2><p>​       多年以来 ，我都承受着巨大的压力 ：快速学习新技术 、新编程语言 、新框架和其他能力 。通常 ，这种压力是我自己造成的 ，我总是投入新事物 ，结果力不从心 。但是 ，即便不考虑压力来源 ，这也迫使我开发出一个可重复使用的自学体系 。在接下来的几章里 ，我会带你了解我自创的进行快速学习的 “十步学习法 ” 。让我们先从了解这个体系的确切含义及其工作原理开始 。</p>
 <h2 id="体系背后的逻辑"><a href="#体系背后的逻辑" class="headerlink" title="体系背后的逻辑"></a>体系背后的逻辑</h2><p>​       在我职业生涯的早年间 ，我学习知识的主要途径就是 “从封面到封底 ”仔细阅读专著 。只有通读全书后我才会将自己学到的知识应用于实践 。使用这个方法 ，我发现 ，我确实能学到东西 ，但是效率很低 ，我还得经常回顾书的内容 ，来弥补自己在该学科方面存在的知识短板 。当我拥有足够的时间 ，且没有一个真实具体的目标的时候 ，这种学习方法很好 。我最终学会了我想要学习的东西 ，而且从头到尾地读书学东西也并不难 ，只是要花时间 。随着我开始有更紧迫的理由需要快速学习 ，我发现自己原来的方法就无法奏效了 。通常 ，我并没有时间通读全书 ，而且我也发现书本里的很多内容更适合作为参考资料 ，而不适合实际学习 。于是 ，我迫使自己去寻找更好的自学方法 ，能在有限的时间内掌握所需内容 。有些时候 ，我只有一周甚至更少的时间去吸收足够的信息以教给别人 。我发现在这种情况下 ，我很自然地会先明确需要掌握哪些内容 ，再去寻找我能获得这些信息的最佳资源 ，同时也会忽略那些并非达成目标所必需的其他信息 。我发现 ，为了能够掌握一门技术 ，我需要了解以下三个要点 。</p>
 <ol>
@@ -816,8 +804,6 @@ git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hid
 <li>基础知识 ——不止在开始阶段 ，要想使用一项特定的技术 ，我需要了解基本的用户案例和最常见的问题 ，也需要知道自己学的哪 2 0 %就能满足 8 0 %的日常应用 。</li>
 </ol>
 <p>​       熟知了这三个关键点后 ，我可以高效地学习一门技术 ，无需通晓全部细节 。我发现 ，如果我了解三项主题 ——如何开始 ，我能做什么 ，以及相关基础知识 ，那么我就能随着学习深入学会所需的其他知识 。 如果我想提前掌握所有知识 ，那只是在浪费时间 ，因为真正重要的内容会湮没在那些细枝末节中 。 这种新方法能让我关注重点 。当我确实需要了解更多细节时 ，我可以利用参考资料来弥补这些不足 。有多少次你从头到尾仔细阅读一本技术书籍 ，却发现自己实际用到的也只是书里介绍的技术的一小部分 ？使用这种方法 ，我在很短的时间内学会了 G o语言 ——仅仅几个星期而已 。我专注于学习如何尽快用 G o语言写代码 。很快我就对这门编程语言以及它有哪些可用的库有了一个大致的了解 。我希望对这门语言能做什么能有一个整体的了解 。最后 ，我完成并掌握了基础知识 。当我需要深入了解时 ，我只需要在这些基础知识的基础上进行扩展 。</p>
-<a id="more"></a>
-
 <h2 id="十步学习法体系"><a href="#十步学习法体系" class="headerlink" title="十步学习法体系"></a>十步学习法体系</h2><p>​        事实证明 ，掌握这三大要点可不像看上去那么轻松 。学会 “如何开始学习一门技术 ”可以说是一项挑战 ，而且往往很难找出那些所谓的 “篇幅只占 2 0 % 、然而有效性却达到 8 0 % ”的内容 。另外 ，我经常发现 ，要总结出一门技术的应用广泛程度的简短描述 ，是很难的 。通常你需要阅读一整本甚至几本不同的书籍之后才能获得此信息 。为了解决这些问题 ，我又提前做功课 ，确保自己能够找出自己所需的信息 ，并以最合理的方式将它们组织起来 ，实施落地 。 “十步学习法 ”的基本思想就是 ：要对自己要学的内容有个基本的了解 ——了解自己不知道什么就足矣 。然后 ，利用这些信息勾勒出学习的范围 ，即需要学哪些内容 ，以及学成之后又会获得什么 。依靠这些知识 ，你可以找出各种资源 （不局限于书 ）来帮助自己学习 。最后 ，你可以创建自己的学习计划 ，列出要去学习哪些相关课程 ，筛选学习材料 ，只保留能帮助自己达成目标的优质内容 。一旦完成这些工作 ，你对自己要学什么和怎样学都了然于胸 ，你就可以把控自己的学习计划中的每个关键点 ，通过 “学习 —实践 —掌握 —教授 ” （ L e a r n i n g , D o i n g , L e a r n i n g a n d T e a c h i n g ， L D L T ）的过程 ，获得对该学科的深刻理解 ，同时你也向着自己的目标前进 。<br>​      “十步学习法 ”的第一部分是研究 ，它是一次性完成的 。 但是从第 7步到第 1 0步则是重复的过程 ，贯穿于你的学习计划的各个模块 。这个方法非常奏效 ，因为它迫使你提前明确自己的学习目标 ，也持续不断的激励你通过实践 （而不仅仅是读书或听讲座 ）向着目标前进 。<br>​        借助此方法 ，我得以在几天之内就全面掌握了一门编程语言 。成千上万注册了我的 “十步学习法 ”视频课程 （ h t t p : / / s i m p l e p r o g r a m m e r . c o m / s s 1 0 s t e p s ）的其他软件开发人员也取得了类似的成果 。这是快速学习的唯一途径吗 ？这是一种魔法系统吗 ？不 ，不是的 。它只是通过 “聚焦学习范围 ，让你关注重点内容 ”来学习的一种快速学习方法 ，它迫使你通过 “自我探索 ”和 “主动教学 ”的方式将真正重要的内容印刻在自己的大脑中 。接下来的几章 ，我们将介绍该方法的实际操作步骤 。你可以根据自己的情况对该方法进行裁剪 ，去掉你不喜欢或者认为无效的部分 ，保留对你有用的部分 。最终 ，你一定会找到适合自己的自学方法 ，而你的未来将仰仗于它 。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/24274-f9a0ae4ea76cecd2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200" alt="img"></p>
 <blockquote>

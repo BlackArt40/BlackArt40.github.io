@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +206,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E5%89%AF%E6%9C%AC/" class="post-title-link" itemprop="url">Ubuntu下git的安装和使用</a>
+            <a href="/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Ubuntu下git的安装和使用</a>
         </h2>
 
         <div class="post-meta">
@@ -300,7 +300,7 @@ pwd (显示当前文件夹的路径)
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -314,7 +314,7 @@ pwd (显示当前文件夹的路径)
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/" class="post-title-link" itemprop="url">如何快速复制代码(git clone)</a>
+            <a href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">如何快速复制代码(git clone)</a>
         </h2>
 
         <div class="post-meta">
@@ -331,7 +331,7 @@ pwd (显示当前文件夹的路径)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 10:56:48" itemprop="dateModified" datetime="2020-08-10T10:56:48+08:00">2020-08-10</time>
+                <time title="修改时间：2020-08-09 22:59:05" itemprop="dateModified" datetime="2020-08-09T22:59:05+08:00">2020-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -357,14 +357,21 @@ pwd (显示当前文件夹的路径)
           <p><em>有一个很多初次使用GitHub的人都会犯难的问题</em></p>
 <p>那就是GitHub网页上的代码如何下载到自己的电脑上</p>
 <p><strong>在这里你会找到最简单的答案</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%89%AF%E6%9C%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="打开cmd界面"><a href="#打开cmd界面" class="headerlink" title="打开cmd界面"></a>打开cmd界面</h2><ul>
+<li>进入保存文件的文件夹</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">cd 文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>输入git clone</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">git clone 你要下载的网站 当前文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果你想将要下载的文件放在当前文件夹中的新建文件夹中</p>
+<p>也可以通过以下代码实现</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone 你要下载的网站 当前文件夹&#x2F;要创建的文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
       
     </div>
 
@@ -383,7 +390,7 @@ pwd (显示当前文件夹的路径)
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -397,7 +404,7 @@ pwd (显示当前文件夹的路径)
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/" class="post-title-link" itemprop="url">MarkDown基本语法</a>
+            <a href="/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">MarkDown基本语法</a>
         </h2>
 
         <div class="post-meta">
@@ -414,7 +421,7 @@ pwd (显示当前文件夹的路径)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 10:57:34" itemprop="dateModified" datetime="2020-08-10T10:57:34+08:00">2020-08-10</time>
+                <time title="修改时间：2020-03-19 17:56:07" itemprop="dateModified" datetime="2020-03-19T17:56:07+08:00">2020-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -446,14 +453,229 @@ pwd (显示当前文件夹的路径)
 <li>缺点：</li>
 </ul>
 <p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%9A%84%E5%89%AF%E6%9C%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
+<li>加粗</li>
+</ul>
+<p>要加粗的文字左右分别用两个*包起来</p>
+<ul>
+<li>斜体</li>
+</ul>
+<p>要倾斜的文字左右分别用一个*包起来</p>
+<ul>
+<li>斜体加粗</li>
+</ul>
+<p>要倾斜和加粗的文字左右分别用三个*包起来</p>
+<ul>
+<li>删除线</li>
+</ul>
+<p>要加删除线的文字左右用两个~~包起来</p>
+<ul>
+<li>下划线</li>
+</ul>
+<p>下划线可以通过HTML的<u></u>标签来实现</p>
+<ul>
+<li>脚注</li>
+</ul>
+<p>脚注时对文本的补充说明。</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">**这是加粗的文字**
+*这是倾斜的文字*
+***这是斜体加粗的文字***
+~~这是加删除线的文字~~
+&lt;u&gt;这是带下划线的文字&lt;&#x2F;u&gt;
+这是要注明的文字[^1]
+[^1]:1111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del><br><u>这是带下划线的文字</u><br>创建脚注格式类似这样[^脚注]<br>[^脚注]<br>[^脚注]:这是要标注的文字。</p>
+<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>貌似是可以一直加下去的</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&gt;这是引用的内容
+&gt;&gt;这是引用的内容
+&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><p>三个或者三个以上的-或者*都可以</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+----
+***
+****<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p>可以看到，显示的效果是一样的</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">![图片alt](图片地址 “图片title”)
+
+图片alt就是现实在图片下面的文字，相当于对图片内容的解释。
+图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>效果如下：</p>
+<p><img src="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg" alt="图片"></p>
+<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">[超链接名](超链接地址 “超链接title”)
+title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">[百度](http:&#x2F;&#x2F;baidu.com)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
+<h2 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h2><ul>
+<li>无序列表</li>
+</ul>
+<p>语法：<br>无序列表用 - + * 任何一种都可以</p>
+<pre class="line-numbers language-none"><code class="language-none">- 列表内容
++ 列表内容
+* 列表内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>有序列表</li>
+</ul>
+<p>语法：<br>数字加点</p>
+<pre class="line-numbers language-none"><code class="language-none">1.列表内容
+2.列表内容
+3.列表内容
+
+注意：序号跟内容之间要有空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+<ul>
+<li>列表嵌套</li>
+</ul>
+<p><strong>上一级和下一级之间敲三个空格</strong></p>
+<ul>
+<li><p>一级无序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级无序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>一级有序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级有序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ol>
+<h2 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">表头|表头|表头
+--|：-- ：|--:
+内容|内容|内容
+内容|内容|内容
+
+第二行分割表头和内容。
+- 有一个就行
+文字默认居左
+-两边加：表示文字居中
+-右边加：表示文字居右
+注：原生的语法两边都要用|包起来。此处省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>姓名|学号|年级<br>–|：–：|–：<br>一|10|大学<br>二|20|大学<br>三|20|大学</p>
+<h2 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h2><p>语法：<br>单行代码：代码之间分别用一个反引号包起来</p>
+<pre class="line-numbers language-none"><code class="language-none">&#96;代码内容&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
+<pre class="line-numbers language-none"><code class="language-none">(&#96;&#96;&#96;)
+
+代码、、、
+代码、、、
+代码、、、
+
+(&#96;&#96;&#96;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong><em>注：为了防止转译，前后三个反引号处加了小括号，实际时没有的，这里只是用来演示，实际中去掉两边小括号即可。</em></strong></p>
+<p>示例：</p>
+<p>单行代码</p>
+<p><code>System.out.print</code></p>
+<p>代码块</p>
+<pre class="line-numbers language-none"><code class="language-none">for(int i &#x3D; 0; i &lt; 10; i++)
+&#123;
+    sum +&#x3D; i;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十、流程图"><a href="#十、流程图" class="headerlink" title="十、流程图"></a>十、流程图</h2><pre class="line-numbers language-none"><code class="language-none">&#96;&#96;&#96;flow
+st&#x3D;&gt;start:开始
+op&#x3D;&gt;operation:My operation
+cond&#x3D;&gt;condition:Yes or No?
+e&#x3D;&gt;end
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+&amp;&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-flow" data-language="flow"><code class="language-flow">st<span class="token operator">=></span>start<span class="token operator">:</span> 开始框
+op<span class="token operator">=></span>operation<span class="token operator">:</span> 处理框
+cond<span class="token operator">=></span>condition<span class="token operator">:</span> <span class="token function">判断框</span><span class="token punctuation">(</span>是或否<span class="token operator">?</span><span class="token punctuation">)</span>
+sub1<span class="token operator">=></span>subroutine<span class="token operator">:</span> 子流程
+io<span class="token operator">=></span>inputoutput<span class="token operator">:</span> 输入输出框
+e<span class="token operator">=></span>end<span class="token operator">:</span> 结束框
+st<span class="token operator">-</span><span class="token operator">></span>op<span class="token operator">-</span><span class="token operator">></span>cond
+<span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>io<span class="token operator">-</span><span class="token operator">></span>e
+<span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">sub1</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>op<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       
     </div>
 
@@ -472,7 +694,7 @@ pwd (显示当前文件夹的路径)
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -486,7 +708,7 @@ pwd (显示当前文件夹的路径)
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/" class="post-title-link" itemprop="url">如何搭建你的个人博客（by hexo）</a>
+            <a href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/" class="post-title-link" itemprop="url">如何搭建你的个人博客（by hexo）</a>
         </h2>
 
         <div class="post-meta">
@@ -503,7 +725,7 @@ pwd (显示当前文件夹的路径)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 10:56:58" itemprop="dateModified" datetime="2020-08-10T10:56:58+08:00">2020-08-10</time>
+                <time title="修改时间：2020-07-25 21:57:15" itemprop="dateModified" datetime="2020-07-25T21:57:15+08:00">2020-07-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -527,14 +749,158 @@ pwd (显示当前文件夹的路径)
 
       
           <h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89%E7%9A%84%E5%89%AF%E6%9C%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="配置基础"><a href="#配置基础" class="headerlink" title="配置基础"></a>配置基础</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Node.js为大多数平台提供了官方的安装程序。<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node.js中文网</a></p>
+<p>其他安装方法：</p>
+<ul>
+<li>Windows：通过<a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/">nvs</a>或者<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>安装。</li>
+<li>Mac：使用<a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a>或<a href="www.macports.org">MacPorts</a>安装。</li>
+<li>Linux：使用NodeSource(<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions)%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/nodesource/distributions)安装。</a></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Windows用户
+
+使用Node.js官方安装程序时，请确保勾选**ADD TO PATH**选项（默认已勾选）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">For Mac&#x2F;Linux用户
+
+如果在尝试安装Hexo的过程中出现*EACCES*权限错误，请遵循由[npmjs发布的指导](https:&#x2F;&#x2F;docs.npmjs.com&#x2F;resolving-eacces-permissions-errors-when-installing-packages-globally)修复该问题。强烈建议**不要**使用root、sudo等方法覆盖权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="通过cnpm安装Hexo"><a href="#通过cnpm安装Hexo" class="headerlink" title="通过cnpm安装Hexo"></a>通过cnpm安装Hexo</h3><ol>
+<li><p>通过node -v 和npm -v检测当前版本</p>
+</li>
+<li><p>利用npm安装cnpm（npm国内下载速度不太行，选用淘宝镜像）</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>利用cnpm安装hexo</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cnpm install -g hexo-cli
+(自动下载)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>建立一个空的文件夹放置网页主体</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p><strong><em>这步完成之后你可以进入C盘，点开Windows文件夹中的System32文件夹找到blog文件夹，后续操作还是在cmd中进行</em></strong></p>
+<ol start="5">
+<li>进入blog<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>使用hexo生成博客<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo init
+（它会自动生成）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+如果出现git报错，要去git官网下载git进行安装<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>。</li>
+</ol>
+<h2 id="在本地使用个人博客"><a href="#在本地使用个人博客" class="headerlink" title="在本地使用个人博客"></a>在本地使用个人博客</h2><h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><pre class="line-numbers language-none"><code class="language-none">hexo s <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它会为你显示一个网址，在浏览器输入进入，就是hexo为你生成的网址</p>
+<h3 id="创建新的博客文章"><a href="#创建新的博客文章" class="headerlink" title="创建新的博客文章"></a>创建新的博客文章</h3><pre class="line-numbers language-none"><code class="language-none">hexo n “我的第一篇博客文章”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>自动生成该文件</p>
+<h3 id="修改博客文章中的内容"><a href="#修改博客文章中的内容" class="headerlink" title="修改博客文章中的内容"></a>修改博客文章中的内容</h3><p>进入blog/source/_posts可以查看刚刚新建的文档</p>
+<p>可以通过vs code 软件编辑该文档</p>
+<h3 id="将文章部署到网页中"><a href="#将文章部署到网页中" class="headerlink" title="将文章部署到网页中"></a>将文章部署到网页中</h3><pre class="line-numbers language-none"><code class="language-none">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Hexo文件夹中各文件信息"><a href="#Hexo文件夹中各文件信息" class="headerlink" title="Hexo文件夹中各文件信息"></a>Hexo文件夹中各文件信息</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>网站的配置信息，你可以在此配置大部分的参数。</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。EJS,Stylus和Markdown renderer已默认安装，你可以自由移除</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">package.json
+<span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"hexo-site"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">""</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token string">"^3.8.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-archive"</span><span class="token operator">:</span> <span class="token string">"^0.1.5"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-category"</span><span class="token operator">:</span> <span class="token string">"^0.1.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-index"</span><span class="token operator">:</span> <span class="token string">"^0.2.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-generator-tag"</span><span class="token operator">:</span> <span class="token string">"^0.2.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-ejs"</span><span class="token operator">:</span> <span class="token string">"^0.3.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-stylus"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-renderer-marked"</span><span class="token operator">:</span> <span class="token string">"^0.3.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"hexo-server"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="scafflods"><a href="#scafflods" class="headerlink" title="scafflods"></a>scafflods</h3><p>模板文件夹。当你新建文章时，Hexo会根据scaffold来建立文件。</p>
+<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果你修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题文件夹。Hexo 会根据主题来生成静态页面。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="下载主题相关文件"><a href="#下载主题相关文件" class="headerlink" title="下载主题相关文件"></a>下载主题相关文件</h3><p>这里推荐两个网站，你也可以去GitHub里找自己喜欢的主题进行下载<br><a target="_blank" rel="noopener" href="https://github.com/halo-dev/halo">halo</a><br><a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">yilia</a></p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;halo-dev&#x2F;halo.git themes&#x2F;halo
+git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>通过这两行代码可以下载halo和yilia两个主题文件到blog/themes中</p>
+<h3 id="配置主题文件"><a href="#配置主题文件" class="headerlink" title="配置主题文件"></a>配置主题文件</h3><p>在blog文件夹中找到_config.yml文件</p>
+<p>用vs code将它打开</p>
+<pre class="line-numbers language-none"><code class="language-none">将其改成theme: halo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>记得:后要加一个空格</p>
+<h3 id="配置主题成功后"><a href="#配置主题成功后" class="headerlink" title="配置主题成功后"></a>配置主题成功后</h3><p>在cmd中运行下面这段代码</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>进入local 4000 查看相关主题</p>
+<p><strong><em>如何修改主题文件，在GitHub中已有现成的方法，在这里不做过多说明(去阅读README文件)</em></strong></p>
+<h2 id="将配置好的网站推到GitHub中"><a href="#将配置好的网站推到GitHub中" class="headerlink" title="将配置好的网站推到GitHub中"></a>将配置好的网站推到GitHub中</h2><ul>
+<li>创建GitHub仓库</li>
+</ul>
+<p>进入自己的GitHub网站</p>
+<p>新建一个仓库(new repository)</p>
+<p>一定是你的昵称.github.io</p>
+<p><strong><em>(用户部署个人博客的GitHub仓库的命名必须符合特定要求才行)</em></strong></p>
+<p>然后create，就完成了</p>
+<ul>
+<li>在cmd中的操作</li>
+</ul>
+<p>在blog文件夹中安装相关插件</p>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>设置config文件</li>
+</ul>
+<p>设置blog文件中的_config.yml文件(用vs code 打开)</p>
+<p>在最底部有一个Deployment配置</p>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+ type: git
+ repo: 刚刚创建的仓库的地址(ssh)
+ branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>部署到远端<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ul>
+<h3 id="部署到远端出现错误的解决办法"><a href="#部署到远端出现错误的解决办法" class="headerlink" title="部署到远端出现错误的解决办法"></a>部署到远端出现错误的解决办法</h3><ol>
+<li><p>打开Git Bash 查看电脑上是否已经存在SSH密钥</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh
+sh.exe&quot;: cd: &#x2F;c&#x2F;Users&#x2F;Lin&#x2F;.ssh: No shch file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>若出现上面的显示无法找到该文件则要创建新的ssh key</p>
+</li>
+<li><p>创建新的ssh key</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ssh -keygen -t rsa -C&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行这条命令会上图体是文件保存路径，可以直接按Enter</p>
+<p>然后提示输入 passphrase(密码)，输入两次(可以不输直接两次Enter)</p>
+<p><strong><em>你输入的密码你是看不见的</em></strong></p>
+<p>然后会在.ssh目录生产两个文件：id_ras和_rsa.pub</p>
+<p>用记事本打开.ssh目录下的id_rsa.pub文件，复制里卖弄的内容(这是你生成的电脑的公钥)</p>
+<p><strong><em>id_rsa文件里面是你自己的私钥，不要交给别人</em></strong></p>
+<ol start="3">
+<li>复制ssh key到GitHub</li>
+</ol>
+<p><strong><em>这一步是到GitHub的，如果自己有搭建git服务器，则可以直接去服务器上(CentOS)将id_rsa.pub内的公告密钥导入到/home/git/.ssh/authorized_keys文件里，一行一个）参考网址：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664">廖雪峰的官方网站-搭建git服务器</a></em></strong></p>
+<p>On the Github site Click “Account Settings” &gt; Click “SSH Keys” &gt; Click “ADD SSH Key”</p>
+<p>打开GitHub网站，点击右上角扳手图标，然后点击左边菜单的ssh key，然后右边页面的 add ssh key，将复制的内容粘贴到GitHub的key中，title可以不填，直接保存即可</p>
+<ol start="4">
+<li>测试ssh链接到GitHub</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>出现successfully就ok</p>
+<ol start="5">
+<li>设置自己的git信息</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name&quot;Firstname Lastname&quot;(此处name可修改为不是用于登陆GitHub的登陆名)
+git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>设置自己的git信息即完成安装和设置，可以输入git config –list查看自己的git信息</p>
+<ol start="6">
+<li>重新部署</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
       
     </div>
 
