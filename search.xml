@@ -654,55 +654,6 @@ pwd (显示当前文件夹的路径)
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu换源</title>
-    <url>/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/</url>
-    <content><![CDATA[<ol>
-<li><p>登陆root用户<br> <code>su</code></p>
-</li>
-<li><p>先备份原来的源列表文件</p>
-<p> <code>mv /etc/apt/sources.list /etc/apt/sourses.list.backup</code></p>
-</li>
-</ol>
-<!--- more --->
-
-<ol start="3">
-<li><p>新建源列表文件</p>
-<p> <code>vim /etc/apt/sources.list</code></p>
-</li>
-<li><p>加入源地址（推荐用阿里云源）</p>
-</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>推荐将该网站的网址输入到Ubuntu的浏览器中，然后用鼠标左键选中源地址，在vim界面按鼠标中键就可以快捷复制了</p>
-</blockquote>
-<ol start="5">
-<li><p>更新软件列表</p>
-<p> <code>sudo apt-get update</code></p>
-</li>
-<li><p>更新软件（把已安装的软件与刚刷新的软件列表中的版本进行对比，如果发现已安装的软件版本太低，就会提示更新）</p>
-<p> <code>sudo apt-get upgrade</code></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git 常用命令</title>
     <url>/2020/03/29/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>作为一名git的初学者，有部分git命令时间长了不使用容易忘记，在这里简单的记录一下，详细的教程请参见<a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的git教程</a></p>
@@ -810,6 +761,55 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu换源</title>
+    <url>/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<ol>
+<li><p>登陆root用户<br> <code>su</code></p>
+</li>
+<li><p>先备份原来的源列表文件</p>
+<p> <code>mv /etc/apt/sources.list /etc/apt/sourses.list.backup</code></p>
+</li>
+</ol>
+<!--- more --->
+
+<ol start="3">
+<li><p>新建源列表文件</p>
+<p> <code>vim /etc/apt/sources.list</code></p>
+</li>
+<li><p>加入源地址（推荐用阿里云源）</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>推荐将该网站的网址输入到Ubuntu的浏览器中，然后用鼠标左键选中源地址，在vim界面按鼠标中键就可以快捷复制了</p>
+</blockquote>
+<ol start="5">
+<li><p>更新软件列表</p>
+<p> <code>sudo apt-get update</code></p>
+</li>
+<li><p>更新软件（把已安装的软件与刚刷新的软件列表中的版本进行对比，如果发现已安装的软件版本太低，就会提示更新）</p>
+<p> <code>sudo apt-get upgrade</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
       </tags>
   </entry>
   <entry>
