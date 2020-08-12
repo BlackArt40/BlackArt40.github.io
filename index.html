@@ -125,17 +125,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -192,6 +192,483 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/" class="post-title-link" itemprop="url">Android开发的点点滴滴——UI</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-12 16:23:57 / 修改时间：18:09:48" itemprop="dateCreated datePublished" datetime="2020-08-12T16:23:57+08:00">2020-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第二期：UI控件的使用</p>
+<!--- more --->
+
+<h3 id="TextView-extend-View"><a href="#TextView-extend-View" class="headerlink" title="TextView extend View"></a>TextView extend View</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;TextView
+    android:id&#x3D;&quot;@id&#x2F;textView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_content&quot;
+    android:gravity&#x3D;&quot;center&quot;
+    android:textSize&#x3D;&quot;40sp&quot;
+    android:textColor&#x3D;&quot;#000000&quot;
+    android:text&#x3D;&quot;this is TextView&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>android:layout_width</code>和<code>android:layout_height</code>  指定了宽度和高度（可选值有：match_parent | fill_parent | wrap_content）</p>
+<p><code>android:gravity</code>  指定了文字的对齐方式（可选值有top | bottom | left | right | center等）</p>
+<p><code>android:textSize</code>  指定了文字的大小</p>
+<p><code>android:textColor</code>  指定了文字的颜色</p>
+<p>官方文档里还介绍里这些：</p>
+<p><code>android:enabled</code>    指定小部件是否启用</p>
+<p><code>android:textAppearance</code>    文本的默认外观:颜色、字体、大小和样式</p>
+<p><code>android:typeface</code>    默认文本字体</p>
+<p><code>android:textStyle</code>    默认文本字体样式</p>
+<p><code>android:textColorHighlight</code>    突出显示文本的颜色</p>
+<p><code>android:textColorHint</code>    提示文本的颜色(字段为空时显示)</p>
+<p><code>android:textColorLink</code>    链接文本(url)的颜色</p>
+<p><code>android:ellipsize</code>    在哪里使用椭圆文本</p>
+<p><code>android:autoLink</code>    控制如url和电子邮件地址等链接是否自动找到并转换为可点击链接</p>
+<p><code>android:linksClickable</code>    如果设置为false，保持移动方法不被设置为链接的移动方法，即使autoLink导致链接被发现</p>
+<p><code>android:maxWidth</code>    提供此视图的最大宽度的可选参数</p>
+<p><code>android:maxHeight</code>    提供此视图的最大高度的可选参数.</p>
+<p><code>android:minWidth</code>    同上</p>
+<p><code>android:minHeight</code>  同上</p>
+<p><code>android:bufferType</code>    确定getText()将返回的最小类型</p>
+<p><code>android:text</code>    文本显示</p>
+<p><code>android:hint</code>    文本为空时显示的提示文本</p>
+<p><code>android:textScaleX</code>    设置文本的水平缩放因子。</p>
+<p><code>android:cursorVisible</code>    使光标可见(缺省值)或不可见</p>
+<p><code>android:maxLines</code>    使TextView最多这么多行高</p>
+<p><code>android:lines</code>    使TextView正好这么多行高</p>
+<p><code>android:height</code>    TextView正好是这么高</p>
+<p><code>android:minLines</code>    使TextView至少这么多行高</p>
+<p><code>android:width</code>    使TextView正好是这个宽</p>
+<p><code>android:scrollHorizontally</code>    是否允许文本比视图宽(因此可以水平滚动)</p>
+<p><code>android:password</code>    字段的字符是否显示为密码点而不是它们本身</p>
+<p><code>android:singleLine</code>    将文本限制为单个水平滚动行，而不是让它换行为多行，并在按enter键时推进焦点，而不是插入新行</p>
+<p><code>android:selectAllOnFocus</code>    如果文本是可选择的，请在视图聚焦时全部选中它</p>
+<p><code>android:includeFontPadding</code>    为上伸和下伸留出足够的空间，而不是严格使用字体的上升和下降</p>
+<p><code>android:maxLength</code>    设置一个输入过滤器，将文本长度约束为指定的数字</p>
+<p><code>android:shadowColor</code>    在文本下面放置一个模糊的文本阴影，用指定的颜色绘制</p>
+<p><code>android:shadowDx</code>    文本阴影的水平偏移</p>
+<p><code>android:shadowDy</code>    文本阴影的垂直偏移</p>
+<p><code>android:shadowRadius</code>    模糊文本阴影的半径</p>
+<p><code>android:numeric</code>    如果设置，指定这个TextView有一个数值输入法</p>
+<p><code>android:digits</code>    如果设置，指定这个TextView有一个数字输入法，这些特定的字符是它将接受的</p>
+<p><code>android:phoneNumber</code>    指定这个TextView有一个电话号码输入法</p>
+<p><code>android:inputMethod</code>    如果设置，指定这个TextView应该使用指定的输入法(由完全限定的类名指定)</p>
+<p><code>android:capitalize</code>    如果设置，指定这个TextView有一个文本输入法，并且应该自动大写用户类型</p>
+<p><code>android:autoText</code>    如果设置，指定这个TextView有一个文本输入法，并自动纠正一些常见的拼写错误</p>
+<p><code>android:editable</code>    如果设置，指定这个TextView有一个输入法</p>
+<p><code>android:freezesText</code>  如果设置，文本视图将在其冻结的冰柱中包括当前完整的文本，以及元数据(如当前光标位置)</p>
+<p><code>android:drawableTop</code>    可绘制的文本被绘制在上面</p>
+<p><code>android:drawableBottom</code>    可绘制的文本下面绘制</p>
+<p><code>android:drawableLeft</code>    可绘制到文本左侧的图形</p>
+<p><code>android:drawableRight</code>    可在文本右侧绘制的图形</p>
+<p><code>android:drawablePadding</code>    拉伸值与文本之间的填充</p>
+<p><code>android:lineSpacingExtra</code>    E文本行之间的间距</p>
+<p><code>android:lineSpacingMultiplier</code>    文本行之间的额外间距，如乘法器</p>
+<p><code>android:marqueeRepeatLimit</code>    重复字幕动画的次数</p>
+<p><code>android:inputType</code>    放置在文本字段中的数据类型，用于帮助输入法决定如何让用户输入文本</p>
+<p><code>android:privateImeOptions</code>    附加到文本视图的输入法的附加内容类型描述，它是输入法实现的私有内容</p>
+<p><code>android:editorExtras</code>    对<input-extras> XML资源的引用，该资源包含要提供给输入法的附加数据，该数据是输入法实现的私有数据</p>
+<p><code>android:imeOptions</code>    您可以在与编辑器关联的IME中启用的其他特性，以改进与应用程序的集成</p>
+<p><code>android:imeActionLabel</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:imeActionId</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:textSelectHandleLeft</code>    引用将用于在选择区域的左侧显示文本选择锚定的可绘制对象</p>
+<p><code>android:textSelectHandleRight</code>    引用将用于在选择区域的右侧显示文本选择锚点的绘图</p>
+<p><code>android:textSelectHandle</code>    对可绘制对象的引用，该可绘制对象将用于显示文本选择锚，以在文本中定位光标</p>
+<p><code>android:textEditPasteWindowLayout</code>    显示在光标上方并粘贴到TextEdit字段内的视图布局</p>
+<p><code>android:textEditNoPasteWindowLayout</code>    剪贴板为空时显示的文本ditpastewindowlayout的变化</p>
+<p><code>android:textIsSelectable</code>    指示一个不可编辑的TextView的内容可以被选择</p>
+<p><code>android:textEditSidePasteWindowLayout</code>    当窗口移动到插入光标的一侧时，代替textEditPasteWindowLayout，因为如果它被放置在顶部，它将被剪切。</p>
+<p><code>android:textEditSideNoPasteWindowLayout</code>    剪贴板为空时显示的textEditSidePasteWindowLayout的变化</p>
+<p><code>android:textCursorDrawable</code>    对将在插入游标下绘制的可绘制对象的引用</p>
+<p><code>android:textEditSuggestionItemLayout</code>    将填充建议弹出窗口的TextView项目的布局</p>
+<p><code>android:textAllCaps</code>  以全大写呈现文本</p>
+<p><code>android:drawableStart</code>    T可绘制的文本的开始部分</p>
+<p><code>android:drawableEnd</code>    可绘制的文本被绘制到文本的末尾.</p>
+<p><code>android:fontFamily</code>    默认字体</p>
+<p><code>android:elegantTextHeight</code>    E文本高度，特别适用于不太紧凑的复杂脚本文本</p>
+<p><code>android:letterSpacing</code>    文字字母间距</p>
+<p><code>android:fontFeatureSettings</code>    字体功能设置</p>
+<p><code>android:drawableTint</code>    着色应用到化合物(左，上，等)拉伸</p>
+<p><code>android:drawableTintMode</code>    混合模式用于应用复合(左，上等)绘制着色</p>
+<p><code>android:breakStrategy</code>    中断策略(控制段落布局)</p>
+<p><code>android:hyphenationFrequency</code>    自动连字符的频率</p>
+<p><code>android:allowUndo</code>    是否允许撤消可编辑文本</p>
+<p><code>android:autoSizeTextType</code>    指定自动大小的类型</p>
+<p><code>android:autoSizeStepGranularity</code>    如果autoSizeTextType设置为uniform，请指定auto-size步长</p>
+<p><code>android:autoSizePresetSizes</code></p>
+<p><code>android:autoSizeMinTextSize</code>    自动调整文本大小时使用的最小文本大小约束</p>
+<p><code>android:autoSizeMaxTextSize</code>    自动调整文本大小时使用的最大文本大小约束</p>
+<p><code>android:justificationMode</code>    模式的理由</p>
+<p><code>android:fontVariationSettings</code>    T修改要应用到字体的设置</p>
+<p><code>android:fallbackLineSpacing</code>    是否尊重用于显示文本的回退字体的上升和下降</p>
+<p><code>android:firstBaselineToTopHeight</code>    从TextView顶部到第一个文本基线的距离</p>
+<p><code>android:lastBaselineToBottomHeight</code>    从TextView底部到最后一个文本基线的距离</p>
+<p><code>android:lineHeight</code>    文本行之间的显式高度</p>
+<p><code>android:textFontWeight</code>    TextView中使用的字体的重量</p>
+<p><code>android:textLocale</code>    指定TextView中文本的本地化列表</p>
+<h3 id="Button-extends-TextView"><a href="#Button-extends-TextView" class="headerlink" title="Button extends TextView"></a>Button extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;Button
+    android:id&#x3D;&quot;@+id&#x2F;button&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_parent&quot;
+    android:textAllCaps&#x3D;&quot;false&quot;
+    android:text&#x3D;&quot;Button&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="EditText-extends-TextView"><a href="#EditText-extends-TextView" class="headerlink" title="EditText extends TextView"></a>EditText extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;EditText
+    android:id&#x3D;&quot;@+id&#x2F;editView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    android:hint&#x3D;&quot;Type something here&quot;
+    android:maxLines&#x3D;&quot;2&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="ProgressBar-extends-View"><a href="#ProgressBar-extends-View" class="headerlink" title="ProgressBar extends View"></a>ProgressBar extends View</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/11/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94%E6%B4%BB%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/11/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94%E6%B4%BB%E5%8A%A8/" class="post-title-link" itemprop="url">Android开发的点点滴滴——活动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-11 17:15:25" itemprop="dateCreated datePublished" datetime="2020-08-11T17:15:25+08:00">2020-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-12 17:36:41" itemprop="dateModified" datetime="2020-08-12T17:36:41+08:00">2020-08-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一次接触到Android app的开发，所以写了名为Android开发的点点滴滴的博客进行记录</p>
+<p>第一期：探究活动的功能</p>
+<!--- more --->
+
+<h2 id="在活动中为Button的点击事件注册一个监听器"><a href="#在活动中为Button的点击事件注册一个监听器" class="headerlink" title="在活动中为Button的点击事件注册一个监听器"></a>在活动中为Button的点击事件注册一个监听器</h2><h3 id="使用匿名类"><a href="#使用匿名类" class="headerlink" title="使用匿名类"></a>使用匿名类</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button &#x3D; (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                &#x2F;&#x2F; 添加逻辑
+            &#125;
+        &#125;);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="使用实现接口"><a href="#使用实现接口" class="headerlink" title="使用实现接口"></a>使用实现接口</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button &#x3D; (Button) findViewById(R.id.button);
+        button.setOnClickListener(this);
+    &#125;
+
+    @Override
+    public void onClick(View view)&#123;
+        switch(View.getId())&#123;
+            case R.id.button
+                &#x2F;&#x2F; 添加逻辑
+                break;
+            default:
+                break;    
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="通过使用按钮来获取EditText中输入的内容"><a href="#通过使用按钮来获取EditText中输入的内容" class="headerlink" title="通过使用按钮来获取EditText中输入的内容"></a>通过使用按钮来获取EditText中输入的内容</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    private EditText editText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button &#x3D; (Button) findViewById(R.id.button);
+        editText &#x3D; (EditText) findViewById(R.id.edit_text);
+        button.setOnClickListener(this);
+    &#125;
+
+    @Override
+    public void onClick(View view)&#123;
+        switch(view.getId())&#123;
+            case R.id.button
+                String inputText &#x3D; editText.getText().toString();
+                &#x2F;&#x2F; 使用Toast显示出来
+                Toast.makeText(Main.this, inputText,Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="通过使用Toast进行弹窗提醒"><a href="#通过使用Toast进行弹窗提醒" class="headerlink" title="通过使用Toast进行弹窗提醒"></a>通过使用Toast进行弹窗提醒</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">protected void onCreate(Bundle savedInstanceState)&#123;
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.first_view);
+    Button button &#x3D; (Button) findViewById(R.id.Button);
+    button.setOnClickListener(new View.OnClickListener()&#123;
+        @override
+        public void onClick(View view)&#123;
+            Toast.makeText(FirstActivity.this, &quot;You Clicked Button&quot;, Toast.LENGTH_SHORT).show();
+        &#125;
+    &#125;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="使用Intent在活动之间跳转"><a href="#使用Intent在活动之间跳转" class="headerlink" title="使用Intent在活动之间跳转"></a>使用Intent在活动之间跳转</h2><h3 id="使用显式Intent"><a href="#使用显式Intent" class="headerlink" title="使用显式Intent"></a>使用显式Intent</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">button.setOnClickListener(new View.OnClickListener()&#123;
+    @Override
+    public void onClick(View view)&#123;
+        Intent intent &#x3D; new Intent(First.this, Second.this);
+        startActivity(intnet);
+    &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="使用隐式Intent"><a href="#使用隐式Intent" class="headerlink" title="使用隐式Intent"></a>使用隐式Intent</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&#x2F;&#x2F; 定义跳转的活动
+&lt;intent-filter&gt;
+    &lt;action android:name&#x3D;&quot;com.example.activitytest.ACTION_START&quot; &#x2F;&gt;
+    &lt;category android:name&#x3D;&quot;android.intent.category.DEFAULT&quot; &#x2F;&gt;
+    &lt;category android:name&#x3D;&quot;com.example.activity.MY_CATEGORY&quot; &#x2F;&gt;
+&lt;&#x2F;intent-filter&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">button.setOnClickListener(new View.OnClickListener()&#123;
+    @Override
+    public void onClick(View view)&#123;
+        Intent intent &#x3D; new Intnet(&quot;com.example.activity.ACTION_START&quot;);
+        intent.addCategory(&quot;com.example.activity.MY_CATEGORY&quot;);
+        startActivity(intent);
+    &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="通过Intent传递数据"><a href="#通过Intent传递数据" class="headerlink" title="通过Intent传递数据"></a>通过Intent传递数据</h2><h3 id="向下一活动传递数据"><a href="#向下一活动传递数据" class="headerlink" title="向下一活动传递数据"></a>向下一活动传递数据</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">button.setOnClickListener(new View.OnClickListener()&#123;
+    @Override
+    public void onClick(View view)&#123;
+        String data &#x3D; &quot;Hello, World&quot;;
+        Intent intent &#x3D; new Intent(First.this, Second.class);
+        Intent.putExtra(&quot;Extra_data&quot;, data);
+        startActivity(intent);
+    &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Second extends AppCompatActivity&#123;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.Second_View);
+        Intent intent &#x3D; getIntent();
+        String data &#x3D; intent.getStringExtra(&quot;Extra_data&quot;);
+        Log.d(&quot;Second&quot;, data);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="给上一个活动返回数据"><a href="#给上一个活动返回数据" class="headerlink" title="给上一个活动返回数据"></a>给上一个活动返回数据</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 通过startActivityForResult函数，使得下一个活动销毁的时候返回数据给上一个活动
+button.setOnClickListener(new View.OnClickListener()&#123;
+    @Override
+    public void onClick(View view)&#123;
+        Intent intent &#x3D; new Intent (First.this, Second.class);
+        startActivityForResult(intent, 1);
+    &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Second extends AppCompatActivity&#123;
+    @Override
+    protected void onCreate(savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.Second);
+        Button button &#x3D; (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                Intent intent &#x3D; new Intent();
+                intent.putExtra(&quot;data_return&quot;, &quot;Hello, World&quot;);
+                setResult(RESULT_OK, intent);
+                finish();
+            &#125;
+        &#125;);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 获得返回数据
+@Override
+protected void onActivityResult(int requsetCode, int resultCode, Intent data)&#123;
+    swtich(requestCode)&#123;
+        case 1:
+            if(resultCode &#x3D;&#x3D; RESULT_OK)&#123;
+                String returnedData &#x3D; data.getStringExtra(&quot;data_return&quot;);
+                Log.d(&quot;First&quot;, returnedData);
+            &#125;
+            break;
+        default:
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 当我们在Second页面并没有按按钮返回而是通过back按钮返回时
+&#x2F;&#x2F; 还是想返回数据的话，可以通过重写onBackPressed方法
+@Override
+public void onBackPressed()&#123;
+    Intent intent &#x3D; new Intent();
+    intent.putExtra(&quot;data_return&quot;, &quot;Hello, World&quot;);
+    setRusult(RESULT_OK, intent);
+    finish();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="返回数据的最佳写法"><a href="#返回数据的最佳写法" class="headerlink" title="返回数据的最佳写法"></a>返回数据的最佳写法</h3><p>当你需要启动活动2，但是启动活动2必须要从活动1传递一些必要的数据时，你为了知道传递的是什么数据，就必须翻看活动2的源码，这非常的不方便，可以通过启动方法来使启动活动变的简单</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 修改Second中的代码
+public class Second extends BaseActivity()&#123;
+    public static void actionStart(Context context, String data1, String data2)&#123;
+        Intent intent &#x3D; new Intent(context,Second.class);
+        intent.putExtra(&quot;zero1&quot;, data1);
+        intent.putExtra(&quot;zero2&quot;, data2);
+        context.startActivity(intnet);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">&#x2F;&#x2F; 在活动1中使用
+button.setOnClickListener(new OnClickListener()&#123;
+    @Override
+    public void onClick(View view)&#123;
+        Second.actionStart(First.this, &quot;data1&quot;, &quot;data2&quot;)
+    &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="活动状态"><a href="#活动状态" class="headerlink" title="活动状态"></a>活动状态</h3><ol>
+<li>运行状态</li>
+<li>暂停状态</li>
+<li>停止状态</li>
+<li>销毁状态</li>
+</ol>
+<h3 id="活动的生存期"><a href="#活动的生存期" class="headerlink" title="活动的生存期"></a>活动的生存期</h3><p><code>onCreate()</code>：活动第一次被创建的时候调用</p>
+<p><code>onStart()</code>：活动有不可见变为可见的时候调用</p>
+<p><code>onResume()</code>：活动准备好和用户进行交互的时候调用</p>
+<p><code>onPause()</code>：系统准备去启动或者恢复另一个互动的时候调用</p>
+<p><code>onStop()</code>：活动完全不可见的时候调用</p>
+<p><code>onDestroy()</code>：活动被销毁之前调用</p>
+<p><code>onRestart()</code>：活动由停止状态变为运行状态之前调用</p>
+<ul>
+<li>完整生存期：从<code>onCreate()</code>到<code>onDestory</code>方法之间所经历的</li>
+<li>可见生存期：从<code>onStart()</code>到<code>onStop()</code>方法之间所经历的</li>
+<li>前台生存期：从<code>onResume()</code>到<code>onPause()</code>方法之间所经历的</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/%E5%8D%81%E6%AD%A5%E5%AD%A6%E4%B9%A0%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,7 +700,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 10:37:15" itemprop="dateModified" datetime="2020-08-10T10:37:15+08:00">2020-08-10</time>
+                <time title="修改时间：2020-08-11 18:33:02" itemprop="dateModified" datetime="2020-08-11T18:33:02+08:00">2020-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,6 +724,8 @@
 
       
           <h1 id="十步学习法"><a href="#十步学习法" class="headerlink" title="十步学习法"></a>十步学习法</h1><h2 id="发明者发明背景"><a href="#发明者发明背景" class="headerlink" title="发明者发明背景"></a>发明者发明背景</h2><p>​       多年以来 ，我都承受着巨大的压力 ：快速学习新技术 、新编程语言 、新框架和其他能力 。通常 ，这种压力是我自己造成的 ，我总是投入新事物 ，结果力不从心 。但是 ，即便不考虑压力来源 ，这也迫使我开发出一个可重复使用的自学体系 。在接下来的几章里 ，我会带你了解我自创的进行快速学习的 “十步学习法 ” 。让我们先从了解这个体系的确切含义及其工作原理开始 。</p>
+<!--- more --->
+
 <h2 id="体系背后的逻辑"><a href="#体系背后的逻辑" class="headerlink" title="体系背后的逻辑"></a>体系背后的逻辑</h2><p>​       在我职业生涯的早年间 ，我学习知识的主要途径就是 “从封面到封底 ”仔细阅读专著 。只有通读全书后我才会将自己学到的知识应用于实践 。使用这个方法 ，我发现 ，我确实能学到东西 ，但是效率很低 ，我还得经常回顾书的内容 ，来弥补自己在该学科方面存在的知识短板 。当我拥有足够的时间 ，且没有一个真实具体的目标的时候 ，这种学习方法很好 。我最终学会了我想要学习的东西 ，而且从头到尾地读书学东西也并不难 ，只是要花时间 。随着我开始有更紧迫的理由需要快速学习 ，我发现自己原来的方法就无法奏效了 。通常 ，我并没有时间通读全书 ，而且我也发现书本里的很多内容更适合作为参考资料 ，而不适合实际学习 。于是 ，我迫使自己去寻找更好的自学方法 ，能在有限的时间内掌握所需内容 。有些时候 ，我只有一周甚至更少的时间去吸收足够的信息以教给别人 。我发现在这种情况下 ，我很自然地会先明确需要掌握哪些内容 ，再去寻找我能获得这些信息的最佳资源 ，同时也会忽略那些并非达成目标所必需的其他信息 。我发现 ，为了能够掌握一门技术 ，我需要了解以下三个要点 。</p>
 <ol>
 <li>如何开始 ——要想开始使用自己所学的 ，我需要掌握哪些基本知识 ？</li>
@@ -354,7 +833,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-09 22:58:58" itemprop="dateModified" datetime="2020-08-09T22:58:58+08:00">2020-08-09</time>
+                <time title="修改时间：2020-08-11 17:44:05" itemprop="dateModified" datetime="2020-08-11T17:44:05+08:00">2020-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -379,6 +858,8 @@
       
           <h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
 <p>简单的来说,Shell就是命令行.</p>
+<!--- more --->
+
 <h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
 <p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
 <pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -526,10 +1007,16 @@ branch            codeclimate  dirhistory         fasd            git-hubflow   
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-29 19:45:50 / 修改时间：20:32:51" itemprop="dateCreated datePublished" datetime="2020-03-29T19:45:50+08:00">2020-03-29</time>
+              <time title="创建时间：2020-03-29 19:45:50" itemprop="dateCreated datePublished" datetime="2020-03-29T19:45:50+08:00">2020-03-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-11 17:46:16" itemprop="dateModified" datetime="2020-08-11T17:46:16+08:00">2020-08-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -552,6 +1039,8 @@ branch            codeclimate  dirhistory         fasd            git-hubflow   
 
       
           <p>作为一名git的初学者，有部分git命令时间长了不使用容易忘记，在这里简单的记录一下，详细的教程请参见<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的git教程</a></p>
+<!--- more --->
+
 <h2 id="创建版本仓库"><a href="#创建版本仓库" class="headerlink" title="创建版本仓库"></a>创建版本仓库</h2><pre class="line-numbers language-none"><code class="language-none">git init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="将文件添加仓库"><a href="#将文件添加仓库" class="headerlink" title="将文件添加仓库"></a>将文件添加仓库</h2><pre class="line-numbers language-none"><code class="language-none">git add<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -663,210 +1152,10 @@ git push origin :refs&#x2F;tags&#x2F;&lt;tagname&gt;<span aria-hidden="true" cla
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="伏城北染">
-      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伏北的BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/" class="post-title-link" itemprop="url">Ubuntu换源</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-28 16:10:34 / 修改时间：17:38:05" itemprop="dateCreated datePublished" datetime="2020-03-28T16:10:34+08:00">2020-03-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><p>登陆root用户<br> <code>su</code></p>
-</li>
-<li><p>先备份原来的源列表文件</p>
-<p> <code>mv /etc/apt/sources.list /etc/apt/sourses.list.backup</code></p>
-</li>
-<li><p>新建源列表文件</p>
-<p> <code>vim /etc/apt/sources.list</code></p>
-</li>
-<li><p>加入源地址（推荐用阿里云源）</p>
-</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
-deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
-deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>推荐将该网站的网址输入到Ubuntu的浏览器中，然后用鼠标左键选中源地址，在vim界面按鼠标中键就可以快捷复制了</p>
-</blockquote>
-<ol start="5">
-<li><p>更新软件列表</p>
-<p> <code>sudo apt-get update</code></p>
-</li>
-<li><p>更新软件（把已安装的软件与刚刷新的软件列表中的版本进行对比，如果发现已安装的软件版本太低，就会提示更新）</p>
-<p> <code>sudo apt-get upgrade</code></p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="伏城北染">
-      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伏北的BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">如何在markdown中添加图片</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-27 19:28:44 / 修改时间：20:03:09" itemprop="dateCreated datePublished" datetime="2020-03-27T19:28:44+08:00">2020-03-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/" itemprop="url" rel="index"><span itemprop="name">文本编辑</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>插图最基础的格式是：</p>
-<ul>
-<li>[alt text](图片链接”optional title”)</li>
-</ul>
-<blockquote>
-<p>Alt text:它是图片的ALT标签，用来描述图片的关键字，可以不写。（直接显示在图片下面）</p>
-<p>图片链接：可以是图片的本地地址或者是网址</p>
-<p>“optional title”：鼠标悬置在图片上会出现的文字，可以不写</p>
-</blockquote>
-<h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。</p>
-<p>例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">![avatar](&#x2F;source&#x2F;picture&#x2F;1.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>缺点：不灵活不好分享，本地图片的路径更改或丢失都会造成MarkDown文件调不出图片。（不推荐）</p>
-<h2 id="插入网络图片"><a href="#插入网络图片" class="headerlink" title="插入网络图片"></a>插入网络图片</h2><p>只需要在基础语法的括号中填入图片的网络链接即可。</p>
-<p>例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">![avatar](http:&#x2F;&#x2F;baidu.com&#x2F;pic&#x2F;cat.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="使用图床上传图片"><a href="#使用图床上传图片" class="headerlink" title="使用图床上传图片"></a>使用图床上传图片</h3><p>可以在进入<a target="_blank" rel="noopener" href="https://imgchr.com/">图床</a>上传自己的图片，在里面可以自己选择代码格式，很方便。</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiMR9s"><img src="https://s1.ax1x.com/2020/03/27/GiMR9s.th.jpg" alt="1"></a></p>
-<h3 id="使用有道云笔记上传照片"><a href="#使用有道云笔记上传照片" class="headerlink" title="使用有道云笔记上传照片"></a>使用有道云笔记上传照片</h3><p>我们只需要把图片保存到有道云笔记中</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQk8A"><img src="https://s1.ax1x.com/2020/03/27/GiQk8A.th.jpg" alt="2"></a></p>
-<p>然后选择分享，点击复制链接</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQ4Gd"><img src="https://s1.ax1x.com/2020/03/27/GiQ4Gd.jpg" alt="3"></a></p>
-<p>在网页中加载出来，然后右键点击图片复制图片地址</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/e53da98942a0b35988f0bc45551a002d?method=download&shareKey=b1304887b92c4a21ea11c9e9e870e469" alt="4"></p>
-<p>就可以显示出来了。是不是也很方便。</p>
-<h2 id="将图片存入markdown文件"><a href="#将图片存入markdown文件" class="headerlink" title="将图片存入markdown文件"></a>将图片存入markdown文件</h2><p>用base64转码工具把图片转成一段字符串，然后把字符串填到基础格式中链接的那个位置。</p>
-<p>例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">![avatar][base64str]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>不是很推荐这种方法，因为这一段字符串一般很长，很影响阅读体验。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -934,20 +1223,20 @@ deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports m
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

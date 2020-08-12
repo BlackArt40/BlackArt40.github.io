@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第二期：UI控件的使用   TextView extend View&lt;TextView     android:id&#x3D;&quot;@id&#x2F;textView&quot;     android:layout_width&#x3D;&quot;match_parent&quot;     android:layout_height&#x3D;&quot;wrap_conten">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发的点点滴滴——UI">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/index.html">
+<meta property="og:site_name" content="伏北的BLOG">
+<meta property="og:description" content="第二期：UI控件的使用   TextView extend View&lt;TextView     android:id&#x3D;&quot;@id&#x2F;textView&quot;     android:layout_width&#x3D;&quot;match_parent&quot;     android:layout_height&#x3D;&quot;wrap_conten">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-12T08:23:57.000Z">
+<meta property="article:modified_time" content="2020-08-12T10:09:48.785Z">
+<meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android开发的点点滴滴——UI | 伏北的BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">伏北的BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/BlackArt40" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android开发的点点滴滴——UI<a href="https://github.com/BlackArt40/BlackArt40.github.io.git_posts/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-12 16:23:57 / 修改时间：18:09:48" itemprop="dateCreated datePublished" datetime="2020-08-12T16:23:57+08:00">2020-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第二期：UI控件的使用</p>
+<!--- more --->
+
+<h3 id="TextView-extend-View"><a href="#TextView-extend-View" class="headerlink" title="TextView extend View"></a>TextView extend View</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;TextView
+    android:id&#x3D;&quot;@id&#x2F;textView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_content&quot;
+    android:gravity&#x3D;&quot;center&quot;
+    android:textSize&#x3D;&quot;40sp&quot;
+    android:textColor&#x3D;&quot;#000000&quot;
+    android:text&#x3D;&quot;this is TextView&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>android:layout_width</code>和<code>android:layout_height</code>  指定了宽度和高度（可选值有：match_parent | fill_parent | wrap_content）</p>
+<p><code>android:gravity</code>  指定了文字的对齐方式（可选值有top | bottom | left | right | center等）</p>
+<p><code>android:textSize</code>  指定了文字的大小</p>
+<p><code>android:textColor</code>  指定了文字的颜色</p>
+<p>官方文档里还介绍里这些：</p>
+<p><code>android:enabled</code>    指定小部件是否启用</p>
+<p><code>android:textAppearance</code>    文本的默认外观:颜色、字体、大小和样式</p>
+<p><code>android:typeface</code>    默认文本字体</p>
+<p><code>android:textStyle</code>    默认文本字体样式</p>
+<p><code>android:textColorHighlight</code>    突出显示文本的颜色</p>
+<p><code>android:textColorHint</code>    提示文本的颜色(字段为空时显示)</p>
+<p><code>android:textColorLink</code>    链接文本(url)的颜色</p>
+<p><code>android:ellipsize</code>    在哪里使用椭圆文本</p>
+<p><code>android:autoLink</code>    控制如url和电子邮件地址等链接是否自动找到并转换为可点击链接</p>
+<p><code>android:linksClickable</code>    如果设置为false，保持移动方法不被设置为链接的移动方法，即使autoLink导致链接被发现</p>
+<p><code>android:maxWidth</code>    提供此视图的最大宽度的可选参数</p>
+<p><code>android:maxHeight</code>    提供此视图的最大高度的可选参数.</p>
+<p><code>android:minWidth</code>    同上</p>
+<p><code>android:minHeight</code>  同上</p>
+<p><code>android:bufferType</code>    确定getText()将返回的最小类型</p>
+<p><code>android:text</code>    文本显示</p>
+<p><code>android:hint</code>    文本为空时显示的提示文本</p>
+<p><code>android:textScaleX</code>    设置文本的水平缩放因子。</p>
+<p><code>android:cursorVisible</code>    使光标可见(缺省值)或不可见</p>
+<p><code>android:maxLines</code>    使TextView最多这么多行高</p>
+<p><code>android:lines</code>    使TextView正好这么多行高</p>
+<p><code>android:height</code>    TextView正好是这么高</p>
+<p><code>android:minLines</code>    使TextView至少这么多行高</p>
+<p><code>android:width</code>    使TextView正好是这个宽</p>
+<p><code>android:scrollHorizontally</code>    是否允许文本比视图宽(因此可以水平滚动)</p>
+<p><code>android:password</code>    字段的字符是否显示为密码点而不是它们本身</p>
+<p><code>android:singleLine</code>    将文本限制为单个水平滚动行，而不是让它换行为多行，并在按enter键时推进焦点，而不是插入新行</p>
+<p><code>android:selectAllOnFocus</code>    如果文本是可选择的，请在视图聚焦时全部选中它</p>
+<p><code>android:includeFontPadding</code>    为上伸和下伸留出足够的空间，而不是严格使用字体的上升和下降</p>
+<p><code>android:maxLength</code>    设置一个输入过滤器，将文本长度约束为指定的数字</p>
+<p><code>android:shadowColor</code>    在文本下面放置一个模糊的文本阴影，用指定的颜色绘制</p>
+<p><code>android:shadowDx</code>    文本阴影的水平偏移</p>
+<p><code>android:shadowDy</code>    文本阴影的垂直偏移</p>
+<p><code>android:shadowRadius</code>    模糊文本阴影的半径</p>
+<p><code>android:numeric</code>    如果设置，指定这个TextView有一个数值输入法</p>
+<p><code>android:digits</code>    如果设置，指定这个TextView有一个数字输入法，这些特定的字符是它将接受的</p>
+<p><code>android:phoneNumber</code>    指定这个TextView有一个电话号码输入法</p>
+<p><code>android:inputMethod</code>    如果设置，指定这个TextView应该使用指定的输入法(由完全限定的类名指定)</p>
+<p><code>android:capitalize</code>    如果设置，指定这个TextView有一个文本输入法，并且应该自动大写用户类型</p>
+<p><code>android:autoText</code>    如果设置，指定这个TextView有一个文本输入法，并自动纠正一些常见的拼写错误</p>
+<p><code>android:editable</code>    如果设置，指定这个TextView有一个输入法</p>
+<p><code>android:freezesText</code>  如果设置，文本视图将在其冻结的冰柱中包括当前完整的文本，以及元数据(如当前光标位置)</p>
+<p><code>android:drawableTop</code>    可绘制的文本被绘制在上面</p>
+<p><code>android:drawableBottom</code>    可绘制的文本下面绘制</p>
+<p><code>android:drawableLeft</code>    可绘制到文本左侧的图形</p>
+<p><code>android:drawableRight</code>    可在文本右侧绘制的图形</p>
+<p><code>android:drawablePadding</code>    拉伸值与文本之间的填充</p>
+<p><code>android:lineSpacingExtra</code>    E文本行之间的间距</p>
+<p><code>android:lineSpacingMultiplier</code>    文本行之间的额外间距，如乘法器</p>
+<p><code>android:marqueeRepeatLimit</code>    重复字幕动画的次数</p>
+<p><code>android:inputType</code>    放置在文本字段中的数据类型，用于帮助输入法决定如何让用户输入文本</p>
+<p><code>android:privateImeOptions</code>    附加到文本视图的输入法的附加内容类型描述，它是输入法实现的私有内容</p>
+<p><code>android:editorExtras</code>    对<input-extras> XML资源的引用，该资源包含要提供给输入法的附加数据，该数据是输入法实现的私有数据</p>
+<p><code>android:imeOptions</code>    您可以在与编辑器关联的IME中启用的其他特性，以改进与应用程序的集成</p>
+<p><code>android:imeActionLabel</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:imeActionId</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:textSelectHandleLeft</code>    引用将用于在选择区域的左侧显示文本选择锚定的可绘制对象</p>
+<p><code>android:textSelectHandleRight</code>    引用将用于在选择区域的右侧显示文本选择锚点的绘图</p>
+<p><code>android:textSelectHandle</code>    对可绘制对象的引用，该可绘制对象将用于显示文本选择锚，以在文本中定位光标</p>
+<p><code>android:textEditPasteWindowLayout</code>    显示在光标上方并粘贴到TextEdit字段内的视图布局</p>
+<p><code>android:textEditNoPasteWindowLayout</code>    剪贴板为空时显示的文本ditpastewindowlayout的变化</p>
+<p><code>android:textIsSelectable</code>    指示一个不可编辑的TextView的内容可以被选择</p>
+<p><code>android:textEditSidePasteWindowLayout</code>    当窗口移动到插入光标的一侧时，代替textEditPasteWindowLayout，因为如果它被放置在顶部，它将被剪切。</p>
+<p><code>android:textEditSideNoPasteWindowLayout</code>    剪贴板为空时显示的textEditSidePasteWindowLayout的变化</p>
+<p><code>android:textCursorDrawable</code>    对将在插入游标下绘制的可绘制对象的引用</p>
+<p><code>android:textEditSuggestionItemLayout</code>    将填充建议弹出窗口的TextView项目的布局</p>
+<p><code>android:textAllCaps</code>  以全大写呈现文本</p>
+<p><code>android:drawableStart</code>    T可绘制的文本的开始部分</p>
+<p><code>android:drawableEnd</code>    可绘制的文本被绘制到文本的末尾.</p>
+<p><code>android:fontFamily</code>    默认字体</p>
+<p><code>android:elegantTextHeight</code>    E文本高度，特别适用于不太紧凑的复杂脚本文本</p>
+<p><code>android:letterSpacing</code>    文字字母间距</p>
+<p><code>android:fontFeatureSettings</code>    字体功能设置</p>
+<p><code>android:drawableTint</code>    着色应用到化合物(左，上，等)拉伸</p>
+<p><code>android:drawableTintMode</code>    混合模式用于应用复合(左，上等)绘制着色</p>
+<p><code>android:breakStrategy</code>    中断策略(控制段落布局)</p>
+<p><code>android:hyphenationFrequency</code>    自动连字符的频率</p>
+<p><code>android:allowUndo</code>    是否允许撤消可编辑文本</p>
+<p><code>android:autoSizeTextType</code>    指定自动大小的类型</p>
+<p><code>android:autoSizeStepGranularity</code>    如果autoSizeTextType设置为uniform，请指定auto-size步长</p>
+<p><code>android:autoSizePresetSizes</code></p>
+<p><code>android:autoSizeMinTextSize</code>    自动调整文本大小时使用的最小文本大小约束</p>
+<p><code>android:autoSizeMaxTextSize</code>    自动调整文本大小时使用的最大文本大小约束</p>
+<p><code>android:justificationMode</code>    模式的理由</p>
+<p><code>android:fontVariationSettings</code>    T修改要应用到字体的设置</p>
+<p><code>android:fallbackLineSpacing</code>    是否尊重用于显示文本的回退字体的上升和下降</p>
+<p><code>android:firstBaselineToTopHeight</code>    从TextView顶部到第一个文本基线的距离</p>
+<p><code>android:lastBaselineToBottomHeight</code>    从TextView底部到最后一个文本基线的距离</p>
+<p><code>android:lineHeight</code>    文本行之间的显式高度</p>
+<p><code>android:textFontWeight</code>    TextView中使用的字体的重量</p>
+<p><code>android:textLocale</code>    指定TextView中文本的本地化列表</p>
+<h3 id="Button-extends-TextView"><a href="#Button-extends-TextView" class="headerlink" title="Button extends TextView"></a>Button extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;Button
+    android:id&#x3D;&quot;@+id&#x2F;button&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_parent&quot;
+    android:textAllCaps&#x3D;&quot;false&quot;
+    android:text&#x3D;&quot;Button&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="EditText-extends-TextView"><a href="#EditText-extends-TextView" class="headerlink" title="EditText extends TextView"></a>EditText extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;EditText
+    android:id&#x3D;&quot;@+id&#x2F;editView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    android:hint&#x3D;&quot;Type something here&quot;
+    android:maxLines&#x3D;&quot;2&quot;
+    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="ProgressBar-extends-View"><a href="#ProgressBar-extends-View" class="headerlink" title="ProgressBar extends View"></a>ProgressBar extends View</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/11/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94%E6%B4%BB%E5%8A%A8/" rel="prev" title="Android开发的点点滴滴——活动">
+      <i class="fa fa-chevron-left"></i> Android开发的点点滴滴——活动
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextView-extend-View"><span class="nav-number">1.</span> <span class="nav-text">TextView extend View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button-extends-TextView"><span class="nav-number">2.</span> <span class="nav-text">Button extends TextView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EditText-extends-TextView"><span class="nav-number">3.</span> <span class="nav-text">EditText extends TextView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressBar-extends-View"><span class="nav-number">4.</span> <span class="nav-text">ProgressBar extends View</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="伏城北染"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">伏城北染</p>
+  <div class="site-description" itemprop="description">在时间的大钟上，只有两个字现在</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/BlackArt40" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;BlackArt40" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">伏城北染</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"log":false});</script></body>
+</html>

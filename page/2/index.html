@@ -125,17 +125,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -192,6 +192,224 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/28/Ubuntu%E6%8D%A2%E6%BA%90/" class="post-title-link" itemprop="url">Ubuntu换源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-28 16:10:34" itemprop="dateCreated datePublished" datetime="2020-03-28T16:10:34+08:00">2020-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-11 17:46:31" itemprop="dateModified" datetime="2020-08-11T17:46:31+08:00">2020-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>登陆root用户<br> <code>su</code></p>
+</li>
+<li><p>先备份原来的源列表文件</p>
+<p> <code>mv /etc/apt/sources.list /etc/apt/sourses.list.backup</code></p>
+</li>
+</ol>
+<!--- more --->
+
+<ol start="3">
+<li><p>新建源列表文件</p>
+<p> <code>vim /etc/apt/sources.list</code></p>
+</li>
+<li><p>加入源地址（推荐用阿里云源）</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>推荐将该网站的网址输入到Ubuntu的浏览器中，然后用鼠标左键选中源地址，在vim界面按鼠标中键就可以快捷复制了</p>
+</blockquote>
+<ol start="5">
+<li><p>更新软件列表</p>
+<p> <code>sudo apt-get update</code></p>
+</li>
+<li><p>更新软件（把已安装的软件与刚刷新的软件列表中的版本进行对比，如果发现已安装的软件版本太低，就会提示更新）</p>
+<p> <code>sudo apt-get upgrade</code></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/27/%E5%A6%82%E4%BD%95%E5%9C%A8markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">如何在markdown中添加图片</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-27 19:28:44" itemprop="dateCreated datePublished" datetime="2020-03-27T19:28:44+08:00">2020-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-11 17:45:48" itemprop="dateModified" datetime="2020-08-11T17:45:48+08:00">2020-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/" itemprop="url" rel="index"><span itemprop="name">文本编辑</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>插图最基础的格式是：</p>
+<ul>
+<li>[alt text](图片链接”optional title”)</li>
+</ul>
+<blockquote>
+<p>Alt text:它是图片的ALT标签，用来描述图片的关键字，可以不写。（直接显示在图片下面）</p>
+<p>图片链接：可以是图片的本地地址或者是网址</p>
+<p>“optional title”：鼠标悬置在图片上会出现的文字，可以不写</p>
+</blockquote>
+<!--- more --->
+
+<h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>在基础语法的口号中填入图片的位置路径即可，支持绝对路径和相对路径。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar](&#x2F;source&#x2F;picture&#x2F;1.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>缺点：不灵活不好分享，本地图片的路径更改或丢失都会造成MarkDown文件调不出图片。（不推荐）</p>
+<h2 id="插入网络图片"><a href="#插入网络图片" class="headerlink" title="插入网络图片"></a>插入网络图片</h2><p>只需要在基础语法的括号中填入图片的网络链接即可。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar](http:&#x2F;&#x2F;baidu.com&#x2F;pic&#x2F;cat.png)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="使用图床上传图片"><a href="#使用图床上传图片" class="headerlink" title="使用图床上传图片"></a>使用图床上传图片</h3><p>可以在进入<a target="_blank" rel="noopener" href="https://imgchr.com/">图床</a>上传自己的图片，在里面可以自己选择代码格式，很方便。</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiMR9s"><img src="https://s1.ax1x.com/2020/03/27/GiMR9s.th.jpg" alt="1"></a></p>
+<h3 id="使用有道云笔记上传照片"><a href="#使用有道云笔记上传照片" class="headerlink" title="使用有道云笔记上传照片"></a>使用有道云笔记上传照片</h3><p>我们只需要把图片保存到有道云笔记中</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQk8A"><img src="https://s1.ax1x.com/2020/03/27/GiQk8A.th.jpg" alt="2"></a></p>
+<p>然后选择分享，点击复制链接</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/GiQ4Gd"><img src="https://s1.ax1x.com/2020/03/27/GiQ4Gd.jpg" alt="3"></a></p>
+<p>在网页中加载出来，然后右键点击图片复制图片地址</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/e53da98942a0b35988f0bc45551a002d?method=download&shareKey=b1304887b92c4a21ea11c9e9e870e469" alt="4"></p>
+<p>就可以显示出来了。是不是也很方便。</p>
+<h2 id="将图片存入markdown文件"><a href="#将图片存入markdown文件" class="headerlink" title="将图片存入markdown文件"></a>将图片存入markdown文件</h2><p>用base64转码工具把图片转成一段字符串，然后把字符串填到基础格式中链接的那个位置。</p>
+<p>例如：</p>
+<pre class="line-numbers language-none"><code class="language-none">![avatar][base64str]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>不是很推荐这种方法，因为这一段字符串一般很长，很影响阅读体验。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/Ubuntu%E4%B8%8Bgit%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,7 +441,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-28 12:06:50" itemprop="dateModified" datetime="2020-03-28T12:06:50+08:00">2020-03-28</time>
+                <time title="修改时间：2020-08-11 17:46:37" itemprop="dateModified" datetime="2020-08-11T17:46:37+08:00">2020-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,6 +469,10 @@
 <p> <code>$ git</code></p>
 <p> ps:很多软件都可以通过这种方式安装。</p>
 </li>
+</ol>
+<!--- more --->
+
+<ol start="2">
 <li><p>根据提示命令进行安装</p>
 <p> <code>$ sudo apt install git</code></p>
 </li>
@@ -331,7 +553,7 @@ pwd (显示当前文件夹的路径)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-09 22:59:05" itemprop="dateModified" datetime="2020-08-09T22:59:05+08:00">2020-08-09</time>
+                <time title="修改时间：2020-08-11 17:45:35" itemprop="dateModified" datetime="2020-08-11T17:45:35+08:00">2020-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -357,6 +579,8 @@ pwd (显示当前文件夹的路径)
           <p><em>有一个很多初次使用GitHub的人都会犯难的问题</em></p>
 <p>那就是GitHub网页上的代码如何下载到自己的电脑上</p>
 <p><strong>在这里你会找到最简单的答案</strong></p>
+<!--- more --->
+
 <h2 id="打开cmd界面"><a href="#打开cmd界面" class="headerlink" title="打开cmd界面"></a>打开cmd界面</h2><ul>
 <li>进入保存文件的文件夹</li>
 </ul>
@@ -421,7 +645,7 @@ pwd (显示当前文件夹的路径)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-19 17:56:07" itemprop="dateModified" datetime="2020-03-19T17:56:07+08:00">2020-03-19</time>
+                <time title="修改时间：2020-08-11 17:45:24" itemprop="dateModified" datetime="2020-08-11T17:45:24+08:00">2020-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -453,6 +677,8 @@ pwd (显示当前文件夹的路径)
 <li>缺点：</li>
 </ul>
 <p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
+<!--- more --->
+
 <h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
 <p>示例：</p>
 <pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
@@ -690,235 +916,10 @@ st<span class="token operator">-</span><span class="token operator">></span>op<s
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="伏城北染">
-      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伏北的BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/" class="post-title-link" itemprop="url">如何搭建你的个人博客（by hexo）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-19 16:14:35" itemprop="dateCreated datePublished" datetime="2020-01-19T16:14:35+08:00">2020-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-25 21:57:15" itemprop="dateModified" datetime="2020-07-25T21:57:15+08:00">2020-07-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">个人博客</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页</p>
-<h2 id="配置基础"><a href="#配置基础" class="headerlink" title="配置基础"></a>配置基础</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>Node.js为大多数平台提供了官方的安装程序。<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node.js中文网</a></p>
-<p>其他安装方法：</p>
-<ul>
-<li>Windows：通过<a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/">nvs</a>或者<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>安装。</li>
-<li>Mac：使用<a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a>或<a href="www.macports.org">MacPorts</a>安装。</li>
-<li>Linux：使用NodeSource(<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions)%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/nodesource/distributions)安装。</a></li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">Windows用户
-
-使用Node.js官方安装程序时，请确保勾选**ADD TO PATH**选项（默认已勾选）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">For Mac&#x2F;Linux用户
-
-如果在尝试安装Hexo的过程中出现*EACCES*权限错误，请遵循由[npmjs发布的指导](https:&#x2F;&#x2F;docs.npmjs.com&#x2F;resolving-eacces-permissions-errors-when-installing-packages-globally)修复该问题。强烈建议**不要**使用root、sudo等方法覆盖权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="通过cnpm安装Hexo"><a href="#通过cnpm安装Hexo" class="headerlink" title="通过cnpm安装Hexo"></a>通过cnpm安装Hexo</h3><ol>
-<li><p>通过node -v 和npm -v检测当前版本</p>
-</li>
-<li><p>利用npm安装cnpm（npm国内下载速度不太行，选用淘宝镜像）</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>利用cnpm安装hexo</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cnpm install -g hexo-cli
-(自动下载)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>建立一个空的文件夹放置网页主体</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ol>
-<p><strong><em>这步完成之后你可以进入C盘，点开Windows文件夹中的System32文件夹找到blog文件夹，后续操作还是在cmd中进行</em></strong></p>
-<ol start="5">
-<li>进入blog<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>使用hexo生成博客<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo init
-（它会自动生成）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-如果出现git报错，要去git官网下载git进行安装<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>。</li>
-</ol>
-<h2 id="在本地使用个人博客"><a href="#在本地使用个人博客" class="headerlink" title="在本地使用个人博客"></a>在本地使用个人博客</h2><h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><pre class="line-numbers language-none"><code class="language-none">hexo s <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它会为你显示一个网址，在浏览器输入进入，就是hexo为你生成的网址</p>
-<h3 id="创建新的博客文章"><a href="#创建新的博客文章" class="headerlink" title="创建新的博客文章"></a>创建新的博客文章</h3><pre class="line-numbers language-none"><code class="language-none">hexo n “我的第一篇博客文章”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>自动生成该文件</p>
-<h3 id="修改博客文章中的内容"><a href="#修改博客文章中的内容" class="headerlink" title="修改博客文章中的内容"></a>修改博客文章中的内容</h3><p>进入blog/source/_posts可以查看刚刚新建的文档</p>
-<p>可以通过vs code 软件编辑该文档</p>
-<h3 id="将文章部署到网页中"><a href="#将文章部署到网页中" class="headerlink" title="将文章部署到网页中"></a>将文章部署到网页中</h3><pre class="line-numbers language-none"><code class="language-none">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Hexo文件夹中各文件信息"><a href="#Hexo文件夹中各文件信息" class="headerlink" title="Hexo文件夹中各文件信息"></a>Hexo文件夹中各文件信息</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>网站的配置信息，你可以在此配置大部分的参数。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>应用程序的信息。EJS,Stylus和Markdown renderer已默认安装，你可以自由移除</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json">package.json
-<span class="token punctuation">&#123;</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"hexo-site"</span><span class="token punctuation">,</span>
-  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.0.0"</span><span class="token punctuation">,</span>
-  <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">""</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">"hexo"</span><span class="token operator">:</span> <span class="token string">"^3.8.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-generator-archive"</span><span class="token operator">:</span> <span class="token string">"^0.1.5"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-generator-category"</span><span class="token operator">:</span> <span class="token string">"^0.1.3"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-generator-index"</span><span class="token operator">:</span> <span class="token string">"^0.2.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-generator-tag"</span><span class="token operator">:</span> <span class="token string">"^0.2.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-renderer-ejs"</span><span class="token operator">:</span> <span class="token string">"^0.3.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-renderer-stylus"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-renderer-marked"</span><span class="token operator">:</span> <span class="token string">"^0.3.2"</span><span class="token punctuation">,</span>
-    <span class="token property">"hexo-server"</span><span class="token operator">:</span> <span class="token string">"^0.3.3"</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="scafflods"><a href="#scafflods" class="headerlink" title="scafflods"></a>scafflods</h3><p>模板文件夹。当你新建文章时，Hexo会根据scaffold来建立文件。</p>
-<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果你修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
-<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
-<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题文件夹。Hexo 会根据主题来生成静态页面。</p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="下载主题相关文件"><a href="#下载主题相关文件" class="headerlink" title="下载主题相关文件"></a>下载主题相关文件</h3><p>这里推荐两个网站，你也可以去GitHub里找自己喜欢的主题进行下载<br><a target="_blank" rel="noopener" href="https://github.com/halo-dev/halo">halo</a><br><a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">yilia</a></p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;halo-dev&#x2F;halo.git themes&#x2F;halo
-git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>通过这两行代码可以下载halo和yilia两个主题文件到blog/themes中</p>
-<h3 id="配置主题文件"><a href="#配置主题文件" class="headerlink" title="配置主题文件"></a>配置主题文件</h3><p>在blog文件夹中找到_config.yml文件</p>
-<p>用vs code将它打开</p>
-<pre class="line-numbers language-none"><code class="language-none">将其改成theme: halo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>记得:后要加一个空格</p>
-<h3 id="配置主题成功后"><a href="#配置主题成功后" class="headerlink" title="配置主题成功后"></a>配置主题成功后</h3><p>在cmd中运行下面这段代码</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo clean
-hexo g
-hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>进入local 4000 查看相关主题</p>
-<p><strong><em>如何修改主题文件，在GitHub中已有现成的方法，在这里不做过多说明(去阅读README文件)</em></strong></p>
-<h2 id="将配置好的网站推到GitHub中"><a href="#将配置好的网站推到GitHub中" class="headerlink" title="将配置好的网站推到GitHub中"></a>将配置好的网站推到GitHub中</h2><ul>
-<li>创建GitHub仓库</li>
-</ul>
-<p>进入自己的GitHub网站</p>
-<p>新建一个仓库(new repository)</p>
-<p>一定是你的昵称.github.io</p>
-<p><strong><em>(用户部署个人博客的GitHub仓库的命名必须符合特定要求才行)</em></strong></p>
-<p>然后create，就完成了</p>
-<ul>
-<li>在cmd中的操作</li>
-</ul>
-<p>在blog文件夹中安装相关插件</p>
-<pre class="line-numbers language-none"><code class="language-none">cnpm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>设置config文件</li>
-</ul>
-<p>设置blog文件中的_config.yml文件(用vs code 打开)</p>
-<p>在最底部有一个Deployment配置</p>
-<pre class="line-numbers language-none"><code class="language-none">deploy:
- type: git
- repo: 刚刚创建的仓库的地址(ssh)
- branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>部署到远端<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-</li>
-</ul>
-<h3 id="部署到远端出现错误的解决办法"><a href="#部署到远端出现错误的解决办法" class="headerlink" title="部署到远端出现错误的解决办法"></a>部署到远端出现错误的解决办法</h3><ol>
-<li><p>打开Git Bash 查看电脑上是否已经存在SSH密钥</p>
-<pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh
-sh.exe&quot;: cd: &#x2F;c&#x2F;Users&#x2F;Lin&#x2F;.ssh: No shch file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>若出现上面的显示无法找到该文件则要创建新的ssh key</p>
-</li>
-<li><p>创建新的ssh key</p>
-</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">ssh -keygen -t rsa -C&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>执行这条命令会上图体是文件保存路径，可以直接按Enter</p>
-<p>然后提示输入 passphrase(密码)，输入两次(可以不输直接两次Enter)</p>
-<p><strong><em>你输入的密码你是看不见的</em></strong></p>
-<p>然后会在.ssh目录生产两个文件：id_ras和_rsa.pub</p>
-<p>用记事本打开.ssh目录下的id_rsa.pub文件，复制里卖弄的内容(这是你生成的电脑的公钥)</p>
-<p><strong><em>id_rsa文件里面是你自己的私钥，不要交给别人</em></strong></p>
-<ol start="3">
-<li>复制ssh key到GitHub</li>
-</ol>
-<p><strong><em>这一步是到GitHub的，如果自己有搭建git服务器，则可以直接去服务器上(CentOS)将id_rsa.pub内的公告密钥导入到/home/git/.ssh/authorized_keys文件里，一行一个）参考网址：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664">廖雪峰的官方网站-搭建git服务器</a></em></strong></p>
-<p>On the Github site Click “Account Settings” &gt; Click “SSH Keys” &gt; Click “ADD SSH Key”</p>
-<p>打开GitHub网站，点击右上角扳手图标，然后点击左边菜单的ssh key，然后右边页面的 add ssh key，将复制的内容粘贴到GitHub的key中，title可以不填，直接保存即可</p>
-<ol start="4">
-<li>测试ssh链接到GitHub</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>出现successfully就ok</p>
-<ol start="5">
-<li>设置自己的git信息</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">git config --global user.name&quot;Firstname Lastname&quot;(此处name可修改为不是用于登陆GitHub的登陆名)
-git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>设置自己的git信息即完成安装和设置，可以输入git config –list查看自己的git信息</p>
-<ol start="6">
-<li>重新部署</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -986,20 +987,20 @@ git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hid
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
