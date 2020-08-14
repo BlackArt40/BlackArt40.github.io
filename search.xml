@@ -1,149 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android开发的点点滴滴——UI</title>
-    <url>/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/</url>
-    <content><![CDATA[<p>第二期：UI控件的使用</p>
-<!--- more --->
-
-<h3 id="TextView-extend-View"><a href="#TextView-extend-View" class="headerlink" title="TextView extend View"></a>TextView extend View</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;TextView
-    android:id&#x3D;&quot;@id&#x2F;textView&quot;
-    android:layout_width&#x3D;&quot;match_parent&quot;
-    android:layout_height&#x3D;&quot;wrap_content&quot;
-    android:gravity&#x3D;&quot;center&quot;
-    android:textSize&#x3D;&quot;40sp&quot;
-    android:textColor&#x3D;&quot;#000000&quot;
-    android:text&#x3D;&quot;this is TextView&quot;
-    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>android:layout_width</code>和<code>android:layout_height</code>  指定了宽度和高度（可选值有：match_parent | fill_parent | wrap_content）</p>
-<p><code>android:gravity</code>  指定了文字的对齐方式（可选值有top | bottom | left | right | center等）</p>
-<p><code>android:textSize</code>  指定了文字的大小</p>
-<p><code>android:textColor</code>  指定了文字的颜色</p>
-<p>官方文档里还介绍里这些：</p>
-<p><code>android:enabled</code>    指定小部件是否启用</p>
-<p><code>android:textAppearance</code>    文本的默认外观:颜色、字体、大小和样式</p>
-<p><code>android:typeface</code>    默认文本字体</p>
-<p><code>android:textStyle</code>    默认文本字体样式</p>
-<p><code>android:textColorHighlight</code>    突出显示文本的颜色</p>
-<p><code>android:textColorHint</code>    提示文本的颜色(字段为空时显示)</p>
-<p><code>android:textColorLink</code>    链接文本(url)的颜色</p>
-<p><code>android:ellipsize</code>    在哪里使用椭圆文本</p>
-<p><code>android:autoLink</code>    控制如url和电子邮件地址等链接是否自动找到并转换为可点击链接</p>
-<p><code>android:linksClickable</code>    如果设置为false，保持移动方法不被设置为链接的移动方法，即使autoLink导致链接被发现</p>
-<p><code>android:maxWidth</code>    提供此视图的最大宽度的可选参数</p>
-<p><code>android:maxHeight</code>    提供此视图的最大高度的可选参数.</p>
-<p><code>android:minWidth</code>    同上</p>
-<p><code>android:minHeight</code>  同上</p>
-<p><code>android:bufferType</code>    确定getText()将返回的最小类型</p>
-<p><code>android:text</code>    文本显示</p>
-<p><code>android:hint</code>    文本为空时显示的提示文本</p>
-<p><code>android:textScaleX</code>    设置文本的水平缩放因子。</p>
-<p><code>android:cursorVisible</code>    使光标可见(缺省值)或不可见</p>
-<p><code>android:maxLines</code>    使TextView最多这么多行高</p>
-<p><code>android:lines</code>    使TextView正好这么多行高</p>
-<p><code>android:height</code>    TextView正好是这么高</p>
-<p><code>android:minLines</code>    使TextView至少这么多行高</p>
-<p><code>android:width</code>    使TextView正好是这个宽</p>
-<p><code>android:scrollHorizontally</code>    是否允许文本比视图宽(因此可以水平滚动)</p>
-<p><code>android:password</code>    字段的字符是否显示为密码点而不是它们本身</p>
-<p><code>android:singleLine</code>    将文本限制为单个水平滚动行，而不是让它换行为多行，并在按enter键时推进焦点，而不是插入新行</p>
-<p><code>android:selectAllOnFocus</code>    如果文本是可选择的，请在视图聚焦时全部选中它</p>
-<p><code>android:includeFontPadding</code>    为上伸和下伸留出足够的空间，而不是严格使用字体的上升和下降</p>
-<p><code>android:maxLength</code>    设置一个输入过滤器，将文本长度约束为指定的数字</p>
-<p><code>android:shadowColor</code>    在文本下面放置一个模糊的文本阴影，用指定的颜色绘制</p>
-<p><code>android:shadowDx</code>    文本阴影的水平偏移</p>
-<p><code>android:shadowDy</code>    文本阴影的垂直偏移</p>
-<p><code>android:shadowRadius</code>    模糊文本阴影的半径</p>
-<p><code>android:numeric</code>    如果设置，指定这个TextView有一个数值输入法</p>
-<p><code>android:digits</code>    如果设置，指定这个TextView有一个数字输入法，这些特定的字符是它将接受的</p>
-<p><code>android:phoneNumber</code>    指定这个TextView有一个电话号码输入法</p>
-<p><code>android:inputMethod</code>    如果设置，指定这个TextView应该使用指定的输入法(由完全限定的类名指定)</p>
-<p><code>android:capitalize</code>    如果设置，指定这个TextView有一个文本输入法，并且应该自动大写用户类型</p>
-<p><code>android:autoText</code>    如果设置，指定这个TextView有一个文本输入法，并自动纠正一些常见的拼写错误</p>
-<p><code>android:editable</code>    如果设置，指定这个TextView有一个输入法</p>
-<p><code>android:freezesText</code>  如果设置，文本视图将在其冻结的冰柱中包括当前完整的文本，以及元数据(如当前光标位置)</p>
-<p><code>android:drawableTop</code>    可绘制的文本被绘制在上面</p>
-<p><code>android:drawableBottom</code>    可绘制的文本下面绘制</p>
-<p><code>android:drawableLeft</code>    可绘制到文本左侧的图形</p>
-<p><code>android:drawableRight</code>    可在文本右侧绘制的图形</p>
-<p><code>android:drawablePadding</code>    拉伸值与文本之间的填充</p>
-<p><code>android:lineSpacingExtra</code>    E文本行之间的间距</p>
-<p><code>android:lineSpacingMultiplier</code>    文本行之间的额外间距，如乘法器</p>
-<p><code>android:marqueeRepeatLimit</code>    重复字幕动画的次数</p>
-<p><code>android:inputType</code>    放置在文本字段中的数据类型，用于帮助输入法决定如何让用户输入文本</p>
-<p><code>android:privateImeOptions</code>    附加到文本视图的输入法的附加内容类型描述，它是输入法实现的私有内容</p>
-<p><code>android:editorExtras</code>    对<input-extras> XML资源的引用，该资源包含要提供给输入法的附加数据，该数据是输入法实现的私有数据</p>
-<p><code>android:imeOptions</code>    您可以在与编辑器关联的IME中启用的其他特性，以改进与应用程序的集成</p>
-<p><code>android:imeActionLabel</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
-<p><code>android:imeActionId</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
-<p><code>android:textSelectHandleLeft</code>    引用将用于在选择区域的左侧显示文本选择锚定的可绘制对象</p>
-<p><code>android:textSelectHandleRight</code>    引用将用于在选择区域的右侧显示文本选择锚点的绘图</p>
-<p><code>android:textSelectHandle</code>    对可绘制对象的引用，该可绘制对象将用于显示文本选择锚，以在文本中定位光标</p>
-<p><code>android:textEditPasteWindowLayout</code>    显示在光标上方并粘贴到TextEdit字段内的视图布局</p>
-<p><code>android:textEditNoPasteWindowLayout</code>    剪贴板为空时显示的文本ditpastewindowlayout的变化</p>
-<p><code>android:textIsSelectable</code>    指示一个不可编辑的TextView的内容可以被选择</p>
-<p><code>android:textEditSidePasteWindowLayout</code>    当窗口移动到插入光标的一侧时，代替textEditPasteWindowLayout，因为如果它被放置在顶部，它将被剪切。</p>
-<p><code>android:textEditSideNoPasteWindowLayout</code>    剪贴板为空时显示的textEditSidePasteWindowLayout的变化</p>
-<p><code>android:textCursorDrawable</code>    对将在插入游标下绘制的可绘制对象的引用</p>
-<p><code>android:textEditSuggestionItemLayout</code>    将填充建议弹出窗口的TextView项目的布局</p>
-<p><code>android:textAllCaps</code>  以全大写呈现文本</p>
-<p><code>android:drawableStart</code>    T可绘制的文本的开始部分</p>
-<p><code>android:drawableEnd</code>    可绘制的文本被绘制到文本的末尾.</p>
-<p><code>android:fontFamily</code>    默认字体</p>
-<p><code>android:elegantTextHeight</code>    E文本高度，特别适用于不太紧凑的复杂脚本文本</p>
-<p><code>android:letterSpacing</code>    文字字母间距</p>
-<p><code>android:fontFeatureSettings</code>    字体功能设置</p>
-<p><code>android:drawableTint</code>    着色应用到化合物(左，上，等)拉伸</p>
-<p><code>android:drawableTintMode</code>    混合模式用于应用复合(左，上等)绘制着色</p>
-<p><code>android:breakStrategy</code>    中断策略(控制段落布局)</p>
-<p><code>android:hyphenationFrequency</code>    自动连字符的频率</p>
-<p><code>android:allowUndo</code>    是否允许撤消可编辑文本</p>
-<p><code>android:autoSizeTextType</code>    指定自动大小的类型</p>
-<p><code>android:autoSizeStepGranularity</code>    如果autoSizeTextType设置为uniform，请指定auto-size步长</p>
-<p><code>android:autoSizePresetSizes</code></p>
-<p><code>android:autoSizeMinTextSize</code>    自动调整文本大小时使用的最小文本大小约束</p>
-<p><code>android:autoSizeMaxTextSize</code>    自动调整文本大小时使用的最大文本大小约束</p>
-<p><code>android:justificationMode</code>    模式的理由</p>
-<p><code>android:fontVariationSettings</code>    T修改要应用到字体的设置</p>
-<p><code>android:fallbackLineSpacing</code>    是否尊重用于显示文本的回退字体的上升和下降</p>
-<p><code>android:firstBaselineToTopHeight</code>    从TextView顶部到第一个文本基线的距离</p>
-<p><code>android:lastBaselineToBottomHeight</code>    从TextView底部到最后一个文本基线的距离</p>
-<p><code>android:lineHeight</code>    文本行之间的显式高度</p>
-<p><code>android:textFontWeight</code>    TextView中使用的字体的重量</p>
-<p><code>android:textLocale</code>    指定TextView中文本的本地化列表</p>
-<h3 id="Button-extends-TextView"><a href="#Button-extends-TextView" class="headerlink" title="Button extends TextView"></a>Button extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;Button
-    android:id&#x3D;&quot;@+id&#x2F;button&quot;
-    android:layout_width&#x3D;&quot;match_parent&quot;
-    android:layout_height&#x3D;&quot;wrap_parent&quot;
-    android:textAllCaps&#x3D;&quot;false&quot;
-    android:text&#x3D;&quot;Button&quot;
-    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="EditText-extends-TextView"><a href="#EditText-extends-TextView" class="headerlink" title="EditText extends TextView"></a>EditText extends TextView</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;EditText
-    android:id&#x3D;&quot;@+id&#x2F;editView&quot;
-    android:layout_width&#x3D;&quot;match_parent&quot;
-    android:layout_height&#x3D;&quot;match_parent&quot;
-    android:hint&#x3D;&quot;Type something here&quot;
-    android:maxLines&#x3D;&quot;2&quot;
-    &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="ProgressBar-extends-View"><a href="#ProgressBar-extends-View" class="headerlink" title="ProgressBar extends View"></a>ProgressBar extends View</h3>]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android开发的点点滴滴——活动</title>
     <url>/2020/08/11/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94%E6%B4%BB%E5%8A%A8/</url>
     <content><![CDATA[<p>第一次接触到Android app的开发，所以写了名为Android开发的点点滴滴的博客进行记录</p>
-<p>第一期：探究活动的功能</p>
+<h1 id="第一期：探究活动的功能"><a href="#第一期：探究活动的功能" class="headerlink" title="第一期：探究活动的功能"></a>第一期：探究活动的功能</h1><hr>
 <!--- more --->
 
-<h2 id="在活动中为Button的点击事件注册一个监听器"><a href="#在活动中为Button的点击事件注册一个监听器" class="headerlink" title="在活动中为Button的点击事件注册一个监听器"></a>在活动中为Button的点击事件注册一个监听器</h2><h3 id="使用匿名类"><a href="#使用匿名类" class="headerlink" title="使用匿名类"></a>使用匿名类</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+<h2 id="按钮Button"><a href="#按钮Button" class="headerlink" title="按钮Button"></a>按钮Button</h2><h3 id="在活动中为Button的点击事件注册一个监听器"><a href="#在活动中为Button的点击事件注册一个监听器" class="headerlink" title="在活动中为Button的点击事件注册一个监听器"></a>在活动中为Button的点击事件注册一个监听器</h3><h4 id="使用匿名类"><a href="#使用匿名类" class="headerlink" title="使用匿名类"></a>使用匿名类</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
     @Override
     protected void onCreate(Bundle savedInstanceState)&#123;
         super.onCreate(savedInstanceState);
@@ -158,7 +22,7 @@
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="使用实现接口"><a href="#使用实现接口" class="headerlink" title="使用实现接口"></a>使用实现接口</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+<h4 id="使用实现接口"><a href="#使用实现接口" class="headerlink" title="使用实现接口"></a>使用实现接口</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
     @Override
     protected void onCreate(Bundle savedInstanceState)&#123;
         super.onCreate(savedInstanceState);
@@ -179,7 +43,7 @@
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="通过使用按钮来获取EditText中输入的内容"><a href="#通过使用按钮来获取EditText中输入的内容" class="headerlink" title="通过使用按钮来获取EditText中输入的内容"></a>通过使用按钮来获取EditText中输入的内容</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+<h3 id="获取EditText中输入的内容"><a href="#获取EditText中输入的内容" class="headerlink" title="获取EditText中输入的内容"></a>获取EditText中输入的内容</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
     private EditText editText;
 
     @Override
@@ -204,6 +68,104 @@
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="控制进度条"><a href="#控制进度条" class="headerlink" title="控制进度条"></a>控制进度条</h3><h4 id="圆形进度条的消失和出现"><a href="#圆形进度条的消失和出现" class="headerlink" title="圆形进度条的消失和出现"></a>圆形进度条的消失和出现</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    private ProgressBar progressBar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button &#x3D; (Button) findViewById(R.id.button);
+        progressBar &#x3D; (ProgressBar) findViewById(R.id.progress_bar);
+        button.setOnClickListener(this);
+    &#125;
+
+    @Override
+    public void onClick(VIew view)&#123;
+        switch(view.getId())&#123;
+            case.R.id.button:
+                if(grogressBar.getVisibility() &#x3D;&#x3D; View.GONE)&#123;
+                    progressBar.setVisibility(View.VISIBLE);
+                &#125;else&#123;
+                    progressBar.setVisibility(View.GONE);
+                &#125;
+                break;
+            default:
+                break;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="水平进度条的增加"><a href="#水平进度条的增加" class="headerlink" title="水平进度条的增加"></a>水平进度条的增加</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    ...
+
+    @Override
+    public void onClick(View view)&#123;
+        switch(view.getId())&#123;
+            case R.id.button:
+                int progress &#x3D; progressBar.getProgress();
+                progress &#x3D; progress + 10;
+                progressBar.setProgress(progress);
+                break;
+            default:
+                break;    
+        &#125;   
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="AlertDialog"><a href="#AlertDialog" class="headerlink" title="AlertDialog"></a>AlertDialog</h3><p>通过弹出一个对话框，来提示一些非常重要的内容或者警告信息</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    ...
+
+    @Override
+    public void onClick(View view)&#123;
+        switch(view.getId())&#123;
+            case R.id.button:
+                AlertDialog.Builder dialog &#x3D; new AlertDialog.Builder(Main.this);
+                dialog.setTitle(&quot;this is warning&quot;);
+                dialog.setMessage(&quot;do you really want delete this ? &quot;);
+                dialog.setCancelable(&quot;false&quot;);
+                dialog.setPositiveButton(&quot;OK&quot;, new DialogInterface.OnClickListener()&#123;
+                    @Override
+                    public void OnClick(DialogInterface diadlog, int which)&#123;
+                        &#x2F;&#x2F; 当选择OK时，按钮的点击事件
+                    &#125;
+                &#125;);
+                dialog.setNegativeButton(&quot;Cancel&quot;, new DialogInterface.onClickListener()&#123;
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)&#123;
+                        &#x2F;&#x2F; 当选择Cancel时，按钮的点击事件
+                    &#125;
+                &#125;);
+                dialog.show();
+                break;
+            default:
+                break;
+        &#125;
+    &#125;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="ProgressDialog"><a href="#ProgressDialog" class="headerlink" title="ProgressDialog"></a>ProgressDialog</h3><p>通过弹出一个带有进度条的对话框，表示当前操作比较耗时，让用户耐心等待</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity implements View.OnClickListener&#123;
+    ...
+
+    @Override
+    public void onClick(View view)&#123;
+        switch(view.getId())&#123;
+            case R.id.button:
+                ProgressDialog progressDialog &#x3D; new ProgressDialog(Main.this);
+                progressDialog.setTitle(&quot;waiting&quot;);
+                progressDialog.setMessage(&quot;Loading...&quot;);
+                progressDialog.setCancelable(true);
+                progressDialog.show();
+                break;
+            default:
+                break;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="通过使用Toast进行弹窗提醒"><a href="#通过使用Toast进行弹窗提醒" class="headerlink" title="通过使用Toast进行弹窗提醒"></a>通过使用Toast进行弹窗提醒</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">protected void onCreate(Bundle savedInstanceState)&#123;
     super.onCreate(savedInstanceState);
@@ -923,126 +885,6 @@ cat id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span><s
       </tags>
   </entry>
   <entry>
-    <title>配置MacBook的终端</title>
-    <url>/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF/</url>
-    <content><![CDATA[<h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
-<p>简单的来说,Shell就是命令行.</p>
-<!--- more --->
-
-<h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
-<p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
-<pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>显示如下:</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;bin&#x2F;bash  
-&#x2F;bin&#x2F;csh
-&#x2F;bin&#x2F;ksh
-&#x2F;bin&#x2F;sh
-&#x2F;bin&#x2F;tcsh
-&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
-<p>在 Linux 里执行这个命令和 Mac 略有不同， Mac 里多了一个 zsh，也就是说 OS X 系统预装了个 zsh(最新版本默认).</p>
-<h4 id="什么是Zsh"><a href="#什么是Zsh" class="headerlink" title="什么是Zsh"></a>什么是Zsh</h4><ul>
-<li><p><code>Oh My Zsh</code>是一个开源的由社区驱动的用于管理zsh配置的框架</p>
-</li>
-<li><p>包含了大量的插件和主题样式,能极大的提升使用shell终端的舒适度</p>
-</li>
-<li><p>Zsh兼容Bash,据传说99%的Bash操作和Zsh是相同的</p>
-</li>
-<li><p>默认CentOS/Ubuntu/MacOS系统使用的是Bash,不过新版MacOS使用的是Zsh</p>
-</li>
-</ul>
-<h3 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h3><p>如果你用 Mac，就可以直接看下一节，Mac默认已经安装；<br>如果你用 Redhat Linux，执行：sudo yum install zsh；<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh；</p>
-<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
-<p>Via curl:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>Via wget:</p>
-<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果官网安装方式失败,可以先使用git下载:</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh.git ~&#x2F;.oh-my-zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>再替换zshrc</p>
-<pre class="line-numbers language-none"><code class="language-none">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>使用vim打开.zshrc文件</p>
-<pre class="line-numbers language-none"><code class="language-none">vim ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>在.zshrc文件中找到主题的配置行</p>
-<pre class="line-numbers language-none"><code class="language-none"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
-# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
-# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
-ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这里可以设置主题的名字,Oh My Zsh中自带了很多主题可以通过进入Oh My Zsh的配置目录进行查看</p>
-<pre class="line-numbers language-none"><code class="language-none">ls &#x2F;Users&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
-Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
-adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
-af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
-afowler.zsh-theme             fino.zsh-theme                kiwi.zsh-theme                rkj.zsh-theme
-agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme                robbyrussell.zsh-theme
-alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
-amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
-apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
-arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
-....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>也可以进入Oh My Zsh的网站进行主题选择:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
-<p>或者我们将主题设置为随机(‘random’),每次打开命令行窗口,都会随机在默认主题中选择一个,如果遇到你喜欢的主题,可以输入命令查看它的名字:</p>
-<pre class="line-numbers language-none"><code class="language-none">echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 中默认自带了一些插件,存放在~/.oh-my-zsh/plugins目录中。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
-
-adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
-ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
-apache2-macports  bundler      colored-man-pages  dnf             fedora           git-remote-branch         jake-node  lighthouse        node                   pow         repo        stack          textastic   vi-mode            zsh_reload
-archlinux         bwana        colorize           docker          forklift         glassfish                 jhbuild    lol               npm                    powder      rsync       sublime        textmate    virtualenv
-asdf              cabal        command-not-found  docker-compose  frontend-search  gnu-utils                 jira       macports          nvm                    powify      ruby        sudo           thefuck     virtualenvwrapper
-autoenv           cake         common-aliases     emacs           gas              go                        jruby      man               nyan                   profiles    rvm         supervisor     themes      vundle
-autojump          cakephp3     compleat           ember-cli       geeknote         golang                    jsontools  marked2           osx                    pyenv       safe-paste  suse           thor        wakeonlan
-autopep8          capistrano   composer           emoji           gem              gpg-agent                 jump       mercurial         pass                   pylint      sbt         svn            tmux        wd
-aws               cask         copydir            emoji-clock     git              gradle                    kate       meteor            paver                  python      scala       svn-fast-info  tmux-cssh   web-search
-battery           catimg       copyfile           emotty          git-extras       grails                    kitchen    mix               pep8                   rails       scd         symfony        tmuxinator  wp-cli
-bbedit            celery       cp                 encode64        gitfast          grunt                     knife      mix-fast          per-directory-history  rake        screen      symfony2       torrent     xcode
-bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
-boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
-bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
-branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>我们打开.zshrc配置文件,定位到plugins</p>
-<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
-  git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>可以看到默认只开启了git插件,我们可以在要使用的插件的名字之间用空格连接在后面就可以了,比如:</p>
-<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
-  git pip)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>如果不知道插件的作用,可以进入GitHub的网站进行查看:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a></p>
-<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>zsh-autosuggestions</strong></p>
-<p>它是Oh-myszh的一个插件，作用基本上是根据历史输入指令的记录即时的提示，能够很大的提高效率</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>zsh-syntax-highlighting</strong></p>
-<p>这是一个命令高亮插件，输入为绿色时表示可用命令，路径带有下划线时表示可用路径</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>最后别忘记了让配置生效</p>
-<pre class="line-numbers language-none"><code class="language-none">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>MacBook</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何搭建你的个人博客（by hexo）</title>
     <url>/2020/01/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88by%20hexo%EF%BC%89/</url>
     <content><![CDATA[<h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用自选的主题生成静态网页</p>
@@ -1205,6 +1047,565 @@ git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hid
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>配置MacBook的终端</title>
+    <url>/2020/05/20/%E9%85%8D%E7%BD%AEMacBook%E7%9A%84%E7%BB%88%E7%AB%AF/</url>
+    <content><![CDATA[<h2 id="使用oh-my-zsh来配置MacBook的终端"><a href="#使用oh-my-zsh来配置MacBook的终端" class="headerlink" title="使用oh-my-zsh来配置MacBook的终端"></a>使用oh-my-zsh来配置MacBook的终端</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h4><p>对于内核来说Shell是Linux/Unix的一个外壳,它负责外界与Linux内核的交互,接受用户或其他应用程序的命令,然后把这些命令转化成内核能理解的语言,传给内核,内核是真正干活的,干完之后再把结果返回到用户或者应用程序.</p>
+<p>简单的来说,Shell就是命令行.</p>
+<!--- more --->
+
+<h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux/Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是/bin/bash</p>
+<p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
+<pre class="line-numbers language-none"><code class="language-none">cat &#x2F;etc&#x2F;shells<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>显示如下:</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;bin&#x2F;bash  
+&#x2F;bin&#x2F;csh
+&#x2F;bin&#x2F;ksh
+&#x2F;bin&#x2F;sh
+&#x2F;bin&#x2F;tcsh
+&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
+<p>在 Linux 里执行这个命令和 Mac 略有不同， Mac 里多了一个 zsh，也就是说 OS X 系统预装了个 zsh(最新版本默认).</p>
+<h4 id="什么是Zsh"><a href="#什么是Zsh" class="headerlink" title="什么是Zsh"></a>什么是Zsh</h4><ul>
+<li><p><code>Oh My Zsh</code>是一个开源的由社区驱动的用于管理zsh配置的框架</p>
+</li>
+<li><p>包含了大量的插件和主题样式,能极大的提升使用shell终端的舒适度</p>
+</li>
+<li><p>Zsh兼容Bash,据传说99%的Bash操作和Zsh是相同的</p>
+</li>
+<li><p>默认CentOS/Ubuntu/MacOS系统使用的是Bash,不过新版MacOS使用的是Zsh</p>
+</li>
+</ul>
+<h3 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h3><p>如果你用 Mac，就可以直接看下一节，Mac默认已经安装；<br>如果你用 Redhat Linux，执行：sudo yum install zsh；<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh；</p>
+<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
+<p>Via curl:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Via wget:</p>
+<pre class="line-numbers language-none"><code class="language-none">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果官网安装方式失败,可以先使用git下载:</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone git:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh.git ~&#x2F;.oh-my-zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再替换zshrc</p>
+<pre class="line-numbers language-none"><code class="language-none">cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>使用vim打开.zshrc文件</p>
+<pre class="line-numbers language-none"><code class="language-none">vim ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在.zshrc文件中找到主题的配置行</p>
+<pre class="line-numbers language-none"><code class="language-none"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
+# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
+# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
+ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里可以设置主题的名字,Oh My Zsh中自带了很多主题可以通过进入Oh My Zsh的配置目录进行查看</p>
+<pre class="line-numbers language-none"><code class="language-none">ls &#x2F;Users&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
+Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
+adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
+af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
+afowler.zsh-theme             fino.zsh-theme                kiwi.zsh-theme                rkj.zsh-theme
+agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme                robbyrussell.zsh-theme
+alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
+amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
+apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
+arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
+....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>也可以进入Oh My Zsh的网站进行主题选择:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
+<p>或者我们将主题设置为随机(‘random’),每次打开命令行窗口,都会随机在默认主题中选择一个,如果遇到你喜欢的主题,可以输入命令查看它的名字:</p>
+<pre class="line-numbers language-none"><code class="language-none">echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 中默认自带了一些插件,存放在~/.oh-my-zsh/plugins目录中。</p>
+<pre class="line-numbers language-none"><code class="language-none">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
+
+adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
+ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
+apache2-macports  bundler      colored-man-pages  dnf             fedora           git-remote-branch         jake-node  lighthouse        node                   pow         repo        stack          textastic   vi-mode            zsh_reload
+archlinux         bwana        colorize           docker          forklift         glassfish                 jhbuild    lol               npm                    powder      rsync       sublime        textmate    virtualenv
+asdf              cabal        command-not-found  docker-compose  frontend-search  gnu-utils                 jira       macports          nvm                    powify      ruby        sudo           thefuck     virtualenvwrapper
+autoenv           cake         common-aliases     emacs           gas              go                        jruby      man               nyan                   profiles    rvm         supervisor     themes      vundle
+autojump          cakephp3     compleat           ember-cli       geeknote         golang                    jsontools  marked2           osx                    pyenv       safe-paste  suse           thor        wakeonlan
+autopep8          capistrano   composer           emoji           gem              gpg-agent                 jump       mercurial         pass                   pylint      sbt         svn            tmux        wd
+aws               cask         copydir            emoji-clock     git              gradle                    kate       meteor            paver                  python      scala       svn-fast-info  tmux-cssh   web-search
+battery           catimg       copyfile           emotty          git-extras       grails                    kitchen    mix               pep8                   rails       scd         symfony        tmuxinator  wp-cli
+bbedit            celery       cp                 encode64        gitfast          grunt                     knife      mix-fast          per-directory-history  rake        screen      symfony2       torrent     xcode
+bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
+boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
+bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
+branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们打开.zshrc配置文件,定位到plugins</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可以看到默认只开启了git插件,我们可以在要使用的插件的名字之间用空格连接在后面就可以了,比如:</p>
+<pre class="line-numbers language-none"><code class="language-none">plugins&#x3D;(
+  git pip)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如果不知道插件的作用,可以进入GitHub的网站进行查看:<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a></p>
+<h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>zsh-autosuggestions</strong></p>
+<p>它是Oh-myszh的一个插件，作用基本上是根据历史输入指令的记录即时的提示，能够很大的提高效率</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>zsh-syntax-highlighting</strong></p>
+<p>这是一个命令高亮插件，输入为绿色时表示可用命令，路径带有下划线时表示可用路径</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>最后别忘记了让配置生效</p>
+<pre class="line-numbers language-none"><code class="language-none">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>MacBook</category>
+      </categories>
+      <tags>
+        <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android开发的点点滴滴——UI</title>
+    <url>/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/</url>
+    <content><![CDATA[<h1 id="第二期：UI控件的使用"><a href="#第二期：UI控件的使用" class="headerlink" title="第二期：UI控件的使用"></a>第二期：UI控件的使用</h1><hr>
+<!--- more --->
+
+<h2 id="TextView-extend-View"><a href="#TextView-extend-View" class="headerlink" title="TextView extend View"></a>TextView extend View</h2><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;TextView
+    android:id&#x3D;&quot;@id&#x2F;textView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_content&quot;
+    android:gravity&#x3D;&quot;center&quot;
+    android:textSize&#x3D;&quot;40sp&quot;
+    android:textColor&#x3D;&quot;#000000&quot;
+    android:text&#x3D;&quot;this is TextView&quot;&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>android:layout_width</code>和<code>android:layout_height</code>  指定了宽度和高度（可选值有：match_parent | fill_parent | wrap_content）</p>
+<p><code>android:gravity</code>  指定了文字的对齐方式（可选值有top | bottom | left | right | center等）</p>
+<p><code>android:textSize</code>  指定了文字的大小</p>
+<p><code>android:textColor</code>  指定了文字的颜色</p>
+<p>官方文档里还介绍里这些：</p>
+<p><code>android:enabled</code>    指定小部件是否启用</p>
+<p><code>android:textAppearance</code>    文本的默认外观:颜色、字体、大小和样式</p>
+<p><code>android:typeface</code>    默认文本字体</p>
+<p><code>android:textStyle</code>    默认文本字体样式</p>
+<p><code>android:textColorHighlight</code>    突出显示文本的颜色</p>
+<p><code>android:textColorHint</code>    提示文本的颜色(字段为空时显示)</p>
+<p><code>android:textColorLink</code>    链接文本(url)的颜色</p>
+<p><code>android:ellipsize</code>    在哪里使用椭圆文本</p>
+<p><code>android:autoLink</code>    控制如url和电子邮件地址等链接是否自动找到并转换为可点击链接</p>
+<p><code>android:linksClickable</code>    如果设置为false，保持移动方法不被设置为链接的移动方法，即使autoLink导致链接被发现</p>
+<p><code>android:maxWidth</code>    提供此视图的最大宽度的可选参数</p>
+<p><code>android:maxHeight</code>    提供此视图的最大高度的可选参数.</p>
+<p><code>android:minWidth</code>    同上</p>
+<p><code>android:minHeight</code>  同上</p>
+<p><code>android:bufferType</code>    确定getText()将返回的最小类型</p>
+<p><code>android:text</code>    文本显示</p>
+<p><code>android:hint</code>    文本为空时显示的提示文本</p>
+<p><code>android:textScaleX</code>    设置文本的水平缩放因子。</p>
+<p><code>android:cursorVisible</code>    使光标可见(缺省值)或不可见</p>
+<p><code>android:maxLines</code>    使TextView最多这么多行高</p>
+<p><code>android:lines</code>    使TextView正好这么多行高</p>
+<p><code>android:height</code>    TextView正好是这么高</p>
+<p><code>android:minLines</code>    使TextView至少这么多行高</p>
+<p><code>android:width</code>    使TextView正好是这个宽</p>
+<p><code>android:scrollHorizontally</code>    是否允许文本比视图宽(因此可以水平滚动)</p>
+<p><code>android:password</code>    字段的字符是否显示为密码点而不是它们本身</p>
+<p><code>android:singleLine</code>    将文本限制为单个水平滚动行，而不是让它换行为多行，并在按enter键时推进焦点，而不是插入新行</p>
+<p><code>android:selectAllOnFocus</code>    如果文本是可选择的，请在视图聚焦时全部选中它</p>
+<p><code>android:includeFontPadding</code>    为上伸和下伸留出足够的空间，而不是严格使用字体的上升和下降</p>
+<p><code>android:maxLength</code>    设置一个输入过滤器，将文本长度约束为指定的数字</p>
+<p><code>android:shadowColor</code>    在文本下面放置一个模糊的文本阴影，用指定的颜色绘制</p>
+<p><code>android:shadowDx</code>    文本阴影的水平偏移</p>
+<p><code>android:shadowDy</code>    文本阴影的垂直偏移</p>
+<p><code>android:shadowRadius</code>    模糊文本阴影的半径</p>
+<p><code>android:numeric</code>    如果设置，指定这个TextView有一个数值输入法</p>
+<p><code>android:digits</code>    如果设置，指定这个TextView有一个数字输入法，这些特定的字符是它将接受的</p>
+<p><code>android:phoneNumber</code>    指定这个TextView有一个电话号码输入法</p>
+<p><code>android:inputMethod</code>    如果设置，指定这个TextView应该使用指定的输入法(由完全限定的类名指定)</p>
+<p><code>android:capitalize</code>    如果设置，指定这个TextView有一个文本输入法，并且应该自动大写用户类型</p>
+<p><code>android:autoText</code>    如果设置，指定这个TextView有一个文本输入法，并自动纠正一些常见的拼写错误</p>
+<p><code>android:editable</code>    如果设置，指定这个TextView有一个输入法</p>
+<p><code>android:freezesText</code>  如果设置，文本视图将在其冻结的冰柱中包括当前完整的文本，以及元数据(如当前光标位置)</p>
+<p><code>android:drawableTop</code>    可绘制的文本被绘制在上面</p>
+<p><code>android:drawableBottom</code>    可绘制的文本下面绘制</p>
+<p><code>android:drawableLeft</code>    可绘制到文本左侧的图形</p>
+<p><code>android:drawableRight</code>    可在文本右侧绘制的图形</p>
+<p><code>android:drawablePadding</code>    拉伸值与文本之间的填充</p>
+<p><code>android:lineSpacingExtra</code>    E文本行之间的间距</p>
+<p><code>android:lineSpacingMultiplier</code>    文本行之间的额外间距，如乘法器</p>
+<p><code>android:marqueeRepeatLimit</code>    重复字幕动画的次数</p>
+<p><code>android:inputType</code>    放置在文本字段中的数据类型，用于帮助输入法决定如何让用户输入文本</p>
+<p><code>android:privateImeOptions</code>    附加到文本视图的输入法的附加内容类型描述，它是输入法实现的私有内容</p>
+<p><code>android:editorExtras</code>    对<input-extras> XML资源的引用，该资源包含要提供给输入法的附加数据，该数据是输入法实现的私有数据</p>
+<p><code>android:imeOptions</code>    您可以在与编辑器关联的IME中启用的其他特性，以改进与应用程序的集成</p>
+<p><code>android:imeActionLabel</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:imeActionId</code>    为EditorInfo提供一个值。当输入法连接到文本视图时使用</p>
+<p><code>android:textSelectHandleLeft</code>    引用将用于在选择区域的左侧显示文本选择锚定的可绘制对象</p>
+<p><code>android:textSelectHandleRight</code>    引用将用于在选择区域的右侧显示文本选择锚点的绘图</p>
+<p><code>android:textSelectHandle</code>    对可绘制对象的引用，该可绘制对象将用于显示文本选择锚，以在文本中定位光标</p>
+<p><code>android:textEditPasteWindowLayout</code>    显示在光标上方并粘贴到TextEdit字段内的视图布局</p>
+<p><code>android:textEditNoPasteWindowLayout</code>    剪贴板为空时显示的文本ditpastewindowlayout的变化</p>
+<p><code>android:textIsSelectable</code>    指示一个不可编辑的TextView的内容可以被选择</p>
+<p><code>android:textEditSidePasteWindowLayout</code>    当窗口移动到插入光标的一侧时，代替textEditPasteWindowLayout，因为如果它被放置在顶部，它将被剪切。</p>
+<p><code>android:textEditSideNoPasteWindowLayout</code>    剪贴板为空时显示的textEditSidePasteWindowLayout的变化</p>
+<p><code>android:textCursorDrawable</code>    对将在插入游标下绘制的可绘制对象的引用</p>
+<p><code>android:textEditSuggestionItemLayout</code>    将填充建议弹出窗口的TextView项目的布局</p>
+<p><code>android:textAllCaps</code>  以全大写呈现文本</p>
+<p><code>android:drawableStart</code>    T可绘制的文本的开始部分</p>
+<p><code>android:drawableEnd</code>    可绘制的文本被绘制到文本的末尾.</p>
+<p><code>android:fontFamily</code>    默认字体</p>
+<p><code>android:elegantTextHeight</code>    E文本高度，特别适用于不太紧凑的复杂脚本文本</p>
+<p><code>android:letterSpacing</code>    文字字母间距</p>
+<p><code>android:fontFeatureSettings</code>    字体功能设置</p>
+<p><code>android:drawableTint</code>    着色应用到化合物(左，上，等)拉伸</p>
+<p><code>android:drawableTintMode</code>    混合模式用于应用复合(左，上等)绘制着色</p>
+<p><code>android:breakStrategy</code>    中断策略(控制段落布局)</p>
+<p><code>android:hyphenationFrequency</code>    自动连字符的频率</p>
+<p><code>android:allowUndo</code>    是否允许撤消可编辑文本</p>
+<p><code>android:autoSizeTextType</code>    指定自动大小的类型</p>
+<p><code>android:autoSizeStepGranularity</code>    如果autoSizeTextType设置为uniform，请指定auto-size步长</p>
+<p><code>android:autoSizePresetSizes</code></p>
+<p><code>android:autoSizeMinTextSize</code>    自动调整文本大小时使用的最小文本大小约束</p>
+<p><code>android:autoSizeMaxTextSize</code>    自动调整文本大小时使用的最大文本大小约束</p>
+<p><code>android:justificationMode</code>    模式的理由</p>
+<p><code>android:fontVariationSettings</code>    T修改要应用到字体的设置</p>
+<p><code>android:fallbackLineSpacing</code>    是否尊重用于显示文本的回退字体的上升和下降</p>
+<p><code>android:firstBaselineToTopHeight</code>    从TextView顶部到第一个文本基线的距离</p>
+<p><code>android:lastBaselineToBottomHeight</code>    从TextView底部到最后一个文本基线的距离</p>
+<p><code>android:lineHeight</code>    文本行之间的显式高度</p>
+<p><code>android:textFontWeight</code>    TextView中使用的字体的重量</p>
+<p><code>android:textLocale</code>    指定TextView中文本的本地化列表</p>
+<h2 id="Button-extends-TextView"><a href="#Button-extends-TextView" class="headerlink" title="Button extends TextView"></a>Button extends TextView</h2><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;Button
+    android:id&#x3D;&quot;@+id&#x2F;button&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;wrap_parent&quot;
+    android:textAllCaps&#x3D;&quot;false&quot;
+    android:text&#x3D;&quot;Button&quot;&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="EditText-extends-TextView"><a href="#EditText-extends-TextView" class="headerlink" title="EditText extends TextView"></a>EditText extends TextView</h2><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;EditText
+    android:id&#x3D;&quot;@+id&#x2F;editView&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    android:hint&#x3D;&quot;Type something here&quot;
+    android:maxLines&#x3D;&quot;2&quot;&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="ProgressBar-extends-View"><a href="#ProgressBar-extends-View" class="headerlink" title="ProgressBar extends View"></a>ProgressBar extends View</h2><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;ProgressBar
+    android:id&#x3D;&quot;@+id&#x2F;progress_bar&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    style&#x3D;&quot;@android:style&#x2F;Widget.ProgressBar.Horizontal&quot;
+    android:max&#x3D;&quot;100&quot;&#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>style</code>指定了进度条的样式，其余样式还有<code>Widget.ProgressBar.Small</code>、<code>Widget.ProgressBar.Large</code>、<code>Widget.ProgressBar.Inverse</code>、<code>Widget.ProgressBar.Small.Inverse</code>、<code>Widget.ProgressBar.Large.Inverse</code></p>
+<p>官方文档中还介绍了这些：</p>
+<p><code>android:animationResolution</code>    动画帧间超时(毫秒)</p>
+<p><code>android:indeterminate</code>    允许启用不确定模式</p>
+<p><code>android:indeterminateBehavior</code>    定义当进程达到最大值时，不确定模式应该如何表现</p>
+<p><code>android:indeterminateDrawable</code>    D可rawable用于不确定模式</p>
+<p><code>android:indeterminateDuration</code>    不确定动画的持续时间</p>
+<p><code>android:indeterminateOnly</code>    仅限制为不确定模式(状态保持进度模式不起作用)</p>
+<p><code>android:indeterminateTint</code>    着色应用于不确定的进度指示器</p>
+<p><code>android:indeterminateTintMode</code>    混合模式用于应用不确定的进度指标着色 </p>
+<p><code>android:interpolator</code>    为不确定的动画设置加速曲线</p>
+<p><code>android:max</code>    定义最大值</p>
+<p><code>android:maxHeight</code>    提供此视图的最大高度的可选参数</p>
+<p><code>android:maxWidth</code>    提供此视图的最大宽度的可选参数</p>
+<p><code>android:min</code>    定义最小值</p>
+<p><code>android:minHeight</code>    </p>
+<p><code>android:minWidth</code>    </p>
+<p><code>android:mirrorForRtl</code>    定义在RTL模式下是否需要镜像关联的drawables</p>
+<p><code>android:progress</code>    定义缺省进度值，在0和最大值之间</p>
+<p><code>android:progressBackgroundTint</code>    应用于进度指示器背景的着色 </p>
+<p><code>android:progressBackgroundTintMode</code>    混合模式用于应用进度指示器背景着色</p>
+<p><code>android:progressDrawable</code>    用于进度模式</p>
+<p><code>android:progressTint</code>    着色以应用于进度指示器</p>
+<p><code>android:progressTintMode</code>    混合模式用于应用进度指示器着色</p>
+<p><code>android:secondaryProgress</code>    定义次要进度值，在0和最大值之间</p>
+<p><code>android:secondaryProgressTint</code>    着色应用于次要进度指示器</p>
+<p><code>android:secondaryProgressTintMode</code>    混合模式用于应用二级进度指示着色</p>
+<h2 id="自定义标题栏"><a href="#自定义标题栏" class="headerlink" title="自定义标题栏"></a>自定义标题栏</h2><h3 id="新建一个布局title-xml"><a href="#新建一个布局title-xml" class="headerlink" title="新建一个布局title.xml"></a>新建一个布局title.xml</h3><pre class="line-numbers language-XMl" data-language="XMl"><code class="language-XMl">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    android:background&#x3D;&quot;背景&quot;&gt;
+    &lt;Button 
+        android:id&#x3D;&quot;@+id&#x2F;title_button&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;center&quot;
+        android:layout_margin&#x3D;&quot;5dp&quot;
+        android:Backgreound&#x3D;&quot;背景&quot;
+        android:text&#x3D;&quot;back&quot;
+        android:textColor&#x3D;&quot;#ffffff&quot;&#x2F;&gt;
+
+    &lt;TextView
+        android:id&#x3D;&quot;@+id&#x2F;title_text&quot;
+        android:layout_width&#x3D;&quot;0dp&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;center&quot;
+        android:layout_weight&#x3D;&quot;1&quot;
+        android:gravity&#x3D;&quot;center&quot;
+        android:textColor&#x3D;&quot;#ffffff&quot;
+        android:textSize&#x3D;&quot;24sp&quot;&#x2F;&gt;
+
+    &lt;Button 
+        android:id&#x3D;&quot;@+id&#x2F;title_edit&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;center&quot;
+        android:layout_margin&#x3D;&quot;5dp&quot;
+        android:Backgreound&#x3D;&quot;背景&quot;
+        android:text&#x3D;&quot;Edit&quot;
+        android:textColor&#x3D;&quot;#ffffff&quot;&#x2F;&gt;  
+
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="在主布局中引入title"><a href="#在主布局中引入title" class="headerlink" title="在主布局中引入title"></a>在主布局中引入title</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;include layout&#x3D;&quot;@layout&#x2F;title&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="隐藏系统自带的标题栏"><a href="#隐藏系统自带的标题栏" class="headerlink" title="隐藏系统自带的标题栏"></a>隐藏系统自带的标题栏</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+
+    @Override
+    protected void onCreate(Bundle savedInstacneState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ActionBar actionbar &#x3D; getSupportActionBar();
+        if(actionbar !&#x3D; null)&#123;
+            actionbar.hide();
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="自定义控件"><a href="#自定义控件" class="headerlink" title="自定义控件"></a>自定义控件</h2><h3 id="新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件"><a href="#新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件" class="headerlink" title="新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件"></a>新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class TitleLayout extends LinearLayout&#123;
+    public TitleLayout(Context context, AttributeSet attrs)&#123;
+        super(context, arrts);
+        LayoutInflater.from(context).inflate(R.layout.title, this);
+        Button titleBack &#x3D; (Button) findViewById(R.id.title_back);
+        Button titleEdit &#x3D; (Button) findViewById(R.id.title_edit);
+        titleBack.setOnClickListener(new OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                ((Activity)getContext()).finish();
+            &#125;
+        &#125;);
+        titleEdit.setOnClickListener(new OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                Toast.makeText(getContext(), &quot;you clicked Edit button&quot;, Toast.LENGTH_SHORT).show();
+            &#125;
+        &#125;);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="自定义控件创建好了以后，在布局文件中添加这个自定义控件"><a href="#自定义控件创建好了以后，在布局文件中添加这个自定义控件" class="headerlink" title="自定义控件创建好了以后，在布局文件中添加这个自定义控件"></a>自定义控件创建好了以后，在布局文件中添加这个自定义控件</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;com.example.包名.TitleLayout
+        android:layout_width&#x3D;&quot;match_parent&quot;
+        android:layout_height&#x3D;&quot;wrap_parent&quot;&#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><h3 id="通过一系列的文本生成列表"><a href="#通过一系列的文本生成列表" class="headerlink" title="通过一系列的文本生成列表"></a>通过一系列的文本生成列表</h3><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;ListView
+        android:id&#x3D;&quot;@+id&#x2F;list_view&quot;
+        android:layout_width&#x3D;&quot;match_parent&quot;
+        android:layout_height&#x3D;&quot;match_parent&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+
+    private String[] data &#x3D; &#123;&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;&#125;;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ArrayAdapter&lt;String&gt; adapter &#x3D; new ArrayAdapter&lt;String&gt;(Main.this, android.R.layout.simple_list_item_1, data);
+        ListView listView &#x3D; (ListView) findViewById(R.id.list_view);
+        listView.setAdapter(adapter);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="通过图片定制ListView界面"><a href="#通过图片定制ListView界面" class="headerlink" title="通过图片定制ListView界面"></a>通过图片定制ListView界面</h3><h4 id="定义一个实体类，作为ListView适配器的适配类型"><a href="#定义一个实体类，作为ListView适配器的适配类型" class="headerlink" title="定义一个实体类，作为ListView适配器的适配类型"></a>定义一个实体类，作为ListView适配器的适配类型</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Day&#123;
+    private String name;
+    private int imageId;
+
+    public Day(String name, int imageId)&#123;
+        this.name &#x3D; name;
+        this.imageId &#x3D; imageId;
+    &#125;
+
+    public String getName()&#123;
+        return name;
+    &#125;
+
+    public int getImageId()&#123;
+        return imageId;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="为ListView的子项指定一个自定义布局，在layout目录下新建Day-item-xml"><a href="#为ListView的子项指定一个自定义布局，在layout目录下新建Day-item-xml" class="headerlink" title="为ListView的子项指定一个自定义布局，在layout目录下新建Day_item.xml"></a>为ListView的子项指定一个自定义布局，在layout目录下新建Day_item.xml</h4><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;ImageView
+        android:id&#x3D;&quot;@+id&#x2F;Day_image&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot; &#x2F;&gt;
+
+    &lt;TestView
+        android:id&#x3D;&quot;@+id&#x2F;Day_name&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;center_vertical&quot;
+        android:layout_marginLeft&#x3D;&quot;10dp&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="创建一个自定义的适配器，泛型指定为Day类"><a href="#创建一个自定义的适配器，泛型指定为Day类" class="headerlink" title="创建一个自定义的适配器，泛型指定为Day类"></a>创建一个自定义的适配器，泛型指定为Day类</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class DayAdapter extends Arrayadapter&lt;Day&gt;&#123;
+    private int resourceId;
+
+    public DayAdapter(Context context, int textViewResourceId, List&lt;Day&gt; objects)&#123;
+        super.(context, textViewResourceId, objets);
+        resourceId &#x3D; textViewResourceId;
+    &#125;
+
+    @Override 
+    public View getView(int position, View convertView, ViewGroup parent)&#123;
+        Day day &#x3D; getItem(positon);
+        View view &#x3D; LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+        ImageView DayImage &#x3D; (ImageView) view.findViewById(R.id.day_image);
+        TextView dayName &#x3D; (TextView) view.findViewById(R.id.day_name);
+        dayImage.setImageResource(fruit.getImageId());
+        dayName.setText(day.getName());
+        return view;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="修改Main中的代码"><a href="#修改Main中的代码" class="headerlink" title="修改Main中的代码"></a>修改Main中的代码</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+    private List&lt;Day&gt; DayList &#x3D; new ArrayList&lt;&gt;();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initDay();
+        DayAdapter adapter &#x3D; new DayAdapter(Main.this, R.layout.day_item, dayList);
+        ListView listView &#x3D; (ListView) findViewById(R.id.list_view);
+        ListView.setAdapter(adapter);
+    &#125;
+
+    private void initDay()&#123;
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january); &#x2F;&#x2F; 填写需要显示的文字和图片id
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+        Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+        dayList.add(january);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="提升ListView的运行效率"><a href="#提升ListView的运行效率" class="headerlink" title="提升ListView的运行效率"></a>提升ListView的运行效率</h3><h4 id="优化滑动"><a href="#优化滑动" class="headerlink" title="优化滑动"></a>优化滑动</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class DayAdapter extends ArrayAdapter&lt;Day&gt;&#123;
+    ...
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent)&#123;
+        Day day &#x3D; getItem(position);
+        &#x2F;&#x2F; 缓存加载好的布局
+        View view;
+        if(convertView &#x3D;&#x3D; null)&#123;
+            view &#x3D; LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+        &#125;else&#123;
+            view &#x3D; converView;
+        &#125;
+        ImageView DayImage &#x3D; (ImageView) view.findViewById(R.id.day_image);
+        TextView dayName &#x3D; (TextView) view.findViewById(R.id.day_name);
+        dayImage.setImageResource(fruit.getImageId());
+        dayName.setText(day.getName());
+        return view;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="优化控件"><a href="#优化控件" class="headerlink" title="优化控件"></a>优化控件</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class DayAdapter extends ArrayAdapter&lt;Day&gt;&#123;
+    ...
+
+    @override
+    public View getView(int position, View convertView, ViewGroup parent)&#123;
+        Day day &#x3D; getItem(position);
+        View view;
+        &#x2F;&#x2F; 缓存控件实例
+        ViewHolder viewHolder;
+        if(convertView &#x3D;&#x3D; null)&#123;
+            view &#x3D; LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            viewHolder &#x3D; new ViewHoler();
+            viewHolder.dayImage &#x3D; (ImageView) view.findViewById(R.id.day_image);
+            viewHolder.dayName &#x3D; (TextView) view.findViewById(R.id.day_name);
+            view.setTag(viewHolder);&#x2F;&#x2F; 将ViewHolder存储在View中
+        &#125;else&#123;
+            view &#x3D; convertView;
+            viewHolder &#x3D; (ViewHolder) view.getTag(); &#x2F;&#x2F; 重新获取ViewHolder
+        &#125;
+        viewHolder.dayImage.setImageResource(day.getImageId());
+        viewHolder.dayName.setText(day.getNmae);
+        return view;
+    &#125;
+
+    class ViewHolder&#123;
+        ImageView dayImage;
+        TextView dayName;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity &#123;
+    private List&lt;Day&gt; ddayList &#x3D; new ArrayList&lt;&gt;();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initDay();
+        dayAdapter adapter &#x3D; new DayAdapter(Main.this, R.layout.day_item, dayList());
+        ListView listview &#x3D; (ListView) findViewById(R.id.list_view);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()&#123;
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt;parent, View view, int position, long id)&#123;
+                Day day &#x3D;dayList.get(position);
+                Toast.makeText(Main.this, day.getName(), Toast.LENGTH_SHORT).show();
+            &#125;
+        &#125;);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
