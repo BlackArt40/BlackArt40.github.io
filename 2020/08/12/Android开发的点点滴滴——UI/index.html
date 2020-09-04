@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="第二期：UI控件的使用   TextView extend View&lt;TextView     android:id&#x3D;&quot;@id&#x2F;textView&quot;     android:layout_width&#x3D;&quot;match_parent&quot;     android:layout_height&#x3D;&quot;wrap_conten">
+  <meta name="description" content="第二期：UI控件的使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发的点点滴滴——UI">
 <meta property="og:url" content="http://yoursite.com/2020/08/12/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94UI/index.html">
 <meta property="og:site_name" content="伏北的BLOG">
-<meta property="og:description" content="第二期：UI控件的使用   TextView extend View&lt;TextView     android:id&#x3D;&quot;@id&#x2F;textView&quot;     android:layout_width&#x3D;&quot;match_parent&quot;     android:layout_height&#x3D;&quot;wrap_conten">
+<meta property="og:description" content="第二期：UI控件的使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-12T08:23:57.000Z">
-<meta property="article:modified_time" content="2020-08-14T10:21:29.480Z">
+<meta property="article:modified_time" content="2020-08-17T08:12:37.274Z">
 <meta property="article:author" content="伏城北染">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -128,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-14 18:21:29" itemprop="dateModified" datetime="2020-08-14T18:21:29+08:00">2020-08-14</time>
+                <time title="修改时间：2020-08-17 16:12:37" itemprop="dateModified" datetime="2020-08-17T16:12:37+08:00">2020-08-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
 
       
         <h1 id="第二期：UI控件的使用"><a href="#第二期：UI控件的使用" class="headerlink" title="第二期：UI控件的使用"></a>第二期：UI控件的使用</h1><hr>
-<!--- more --->
+<a id="more"></a>
 
 <h2 id="TextView-extend-View"><a href="#TextView-extend-View" class="headerlink" title="TextView extend View"></a>TextView extend View</h2><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;TextView
     android:id&#x3D;&quot;@id&#x2F;textView&quot;
@@ -678,6 +678,256 @@
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="RecycleView"><a href="#RecycleView" class="headerlink" title="RecycleView"></a>RecycleView</h2><h3 id="生成列表"><a href="#生成列表" class="headerlink" title="生成列表"></a>生成列表</h3><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><h5 id="build-gradle"><a href="#build-gradle" class="headerlink" title="build.gradle"></a>build.gradle</h5><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">dependencies&#123;
+    complie &#39;com.android.support:recycleview-v7:24.2.1&#39;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="activity-main"><a href="#activity-main" class="headerlink" title="activity_main"></a>activity_main</h5><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;android:support.v7.widget.RecycleView 
+        android:id&#x3D;&quot;@+id&#x2F;recycle_view&quot;
+        android:layout_width&#x3D;&quot;match_parent&quot;
+        android:layout_height&#x3D;&quot;match_parent&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="准备适配器"><a href="#准备适配器" class="headerlink" title="准备适配器"></a>准备适配器</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class DayAdapter extends RecycleView.Adapter&lt;DayAdapter.ViewHolder&gt;&#123;
+    private List&lt;Day&gt;mDayList;
+
+    static class ViewHolder extends RecyclerView.ViewHolder&#123;
+        ImageView dayImage;
+        TextView dayName;
+
+        public ViewHolder(View view)&#123;
+            super(view);
+            dayImage &#x3D; (ImageView) view.findViewById(R.id.day_image);
+            dayName &#x3D; (ImageView) view.findViewById(R.id.day_name);
+        &#125;
+    &#125;
+
+    public DayAdapter(List&lt;Day&gt; dayList)&#123;
+        mDayList &#x3D; dayList;
+    &#125;
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)&#123;
+        View view &#x3D; LayoutInflater.from(parent, getContext()).inflate(R.layout.day_item, parent, false);
+        ViewHolder holder &#x3D; new ViewHolder(view);
+        return holder;
+    &#125;
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position)&#123;
+        Day day &#x3D; mDayList.get(positon);
+        holder.dayImage.setImageResource(day.getImageId());
+        holder.dayName.setText(day.getName());
+    &#125;
+
+    @Override
+    public int getItemCount()&#123;
+        return mDayList.size();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompateActivity&#123;
+    private List&lt;Day&gt; dayList &#x3D; new ArrayList&lt;&gt;();
+
+    @Override
+    protected void onCreate(Budle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initDay();
+        RecyclerView recycleView &#x3D; (RecycleView) findViewById(R.id.recycle_view);
+        LinearLayoutManager layoutManager &#x3D; new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        DayAdapter adapter &#x3D; new DayAdapter(dayList);
+        recyclerView.setAdapter(adapter);        
+    &#125;
+
+    private void initDay()&#123;
+        for(int i &#x3D; 0; i &lt; 2; i++)&#123;
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january); &#x2F;&#x2F; 填写需要显示的文字和图片id
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+            Day january &#x3D; new Day(&quot;January&quot;, R.drawable.january_pic);
+            dayList.add(january);
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实现横向滚动和瀑布流布局"><a href="#实现横向滚动和瀑布流布局" class="headerlink" title="实现横向滚动和瀑布流布局"></a>实现横向滚动和瀑布流布局</h3><h4 id="横向滚动"><a href="#横向滚动" class="headerlink" title="横向滚动"></a>横向滚动</h4><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:prientation&#x3D;&quot;vertical&quot;
+    android:layout_width&#x3D;&quot;100dp&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;&gt;
+
+    &lt;ImageView
+        android:id&#x3D;&quot;@+id&#x2F;Day_image&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot; 
+        android:layout_gravity&#x3D;&quot;center_horizontal&quot; &#x2F;&gt;
+
+    &lt;TestView
+        android:id&#x3D;&quot;@+id&#x2F;Day_name&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;center_vertical&quot;
+        android:layout_marginLeft&#x3D;&quot;10dp&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompateActivity&#123;
+    private List&lt;Day&gt; dayList &#x3D; new ArrayList&lt;&gt;();
+
+    @Override
+    protected void onCreate(Budle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initDay();
+        RecyclerView recycleView &#x3D; (RecycleView) findViewById(R.id.recycle_view);
+        LinearLayoutManager layoutManager &#x3D; new LinearLayoutManager(this);
+        layoutManager.seOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+        DayAdapter adapter &#x3D; new DayAdapter(dayList);
+        recyclerView.setAdapter(adapter);        
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="瀑布流"><a href="#瀑布流" class="headerlink" title="瀑布流"></a>瀑布流</h4><pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">&lt;LinearLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;
+    android:prientation&#x3D;&quot;vertical&quot;
+    android:layout_width&#x3D;&quot;match_parent&quot;
+    android:layout_height&#x3D;&quot;match_parent&quot;
+    android:layout_margin&#x3D;&quot;5dp&quot;&gt;
+
+    &lt;ImageView
+        android:id&#x3D;&quot;@+id&#x2F;Day_image&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot; 
+        android:layout_gravity&#x3D;&quot;center_horizontal&quot; &#x2F;&gt;
+
+    &lt;TestView
+        android:id&#x3D;&quot;@+id&#x2F;Day_name&quot;
+        android:layout_width&#x3D;&quot;wrap_content&quot;
+        android:layout_height&#x3D;&quot;wrap_content&quot;
+        android:layout_gravity&#x3D;&quot;left&quot;
+        android:layout_marginLeft&#x3D;&quot;10dp&quot; &#x2F;&gt;
+&lt;&#x2F;LinearLayout&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompateActivity&#123;
+    private List&lt;Day&gt; dayList &#x3D; new ArrayList&lt;&gt;();
+
+    @Override
+    protected void onCreate(Budle savedInstanceState)&#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initDay();
+        RecyclerView recycleView &#x3D; (RecycleView) findViewById(R.id.recycle_view);
+        LinearLayoutManager layoutManager &#x3D; new LinearLayoutManager(this);
+        StaggeredGridLayoutManager layoutManager &#x3D; new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        DayAdapter adapter &#x3D; new DayAdapter(dayList);
+        recyclerView.setAdapter(adapter);        
+    &#125;
+
+    private void initDay()&#123;
+        for(int i &#x3D; 0; i &lt; 2; i++)&#123;
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); &#x2F;&#x2F; 填写需要显示的文字和图片id
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+            Day january &#x3D; new Day(getRandomLenthName(&quot;January&quot;), R.drawable.january_pic);
+            dayList.add(january); 
+        &#125;
+    &#125;
+
+    private String getRandomLengthName(String name)&#123;
+        Random random &#x3D; new Random();
+        int length &#x3D; random.nextInt(20) + 1;
+        StringBuilder builder &#x3D; new StringBuilder();
+        for(int i &#x3D; 0; i &lt; length; i++)&#123;
+            builder.append(name);
+        &#125;
+        retunr builder.toString();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="点击事件-1"><a href="#点击事件-1" class="headerlink" title="点击事件"></a>点击事件</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class DayAdapter extends RecyclerView.Adapter&lt;DayAdapter.ViewHolder&gt;&#123;
+    private List&lt;Day&gt; mDayList;
+
+    static class ViewHolder extends RecyclerView.ViewHolder&#123;
+        View dayView;
+        ImageView dayImage;
+        TextView dayName;
+
+        public ViewHolder(View view)&#123;
+            super(view);
+            dayView &#x3D; view;
+                        dayImage &#x3D; (ImageView) view.findViewById(R.id.day_image);
+            dayName &#x3D; (ImageView) view.findViewById(R.id.day_name);
+        &#125;
+    &#125;
+
+    public DayAdapter(List&lt;Day&gt; dayList)&#123;
+        mDayList &#x3D; dayList;
+    &#125;
+
+    @Override
+
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewTyper)&#123;
+        View view &#x3D; LayoutInflater.from(parent.getContext()).inflate(R.layout.day_item, parent, false);
+        final ViewHolder holder &#x3D; new ViewHolder(view);
+        holder.dayView.setOnClickListener(new View.OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                int position &#x3D; holder.getAdapterPosition();
+                Day day &#x3D; mDayList.get(position);
+                Toast.makeText(view.getContext(), &quot;you clicked view&quot; + day.getName(), Toast.LENGTH_SHORT).show();
+            &#125;
+        &#125;);
+        holder.dayImage.setOnClickListener(new View.OnClickListener()&#123;
+            @Override
+            public void onClick(View view)&#123;
+                int positon &#x3D; holder.getAdapterPosition();
+                Day day &#x3D; mDayList.get(position);
+                Toast.makeText(view.getContext(), &quot;you clicked image&quot; + day.getName(), Toast.LENGTH_SHORT).show();
+            &#125;
+        &#125;);
+        return holder;
+    &#125;
+
+    ...
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     </div>
 
     
@@ -760,7 +1010,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%9AUI%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">第二期：UI控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TextView-extend-View"><span class="nav-number">1.1.</span> <span class="nav-text">TextView extend View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Button-extends-TextView"><span class="nav-number">1.2.</span> <span class="nav-text">Button extends TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EditText-extends-TextView"><span class="nav-number">1.3.</span> <span class="nav-text">EditText extends TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProgressBar-extends-View"><span class="nav-number">1.4.</span> <span class="nav-text">ProgressBar extends View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="nav-number">1.5.</span> <span class="nav-text">自定义标题栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B8%83%E5%B1%80title-xml"><span class="nav-number">1.5.1.</span> <span class="nav-text">新建一个布局title.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E5%B8%83%E5%B1%80%E4%B8%AD%E5%BC%95%E5%85%A5title"><span class="nav-number">1.5.2.</span> <span class="nav-text">在主布局中引入title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">隐藏系统自带的标题栏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">自定义控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BATitleLayout%E7%BB%A7%E6%89%BF%E8%87%AALinearLayout%EF%BC%8C%E8%AE%A9%E5%AE%83%E6%88%90%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%A0%87%E9%A2%98%E6%A0%8F%E7%9A%84%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%88%9B%E5%BB%BA%E5%A5%BD%E4%BA%86%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%BF%99%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.2.</span> <span class="nav-text">自定义控件创建好了以后，在布局文件中添加这个自定义控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView"><span class="nav-number">1.7.</span> <span class="nav-text">ListView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E5%88%97%E8%A1%A8"><span class="nav-number">1.7.1.</span> <span class="nav-text">通过一系列的文本生成列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%9B%BE%E7%89%87%E5%AE%9A%E5%88%B6ListView%E7%95%8C%E9%9D%A2"><span class="nav-number">1.7.2.</span> <span class="nav-text">通过图片定制ListView界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BD%93%E7%B1%BB%EF%BC%8C%E4%BD%9C%E4%B8%BAListView%E9%80%82%E9%85%8D%E5%99%A8%E7%9A%84%E9%80%82%E9%85%8D%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">定义一个实体类，作为ListView适配器的适配类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BAListView%E7%9A%84%E5%AD%90%E9%A1%B9%E6%8C%87%E5%AE%9A%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%83%E5%B1%80%EF%BC%8C%E5%9C%A8layout%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%B0%E5%BB%BADay-item-xml"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">为ListView的子项指定一个自定义布局，在layout目录下新建Day_item.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8C%87%E5%AE%9A%E4%B8%BADay%E7%B1%BB"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">创建一个自定义的适配器，泛型指定为Day类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9Main%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.7.2.4.</span> <span class="nav-text">修改Main中的代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8D%87ListView%E7%9A%84%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87"><span class="nav-number">1.7.3.</span> <span class="nav-text">提升ListView的运行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%BB%91%E5%8A%A8"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">优化滑动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">优化控件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.7.4.</span> <span class="nav-text">点击事件</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%9AUI%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">第二期：UI控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TextView-extend-View"><span class="nav-number">1.1.</span> <span class="nav-text">TextView extend View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Button-extends-TextView"><span class="nav-number">1.2.</span> <span class="nav-text">Button extends TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EditText-extends-TextView"><span class="nav-number">1.3.</span> <span class="nav-text">EditText extends TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProgressBar-extends-View"><span class="nav-number">1.4.</span> <span class="nav-text">ProgressBar extends View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="nav-number">1.5.</span> <span class="nav-text">自定义标题栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B8%83%E5%B1%80title-xml"><span class="nav-number">1.5.1.</span> <span class="nav-text">新建一个布局title.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E5%B8%83%E5%B1%80%E4%B8%AD%E5%BC%95%E5%85%A5title"><span class="nav-number">1.5.2.</span> <span class="nav-text">在主布局中引入title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">隐藏系统自带的标题栏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">自定义控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BATitleLayout%E7%BB%A7%E6%89%BF%E8%87%AALinearLayout%EF%BC%8C%E8%AE%A9%E5%AE%83%E6%88%90%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%A0%87%E9%A2%98%E6%A0%8F%E7%9A%84%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">新建TitleLayout继承自LinearLayout，让它成为自定义的标题栏的控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%88%9B%E5%BB%BA%E5%A5%BD%E4%BA%86%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%BF%99%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.6.2.</span> <span class="nav-text">自定义控件创建好了以后，在布局文件中添加这个自定义控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView"><span class="nav-number">1.7.</span> <span class="nav-text">ListView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E5%88%97%E8%A1%A8"><span class="nav-number">1.7.1.</span> <span class="nav-text">通过一系列的文本生成列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%9B%BE%E7%89%87%E5%AE%9A%E5%88%B6ListView%E7%95%8C%E9%9D%A2"><span class="nav-number">1.7.2.</span> <span class="nav-text">通过图片定制ListView界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BD%93%E7%B1%BB%EF%BC%8C%E4%BD%9C%E4%B8%BAListView%E9%80%82%E9%85%8D%E5%99%A8%E7%9A%84%E9%80%82%E9%85%8D%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">定义一个实体类，作为ListView适配器的适配类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BAListView%E7%9A%84%E5%AD%90%E9%A1%B9%E6%8C%87%E5%AE%9A%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%83%E5%B1%80%EF%BC%8C%E5%9C%A8layout%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%B0%E5%BB%BADay-item-xml"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">为ListView的子项指定一个自定义布局，在layout目录下新建Day_item.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8C%87%E5%AE%9A%E4%B8%BADay%E7%B1%BB"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">创建一个自定义的适配器，泛型指定为Day类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9Main%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.7.2.4.</span> <span class="nav-text">修改Main中的代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8D%87ListView%E7%9A%84%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87"><span class="nav-number">1.7.3.</span> <span class="nav-text">提升ListView的运行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%BB%91%E5%8A%A8"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">优化滑动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">优化控件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.7.4.</span> <span class="nav-text">点击事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecycleView"><span class="nav-number">1.8.</span> <span class="nav-text">RecycleView</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%88%97%E8%A1%A8"><span class="nav-number">1.8.1.</span> <span class="nav-text">生成列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.1.1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#build-gradle"><span class="nav-number">1.8.1.1.1.</span> <span class="nav-text">build.gradle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#activity-main"><span class="nav-number">1.8.1.1.2.</span> <span class="nav-text">activity_main</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E9%80%82%E9%85%8D%E5%99%A8"><span class="nav-number">1.8.1.2.</span> <span class="nav-text">准备适配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.8.1.3.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%A8%AA%E5%90%91%E6%BB%9A%E5%8A%A8%E5%92%8C%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80"><span class="nav-number">1.8.2.</span> <span class="nav-text">实现横向滚动和瀑布流布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E6%BB%9A%E5%8A%A8"><span class="nav-number">1.8.2.1.</span> <span class="nav-text">横向滚动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%B5%81"><span class="nav-number">1.8.2.2.</span> <span class="nav-text">瀑布流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6-1"><span class="nav-number">1.8.3.</span> <span class="nav-text">点击事件</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -776,20 +1026,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -22,19 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在时间的大钟上，只有两个字现在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="在软件里点开工程文件下的build.gradle（全局的） 在 buildscript 和 allprojects 的 repositories 中分别注释掉 jcenter() 在 buildscript 和 allprojects 的 repositories 分别添加：maven&amp;#123;url &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;gro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio Gradle下载速度慢解决方法">
+<meta property="og:url" content="http://yoursite.com/2020/08/25/Android-Studio-Gradle%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="伏北的BLOG">
-<meta property="og:description" content="在时间的大钟上，只有两个字现在">
+<meta property="og:description" content="在软件里点开工程文件下的build.gradle（全局的） 在 buildscript 和 allprojects 的 repositories 中分别注释掉 jcenter() 在 buildscript 和 allprojects 的 repositories 分别添加：maven&amp;#123;url &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;gro">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-09T15:02:39.000Z">
-<meta property="article:modified_time" content="2020-08-09T15:03:07.353Z">
+<meta property="article:published_time" content="2020-08-25T14:15:44.000Z">
+<meta property="article:modified_time" content="2020-08-25T14:18:54.983Z">
 <meta property="article:author" content="伏城北染">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/">
+<link rel="canonical" href="http://yoursite.com/2020/08/25/Android-Studio-Gradle%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -42,13 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>tags | 伏北的BLOG
-</title>
+  <title>Android Studio Gradle下载速度慢解决方法 | 伏北的BLOG</title>
   
 
 
@@ -188,51 +188,100 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/Android-Studio-Gradle%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="伏城北染">
+      <meta itemprop="description" content="在时间的大钟上，只有两个字现在">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伏北的BLOG">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android Studio Gradle下载速度慢解决方法<a href="https://github.com/BlackArt40/BlackArt40.github.io.git_posts/Android-Studio-Gradle%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">tags<a href="https://github.com/BlackArt40/BlackArt40.github.io.gittags/index.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-08-25 22:15:44 / 修改时间：22:18:54" itemprop="dateCreated datePublished" datetime="2020-08-25T22:15:44+08:00">2020-08-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ol>
+<li>在软件里点开工程文件下的build.gradle（全局的）</li>
+<li>在 buildscript 和 allprojects 的 repositories 中分别注释掉 jcenter()</li>
+<li>在 buildscript 和 allprojects 的 repositories 分别添加：<code>maven&#123;url &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39;&#125;</code></li>
+<li>再在 buildscript 的 repositories 添加：<code>maven&#123;url &quot;https://jitpack.io&quot;&#125;</code></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/17/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94LitePal%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="Android开发的点点滴滴——LitePal数据库">
+      <i class="fa fa-chevron-left"></i> Android开发的点点滴滴——LitePal数据库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" rel="next" title="算法学习总结">
+      算法学习总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 8 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Android/" style="font-size: 30px; color: #111">Android</a> <a href="/tags/MarkDown/" style="font-size: 21px; color: #6f6f6f">MarkDown</a> <a href="/tags/git/" style="font-size: 21px; color: #6f6f6f">git</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 21px; color: #6f6f6f">方法</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12px; color: #ccc">算法</a> <a href="/tags/%E7%BB%88%E7%AB%AF/" style="font-size: 12px; color: #ccc">终端</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 12px; color: #ccc">虚拟机</a>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
