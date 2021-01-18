@@ -20,12 +20,12 @@
   <entry>
     <title>Android开发的点点滴滴——LitePal数据库</title>
     <url>/2020/08/17/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94LitePal%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="第三期-LitePal数据库"><a href="#第三期-LitePal数据库" class="headerlink" title="第三期 LitePal数据库"></a>第三期 LitePal数据库</h1><a id="more"></a>
+    <content><![CDATA[<h2 id="第三期-LitePal数据库"><a href="#第三期-LitePal数据库" class="headerlink" title="第三期 LitePal数据库"></a>第三期 LitePal数据库</h2><a id="more"></a>
 
-<h2 id="配置LitePal"><a href="#配置LitePal" class="headerlink" title="配置LitePal"></a>配置LitePal</h2><ul>
+<h3 id="配置LitePal"><a href="#配置LitePal" class="headerlink" title="配置LitePal"></a>配置LitePal</h3><ul>
 <li>编辑build.gradle文件，在dependencies中添加</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">dependencies&#123;
+<pre class="line-numbers language-XML" data-language="XML"><code class="language-XML">dependencies&#123;
     compile &#39;org.litepal.android:core:1.4.1&#39;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
@@ -52,7 +52,7 @@
     ...
 &lt;&#x2F;application&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><ul>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><ul>
 <li>定义一个book类</li>
 </ul>
 <pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Book extends DataSupport&#123;
@@ -125,8 +125,8 @@
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h2><p>可以直接在book类中进行修改。如果想要添加新表，直接创建类就可以了，最后记得将版本号加1。</p>
-<h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
+<h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><p>可以直接在book类中进行修改。如果想要添加新表，直接创建类就可以了，最后记得将版本号加1。</p>
+<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class Main extends AppCompatActivity&#123;
     @Override
     protected void onCreate(Bundle savedInstanceState)&#123;
         super.onCreate(savedInstanceState);
@@ -145,7 +145,7 @@
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2>]]></content>
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3>]]></content>
       <categories>
         <category>开发</category>
       </categories>
@@ -686,30 +686,10 @@ title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></s
 <p>单行代码</p>
 <p><code>System.out.print</code></p>
 <p>代码块</p>
-<pre class="line-numbers language-none"><code class="language-none">for(int i &#x3D; 0; i &lt; 10; i++)
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">for(int i &#x3D; 0; i &lt; 10; i++)
 &#123;
     sum +&#x3D; i;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="十、流程图"><a href="#十、流程图" class="headerlink" title="十、流程图"></a>十、流程图</h2><pre class="line-numbers language-none"><code class="language-none">&#96;&#96;&#96;flow
-st&#x3D;&gt;start:开始
-op&#x3D;&gt;operation:My operation
-cond&#x3D;&gt;condition:Yes or No?
-e&#x3D;&gt;end
-st-&gt;op-&gt;cond
-cond(yes)-&gt;e
-cond(no)-&gt;op
-&amp;&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-flow" data-language="flow"><code class="language-flow">st<span class="token operator">=></span>start<span class="token operator">:</span> 开始框
-op<span class="token operator">=></span>operation<span class="token operator">:</span> 处理框
-cond<span class="token operator">=></span>condition<span class="token operator">:</span> <span class="token function">判断框</span><span class="token punctuation">(</span>是或否<span class="token operator">?</span><span class="token punctuation">)</span>
-sub1<span class="token operator">=></span>subroutine<span class="token operator">:</span> 子流程
-io<span class="token operator">=></span>inputoutput<span class="token operator">:</span> 输入输出框
-e<span class="token operator">=></span>end<span class="token operator">:</span> 结束框
-st<span class="token operator">-</span><span class="token operator">></span>op<span class="token operator">-</span><span class="token operator">></span>cond
-<span class="token function">cond</span><span class="token punctuation">(</span>yes<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>io<span class="token operator">-</span><span class="token operator">></span>e
-<span class="token function">cond</span><span class="token punctuation">(</span>no<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">sub1</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>op<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>文本编辑</category>
@@ -1220,6 +1200,7 @@ git config --global user.email&quot;your_email@youremail.com&quot;<span aria-hid
             &#125;
         &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>这个函数很简单，或者说冒泡排序很简单，它的思想很好理解。但是正是因为它的简单，<br>所以才使得这个函数不具备实用性，只能作为初步了解排序的小算法。</p>
 <p>至于为什么这么多，可以看到第一个<code>for</code>循环要进行n-1次，而循环内部还嵌套了一个要进行n次以上的<code>for</code>循环，<br>所以导致这个排序的时间复杂度为n的平方，其中n为要排序的数字的数量。<br>这就代表着如果有100个数字，则要进行10000次排序才能成功，<br>如果一个计算机能够1s进行一次的话，通过这个算法进行排序要10000s才能出现结果。</p>
 <p>冒泡排序也是可以进行优化的，比如说有一组数字，在进行排序前就是一个粗排的状态，<br>那么它可能只需要比（n-1）次少的次数就能够排序成功，我们可以通过查看内部循环是否达到完全不交换的状态，<br>来进行判断数组是否完全排序，这个时候我们可以在这个时间点上停止冒泡排序。</p>
