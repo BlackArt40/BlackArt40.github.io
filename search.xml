@@ -154,6 +154,230 @@
       </tags>
   </entry>
   <entry>
+    <title>MarkDown基本语法</title>
+    <url>/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍</p>
+<ul>
+<li>优点：</li>
+</ul>
+<p>1.因为是纯文本，所以只要支持MarkDown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写博客<br>2.操作简单</p>
+<ul>
+<li>缺点：</li>
+</ul>
+<p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
+<a id="more"></a>
+
+<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
+<li>加粗</li>
+</ul>
+<p>要加粗的文字左右分别用两个*包起来</p>
+<ul>
+<li>斜体</li>
+</ul>
+<p>要倾斜的文字左右分别用一个*包起来</p>
+<ul>
+<li>斜体加粗</li>
+</ul>
+<p>要倾斜和加粗的文字左右分别用三个*包起来</p>
+<ul>
+<li>删除线</li>
+</ul>
+<p>要加删除线的文字左右用两个~~包起来</p>
+<ul>
+<li>下划线</li>
+</ul>
+<p>下划线可以通过HTML的<u></u>标签来实现</p>
+<ul>
+<li>脚注</li>
+</ul>
+<p>脚注时对文本的补充说明。</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">**这是加粗的文字**
+*这是倾斜的文字*
+***这是斜体加粗的文字***
+~~这是加删除线的文字~~
+&lt;u&gt;这是带下划线的文字&lt;&#x2F;u&gt;
+这是要注明的文字[^1]
+[^1]:1111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del><br><u>这是带下划线的文字</u><br>创建脚注格式类似这样[^脚注]<br>[^脚注]<br>[^脚注]:这是要标注的文字。</p>
+<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>貌似是可以一直加下去的</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&gt;这是引用的内容
+&gt;&gt;这是引用的内容
+&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><p>三个或者三个以上的-或者*都可以</p>
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+----
+***
+****<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p>可以看到，显示的效果是一样的</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">![图片alt](图片地址 “图片title”)
+
+图片alt就是现实在图片下面的文字，相当于对图片内容的解释。
+图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>效果如下：</p>
+<p><img src="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg" alt="图片"></p>
+<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">[超链接名](超链接地址 “超链接title”)
+title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">[百度](http:&#x2F;&#x2F;baidu.com)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<p><a href="http://baidu.com/">百度</a></p>
+<h2 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h2><ul>
+<li>无序列表</li>
+</ul>
+<p>语法：<br>无序列表用 - + * 任何一种都可以</p>
+<pre class="line-numbers language-none"><code class="language-none">- 列表内容
++ 列表内容
+* 列表内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>有序列表</li>
+</ul>
+<p>语法：<br>数字加点</p>
+<pre class="line-numbers language-none"><code class="language-none">1.列表内容
+2.列表内容
+3.列表内容
+
+注意：序号跟内容之间要有空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+<ul>
+<li>列表嵌套</li>
+</ul>
+<p><strong>上一级和下一级之间敲三个空格</strong></p>
+<ul>
+<li><p>一级无序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级无序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>一级有序列表内容</p>
+<ul>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+<li>二级无序列表内容</li>
+</ul>
+</li>
+<li><p>一级有序列表内容</p>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+</ol>
+</li>
+</ol>
+<h2 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h2><p>语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">表头|表头|表头
+--|：-- ：|--:
+内容|内容|内容
+内容|内容|内容
+
+第二行分割表头和内容。
+- 有一个就行
+文字默认居左
+-两边加：表示文字居中
+-右边加：表示文字居右
+注：原生的语法两边都要用|包起来。此处省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>姓名|学号|年级<br>–|：–：|–：<br>一|10|大学<br>二|20|大学<br>三|20|大学</p>
+<h2 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h2><p>语法：<br>单行代码：代码之间分别用一个反引号包起来</p>
+<pre class="line-numbers language-none"><code class="language-none">&#96;代码内容&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
+<pre class="line-numbers language-none"><code class="language-none">(&#96;&#96;&#96;)
+
+代码、、、
+代码、、、
+代码、、、
+
+(&#96;&#96;&#96;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong><em>注：为了防止转译，前后三个反引号处加了小括号，实际时没有的，这里只是用来演示，实际中去掉两边小括号即可。</em></strong></p>
+<p>示例：</p>
+<p>单行代码</p>
+<p><code>System.out.print</code></p>
+<p>代码块</p>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">for(int i &#x3D; 0; i &lt; 10; i++)
+&#123;
+    sum +&#x3D; i;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>文本编辑</category>
+      </categories>
+      <tags>
+        <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android开发的点点滴滴——活动</title>
     <url>/2020/08/11/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E2%80%94%E2%80%94%E6%B4%BB%E5%8A%A8/</url>
     <content><![CDATA[<p>第一次接触到Android app的开发，所以写了名为Android开发的点点滴滴的博客进行记录</p>
@@ -472,230 +696,6 @@ button.setOnClickListener(new OnClickListener()&#123;
       </categories>
       <tags>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MarkDown基本语法</title>
-    <url>/2020/01/21/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>MarkDown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>在我写博客时的文件为.md文件，为了防止忘记部分语法，在此介绍</p>
-<ul>
-<li>优点：</li>
-</ul>
-<p>1.因为是纯文本，所以只要支持MarkDown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写博客<br>2.操作简单</p>
-<ul>
-<li>缺点：</li>
-</ul>
-<p>1.需要记一些语法<br>2.有些平台不支持MarkDown边集模式</p>
-<a id="more"></a>
-
-<h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置标题的文字前面加#来表示<br>一个#是一级标题，两个#是二级标题，以此类推。最高支持六级标题。<br>注：标准语法一般在#后跟一个空格再写文字</p>
-<p>示例：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 这是一级标题
-## 这是二级标题
-### 这是三级标题
-#### 这是四级标题
-##### 这是五级标题
-###### 这是六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
-<li>加粗</li>
-</ul>
-<p>要加粗的文字左右分别用两个*包起来</p>
-<ul>
-<li>斜体</li>
-</ul>
-<p>要倾斜的文字左右分别用一个*包起来</p>
-<ul>
-<li>斜体加粗</li>
-</ul>
-<p>要倾斜和加粗的文字左右分别用三个*包起来</p>
-<ul>
-<li>删除线</li>
-</ul>
-<p>要加删除线的文字左右用两个~~包起来</p>
-<ul>
-<li>下划线</li>
-</ul>
-<p>下划线可以通过HTML的<u></u>标签来实现</p>
-<ul>
-<li>脚注</li>
-</ul>
-<p>脚注时对文本的补充说明。</p>
-<p>示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">**这是加粗的文字**
-*这是倾斜的文字*
-***这是斜体加粗的文字***
-~~这是加删除线的文字~~
-&lt;u&gt;这是带下划线的文字&lt;&#x2F;u&gt;
-这是要注明的文字[^1]
-[^1]:1111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del><br><u>这是带下划线的文字</u><br>创建脚注格式类似这样[^脚注]<br>[^脚注]<br>[^脚注]:这是要标注的文字。</p>
-<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>貌似是可以一直加下去的</p>
-<p>示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">&gt;这是引用的内容
-&gt;&gt;这是引用的内容
-&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><p>三个或者三个以上的-或者*都可以</p>
-<p>示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-----
-***
-****<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<p>可以看到，显示的效果是一样的</p>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">![图片alt](图片地址 “图片title”)
-
-图片alt就是现实在图片下面的文字，相当于对图片内容的解释。
-图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<p>效果如下：</p>
-<p><img src="http://pic.netbian.com/uploads/allimg/190824/202750-1566649670d486.jpg" alt="图片"></p>
-<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">[超链接名](超链接地址 “超链接title”)
-title可加可不加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">[百度](http:&#x2F;&#x2F;baidu.com)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<p><a href="http://baidu.com/">百度</a></p>
-<h2 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h2><ul>
-<li>无序列表</li>
-</ul>
-<p>语法：<br>无序列表用 - + * 任何一种都可以</p>
-<pre class="line-numbers language-none"><code class="language-none">- 列表内容
-+ 列表内容
-* 列表内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<ul>
-<li>列表内容</li>
-</ul>
-<ul>
-<li>列表内容</li>
-</ul>
-<ul>
-<li>列表内容</li>
-</ul>
-<ul>
-<li>有序列表</li>
-</ul>
-<p>语法：<br>数字加点</p>
-<pre class="line-numbers language-none"><code class="language-none">1.列表内容
-2.列表内容
-3.列表内容
-
-注意：序号跟内容之间要有空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下：</p>
-<ol>
-<li>列表内容</li>
-<li>列表内容</li>
-<li>列表内容</li>
-</ol>
-<ul>
-<li>列表嵌套</li>
-</ul>
-<p><strong>上一级和下一级之间敲三个空格</strong></p>
-<ul>
-<li><p>一级无序列表内容</p>
-<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-<li><p>一级无序列表内容</p>
-<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li><p>一级有序列表内容</p>
-<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-<li><p>一级有序列表内容</p>
-<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ol>
-<h2 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h2><p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">表头|表头|表头
---|：-- ：|--:
-内容|内容|内容
-内容|内容|内容
-
-第二行分割表头和内容。
-- 有一个就行
-文字默认居左
--两边加：表示文字居中
--右边加：表示文字居右
-注：原生的语法两边都要用|包起来。此处省略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>示例：</p>
-<p>姓名|学号|年级<br>–|：–：|–：<br>一|10|大学<br>二|20|大学<br>三|20|大学</p>
-<h2 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h2><p>语法：<br>单行代码：代码之间分别用一个反引号包起来</p>
-<pre class="line-numbers language-none"><code class="language-none">&#96;代码内容&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
-<pre class="line-numbers language-none"><code class="language-none">(&#96;&#96;&#96;)
-
-代码、、、
-代码、、、
-代码、、、
-
-(&#96;&#96;&#96;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong><em>注：为了防止转译，前后三个反引号处加了小括号，实际时没有的，这里只是用来演示，实际中去掉两边小括号即可。</em></strong></p>
-<p>示例：</p>
-<p>单行代码</p>
-<p><code>System.out.print</code></p>
-<p>代码块</p>
-<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">for(int i &#x3D; 0; i &lt; 10; i++)
-&#123;
-    sum +&#x3D; i;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>文本编辑</category>
-      </categories>
-      <tags>
-        <tag>MarkDown</tag>
       </tags>
   </entry>
   <entry>
